@@ -106,6 +106,13 @@ function verDatosComunicat(x){
         $('#labelCOMUNICAT_REFERENCIA').text(aComs[x].REFERENCIA);
         $('#labelCOMUNICAT_ESTAT').text(aComs[x].ESTAT);
         $('#labelCOMUNICAT_DATA').text(aComs[x].DATA);
+        if(aComs[x].ESTA=="TANCAT") {
+            $('#labelCOMUNICAT_DATARES').text(aComs[x].DATARES);
+            $('#fecharesuelta').show();
+        }
+        else{
+            $('#fecharesuelta').hide();
+        }
         $('#labelCOMUNICAT_CARRER').text(aComs[x].CARRER + " " + aComs[x].NUM);
         $('#labelCOMUNICAT_COMENTARI').text(aComs[x].COMENTARI);
         $('#labelCOMUNICAT_COORDENADES').text(aComs[x].COORD_X + " , " + aComs[x].COORD_Y);
@@ -327,7 +334,6 @@ function enviamentDePendents(p_inicio) {
     }
     catch (ex) {
         v_bError=true;
-        alert(ex.message);
     }
     if(v_bError)
     {
@@ -482,13 +488,14 @@ function GuardaActualizacionComunicats(aResultados){
 
             aDatos['id'] = aRegistro[nPosIdLocal][1].toString().trim();
             aDatos['referencia'] = aRegistro[nPosRefUlls][1] + '';
+            aDatos['data'] = objComunicatEXISTENTE.DATA + '';
             if(aRegistro[nPosEstado][1]=="T"){
                 aDatos['estat'] = 'TANCAT';
-                aDatos['data'] = aRegistro[nPosFecha][1] + '';
+                aDatos['datares'] = aRegistro[nPosFecha][1] + '';
             }
             else{
                 aDatos['estat'] = 'NOTIFICAT';
-                aDatos['data'] = objComunicatEXISTENTE.DATA + '';
+                aDatos['datares'] = '';
             }
             aDatos['codcarrer'] = objComunicatEXISTENTE.CODCARRER + '';
             aDatos['carrer'] = objComunicatEXISTENTE.CARRER + '';

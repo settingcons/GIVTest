@@ -52,14 +52,90 @@ function cargarPaginaDatosIncidencia() {
         $('#TipusInciImg').attr({"src":dicImagenes[TipoInciSel]});
         $('#TipusInciText').html(dicAyuda[TipoInciSel]);
 
-        //cargar mapa
-        //iniciaMapa();
-        //MiPosicion();
-        if(!GPSActivado){
-            getPosition();
-        }
-        if(GPSActivado){
+        MostrarUbicacion();
+    }
+    catch(ex) {
+        //alert("cargarPaginaDatosIncidencia:"+ ex.message);
+    }
+}
+
+function MostrarUbicacion(){
+
+    var v_bMostrarCombos=false;
+    if(!GPSActivado){
+        //Se vuelve a mirar si el GPS está activado
+        GPSEstaActivado();
+    }
+
+    if (GPSActivado){
+        if(GPSwathId){
             posicionOK(posicionGPS);
+        }
+        else{
+            //Si hay error al recuperar posición (puede que esté sin cobertura)
+            //Se obtiene la current position por si acaso
+            getPosition();
+            if(GPScurrentposition){
+                posicionOK(posicionGPS);
+            }
+            else{
+                //Falla la obtención de la current position y el wathID sigue sin ir
+                if(!GPSwathId){
+                    //No hay última posición de GPS
+                    if(posicionGPS==''){
+                        v_bMostrarCombos=true;
+                        mensaje("No es pot obtenir les coordenades de GPS","error");
+                    }
+                    else{
+                        //Hay última posición de GPS, preguntar si la quiere o no
+                        UltimaUbicacionConfirm();
+                    }
+                }
+            }
+
+        }
+    }
+    else{
+        //GPS no está activado
+        v_bMostrarCombos=true;
+    }
+
+    if(v_bMostrarCombos){
+        $('#divCargarMapaAlta').hide();
+        $('#divMapa').hide();
+        $('#divMensajeMapa').hide();
+        $('#divDireccion').show();
+    }
+    var nLetra = 65;
+    var combo = $('#selectLletraIniCARRER');
+    cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
+}
+
+
+function UltimaUbicacionConfirm(){
+    var v_mensaje = "No es pot obtenir les coordenades de GPS \n Vol recuperar l'ultima posició?";
+    var v_titulo = "error de GPS";
+    var v_botones = "SI,NO";
+
+    if(navigator.notification && navigator.notification.confirm){
+        navigator.notification.confirm(v_mensaje,UltimaUbicacion,v_titulo,v_botones);
+    }
+    else
+    {
+        var v_retorno = confirm(v_mensaje);
+        if (v_retorno){
+            UltimaUbicacion(1);
+        }
+        else {
+            UltimaUbicacion(2);
+        }
+    }
+
+}
+function UltimaUbicacion(respuesta){
+    try {
+        if (respuesta == 1) {
+            posicionOK(posicionGPS)
         }
         else{
             $('#divCargarMapaAlta').hide();
@@ -67,82 +143,9 @@ function cargarPaginaDatosIncidencia() {
             $('#divMensajeMapa').hide();
             $('#divDireccion').show();
         }
-
-        var nLetra = 65;
-        var combo = $('#selectLletraIniCARRER');
-        cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
     }
-    catch(ex) {
-        //alert("cargarPaginaDatosIncidencia:"+ ex.message);
-    }
+    catch (ex){}
 }
-
-
-function iniciaMapa() {
-    try {
-        // Try HTML5 geolocation
-        if (navigator.geolocation) {
-            var locOptions = {
-                maximumAge : 0,
-                timeout : 10000,
-                enableHighAccuracy : true
-            };
-
-                navigator.geolocation.getCurrentPosition(posicionOK,posicionError,locOptions);
-
-        } else {
-            // Browser no soporta Geolocation
-            alert("Browser no soporta Geolocation");
-            $('#divCargarMapaAlta').hide();
-            $('#divMapa').hide();
-            $('#divMensajeMapa').show();
-            //getCurrentPositionError(false);
-        }
-    }
-    catch (ex) {
-        //alert(ex.message);
-        $('#divCargarMapaAlta').hide();
-        $('#divMapa').hide();
-        $('#divMensajeMapa').show();
-    }
-}
-
-function MiPosicion(){
-    try{
-        var posOptions={
-            maximumAge:100,
-            timeout:10000,
-            enableHighAccuracy:true
-        };
-        cordovaGeolocation.getCurrentPosition(posOptions).then(MiPosicionOK,MiPosicionError);
-    }
-    catch (ex){
-        alert("MiPosicion: "+ex.message);
-    }
-}
-
-function MiPosicionOK(position){
-    posicionOK(position);
-}
-function MiPosicionError(error){
-    var posOptions={
-        maximumAge:1500,
-        timeout:20000,
-        enableHighAccuracy:true
-    };
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(posicionOK,posicionError,posOptions);
-    }
-    else{
-        alert('Error no tiene navigator.geolocation: '+error.message);
-        posAlta = "";
-        $('#divCargarMapaAlta').hide();
-        $('#divMapa').hide();
-        $('#divMensajeMapa').hide();
-        $('#divDireccion').show();
-    }
-}
-
 
 function posicionOK(position){
     try {

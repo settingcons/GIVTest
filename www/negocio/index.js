@@ -3,6 +3,8 @@ var pictureSource;
 var destinationType;
 
 var posicionGPS = null;
+var GPSwathId=false;
+var GPScurrentposition=false;
 var wathID=null;
 var GPSActivado=false;
 var GPSErrorNum = 0;
@@ -96,11 +98,15 @@ function deviceReady() {
 
     getLocation();
     GPSEstaActivado();
+    if(GPSErrorNum==0)
+    {
+        MostrarAjustesUbicacionConfirm();
+    }
     try {
         enviamentDePendents(true);
     }
     catch (ex){}
-    $.doTimeout( 1500, function(){
+    $.doTimeout( 1000, function(){
         if (SinDatosCiudadano())
         {
             abrirPagina("pageIdentificacion", false);
@@ -274,7 +280,6 @@ function selectTipo(p_tipo) {
     try{
         TipoInciSel = p_tipo;
         abrirPagina('pageDatosIncidencia', false);
-        //navigator.camera.getPicture(hacerfotoOK, hacerFotoERROR, { quality: 20, destinationType: Camera.DestinationType.DATA_URL, correctOrientation: true,sourceType:  Camera.PictureSourceType.CAMERA,  saveToPhotoAlbum: false });
     }
     catch (ex){
         //abrirPagina('pageDatosIncidencia', false);
@@ -295,19 +300,18 @@ function getLocation() {
     }
     catch (ex){
         //mensaje(ex.message,"error");
-        GPSActivado=false;
+        GPSwathId=false;
         posicionGPS='';
     }
 }
 
 function onLocationSuccess(loc) {
-    GPSActivado = true;
+    GPSwathId = true;
     posicionGPS = loc;
 }
 
 function onLocationError(e) {
-    GPSActivado=false;
-    posicionGPS='';
+    GPSwathId=false;
 }
 
 function getPosition() {
@@ -319,23 +323,20 @@ function getPosition() {
             enableHighAccuracy: true
         };
         //get the current location
-        navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError, locOptions);
+        navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1, locOptions);
     }
     catch (ex){
         //mensaje(ex.message,"error");
-        GPSActivado=false;
-        posicionGPS='';
     }
 }
 
-function onLocationSuccess(loc) {
-    GPSActivado = true;
+function onLocationSuccess1(loc) {
     posicionGPS = loc;
+    GPScurrentposition=true;
 }
 
-function onLocationError(e) {
-    GPSActivado=false;
-    posicionGPS='';
+function onLocationError1(e) {
+    GPScurrentposition=false;
 }
 
 function GPSEstaActivado() {
@@ -343,38 +344,47 @@ function GPSEstaActivado() {
         Diagnostic.prototype.isLocationEnabled(GPSEstaActivadoOK, GPSEstaActivadoError);
     }
     catch (ex) {
+        GPSErrorNum=1;
     }
 }
 function GPSEstaActivadoError(error) {
 }
 
 function GPSEstaActivadoOK(result) {
-    if (!result) {
-        //GPS Desactivado
-        var v_mensaje = "Mostrar els ajustos d'ubicació?";
-        var v_titulo = "El GPS està desactivado";
-        var v_botones = "SI,NO";
-
-        if(navigator.notification && navigator.notification.confirm){
-            navigator.notification.confirm(v_mensaje,MostrarAjustesUbicacion,v_titulo,v_botones);
-        }
-        else
-        {
-            var v_retorno = confirm(v_mensaje);
-            if (v_retorno){
-                MostrarAjustesUbicacion(1);
-            }
-            else {
-                MostrarAjustesUbicacion(2);
-            }
-        }
+    if (result) {
+        GPSActivado=true;
+    }
+    else{
+        GPSActivado=false;
     }
 }
 
+function MostrarAjustesUbicacionConfirm(){
+    var v_mensaje = "Mostrar els ajustos d'ubicació?";
+    var v_titulo = "El GPS està desactivado";
+    var v_botones = "SI,NO";
+
+    if(navigator.notification && navigator.notification.confirm){
+        navigator.notification.confirm(v_mensaje,MostrarAjustesUbicacion,v_titulo,v_botones);
+    }
+    else
+    {
+        var v_retorno = confirm(v_mensaje);
+        if (v_retorno){
+            MostrarAjustesUbicacion(1);
+        }
+        else {
+            MostrarAjustesUbicacion(2);
+        }
+    }
+
+}
 function MostrarAjustesUbicacion(respuesta){
     try {
         if (respuesta == 1) {
             Diagnostic.prototype.switchToLocationSettings();
+            $.doTimeout( 1000, function() {
+            });
         }
     }
     catch (ex){}
