@@ -62,11 +62,14 @@ function LeerFicheroAudioOK(file){
 function TransformarFicheroAudioToBase64(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
-        miGlobal_inciAudio = evt.target.result;
-        alert(miGlobal_inciAudio);
-        miGlobal_inciAudio =miGlobal_inciAudio.toString().substring(miGlobal_inciAudio.toString().indexOf(",")+1);
-        alert(miGlobal_inciAudio);
-    };
+        var base64Data = evt.target.result;
+        miGlobal_inciAudio  =   base64Data.replace(/^data:audio\/mpeg;base64,/, "");
+        miGlobal_inciAudio  +=  miGlobal_inciAudio.replace('+', ' ');
+        //miGlobal_inciAudio = evt.target.result;
+        //alert(miGlobal_inciAudio);
+        //miGlobal_inciAudio =miGlobal_inciAudio.toString().substring(miGlobal_inciAudio.toString().indexOf(",")+1);
+        //alert(miGlobal_inciAudio);
+};
     reader.readAsDataURL(file);
 }
 
