@@ -98,9 +98,12 @@ function deviceReady() {
 
     getLocation();
     GPSEstaActivado();
-    if(GPSErrorNum==1)
+    if(!GPSActivado)
     {
-        MostrarAjustesUbicacionConfirm();
+        if(GPSErrorNum==0){
+            MostrarAjustesUbicacionConfirm();
+        }
+
     }
     try {
         enviamentDePendents(true);
@@ -337,14 +340,15 @@ function onLocationError1(e) {
 
 function GPSEstaActivado() {
     try {
+        GPSErrorNum=0;
         Diagnostic.prototype.isLocationEnabled(GPSEstaActivadoOK, GPSEstaActivadoError);
     }
     catch (ex) {
-        GPSErrorNum=2;
+        GPSErrorNum=1;
     }
 }
 function GPSEstaActivadoError(error) {
-    GPSErrorNum=2;
+    GPSErrorNum=1;
 }
 
 function GPSEstaActivadoOK(result) {
@@ -353,7 +357,6 @@ function GPSEstaActivadoOK(result) {
     }
     else{
         GPSActivado=false;
-        GPSErrorNum=1;
     }
 }
 
