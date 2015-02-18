@@ -64,7 +64,7 @@ function TransformarFicheroAudioToBase64(file) {
     reader.onloadend = function(evt) {
         var base64Data = evt.target.result;
         miGlobal_inciAudio  =   base64Data.toString().substring(miGlobal_inciAudio.toString().indexOf(",")+1);
-        miGlobal_inciAudio  +=  miGlobal_inciAudio.replace('+', ' ');
+        miGlobal_inciAudio  =  miGlobal_inciAudio.replace('+', ' ');
         //miGlobal_inciAudio = evt.target.result;
         //alert(miGlobal_inciAudio);
         //miGlobal_inciAudio =miGlobal_inciAudio.toString().substring(miGlobal_inciAudio.toString().indexOf(",")+1);
