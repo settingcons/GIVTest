@@ -77,7 +77,7 @@ function ComprobarUsuarioWS(sParams){
     try {
         $.ajax({
             type: 'POST',
-            url: 'http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/Login_v1',
+            url: _wsURLLogin,
             data: sParams,
             success: ComprobarUsuarioWS_OK,
             error: ComprobarUsuarioWS_ERROR,

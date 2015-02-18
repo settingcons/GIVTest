@@ -64,7 +64,15 @@ function cargarPaginaDatosIncidencia() {
         $('#TipusInciImg').attr({"src":dicImagenes[TipoInciSel]});
         $('#TipusInciText').html(dicAyuda[TipoInciSel]);
 
-        MostrarUbicacion();
+        if(!GPSActivado){
+            //Se vuelve a mirar si el GPS está activado
+            GPSEstaActivado(false);
+            $.doTimeout(3000, MostrarUbicacion());
+        }
+        else{
+            MostrarUbicacion();
+        }
+
     }
     catch(ex) {
         //alert("cargarPaginaDatosIncidencia:"+ ex.message);
@@ -74,11 +82,6 @@ function cargarPaginaDatosIncidencia() {
 function MostrarUbicacion(){
 
     var v_bMostrarCombos=false;
-    if(!GPSActivado){
-        //Se vuelve a mirar si el GPS está activado
-        GPSEstaActivado(false);
-        $.doTimeout(2000, function(){});
-    }
 
     if (GPSActivado){
         if(GPSwathId){

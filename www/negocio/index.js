@@ -101,7 +101,7 @@ function deviceReady() {
         enviamentDePendents(true);
     }
     catch (ex){}
-    $.doTimeout( 1000, function(){
+    $.doTimeout( 3000, function(){
         if (SinDatosCiudadano())
         {
             abrirPagina("pageIdentificacion", false);
