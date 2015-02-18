@@ -55,6 +55,9 @@ function cargarPaginaDatosIncidencia() {
         //cargar mapa
         //iniciaMapa();
         //MiPosicion();
+        if(!GPSActivado){
+            getPosition();
+        }
         if(GPSActivado){
             posicionOK(posicionGPS);
         }

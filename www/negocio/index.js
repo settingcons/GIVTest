@@ -96,19 +96,20 @@ function deviceReady() {
 
     getLocation();
     GPSEstaActivado();
-
     try {
         enviamentDePendents(true);
     }
     catch (ex){}
-    if (SinDatosCiudadano())
-    {
-        abrirPagina("pageIdentificacion", false);
-    }
-    else
-    {
-        abrirPagina("pageTipoIncidencia", false);
-    }
+    $.doTimeout( 1500, function(){
+        if (SinDatosCiudadano())
+        {
+            abrirPagina("pageIdentificacion", false);
+        }
+        else
+        {
+            abrirPagina("pageTipoIncidencia", false);
+        }
+    });
 }
 function handleBackButton() {
     try {
@@ -291,6 +292,34 @@ function getLocation() {
         };
         //get the current location
         wathID = navigator.geolocation.watchPosition(onLocationSuccess, onLocationError, locOptions);
+    }
+    catch (ex){
+        //mensaje(ex.message,"error");
+        GPSActivado=false;
+        posicionGPS='';
+    }
+}
+
+function onLocationSuccess(loc) {
+    GPSActivado = true;
+    posicionGPS = loc;
+}
+
+function onLocationError(e) {
+    GPSActivado=false;
+    posicionGPS='';
+}
+
+function getPosition() {
+    try {
+
+        var locOptions = {
+            maximumAge: 1000,
+            timeout: 1000,
+            enableHighAccuracy: true
+        };
+        //get the current location
+        navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError, locOptions);
     }
     catch (ex){
         //mensaje(ex.message,"error");
