@@ -14,7 +14,7 @@ var _wsURLLogin="http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/Log
 
 var miGlobal_mediaAudio;
 var mi_mediaAudioReproducir;
-var miGlobal_mediaAudiosrc = "givaudio.mp3";
+var miGlobal_mediaAudiosrc = "givaudio.mpeg";
 
 
 var miGlobal_inciAudio;

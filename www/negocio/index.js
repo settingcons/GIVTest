@@ -98,7 +98,7 @@ function deviceReady() {
 
     getLocation();
     GPSEstaActivado();
-    if(GPSErrorNum==0)
+    if(GPSErrorNum==1)
     {
         MostrarAjustesUbicacionConfirm();
     }
@@ -340,10 +340,11 @@ function GPSEstaActivado() {
         Diagnostic.prototype.isLocationEnabled(GPSEstaActivadoOK, GPSEstaActivadoError);
     }
     catch (ex) {
-        GPSErrorNum=1;
+        GPSErrorNum=2;
     }
 }
 function GPSEstaActivadoError(error) {
+    GPSErrorNum=2;
 }
 
 function GPSEstaActivadoOK(result) {
@@ -352,6 +353,7 @@ function GPSEstaActivadoOK(result) {
     }
     else{
         GPSActivado=false;
+        GPSErrorNum=1;
     }
 }
 
