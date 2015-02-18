@@ -31,7 +31,7 @@ function hacerfotoOK(imageData) {
 }
 function hacerFotoERROR(mensaje) {
     sFoto = '';
-    abrirPagina('pageIndex', false);
+    abrirPagina('pageTipoIncidencia', false);
 }
 
 function cargarPaginaDatosIncidencia() {

@@ -223,7 +223,7 @@ function borrarHistoricoComunicados(respuesta){
 
 function enviamentDePendents(p_inicio) {
     try {
-
+//alert(p_inicio);
         var v_bError=false;
         var v_sError="";
         var sIdsActualizar = "";
@@ -232,97 +232,102 @@ function enviamentDePendents(p_inicio) {
         var v_aComs = new Array();
         v_aComs = getComunicats();
 
-        var objUsu = getDatosUsuario();
-        var v_email=objUsu.EMAIL;
-        if (v_email.toString().trim()!="") {
+        if (v_aComs == null || v_aComs.length == 0) {
 
-            var objComunicat = null;
-            var bBorrado = false;
-            var sParams = {};
+            var objUsu = getDatosUsuario();
+            var v_email = objUsu.EMAIL;
+            if (v_email.toString().trim() != "") {
+                var objComunicat = null;
+                var bBorrado = false;
+                var sParams = {};
 
 
-            for (var x = 0; x < v_aComs.length; x++) {
-                if (v_aComs[x].ESTAT == 'PENDENT_ENVIAMENT' || v_aComs[x].ESTAT == 'ERROR_ENVIAMENT') {
+                for (var x = 0; x < v_aComs.length; x++) {
+                    if (v_aComs[x].ESTAT == 'PENDENT_ENVIAMENT' || v_aComs[x].ESTAT == 'ERROR_ENVIAMENT') {
 
-                    sSuFoto = leeObjetoLocal('FOTO_' + v_aComs[x].ID, '');
+                        sSuFoto = leeObjetoLocal('FOTO_' + v_aComs[x].ID, '');
 
-                    var v_sObs = v_aComs[x].COMENTARI + '';
-                    var v_sCoord = v_aComs[x].COORD_X + ',' + aComs[x].COORD_Y + '';
-                    var v_sCodCarrer = v_aComs[x].CODCARRER + '';
-                    var v_sNumPortal = v_aComs[x].NUM + '';
-                    sParams = {
-                        p_sIdTipoInci: v_aComs[x].ITE_ID,
-                        p_sNom: objUsu.NOM.toString().trim() + '',
-                        p_sCognom1: objUsu.COGNOM1.toString().trim() + '',
-                        p_sCognom2: objUsu.COGNOM2.toString().trim() + '',
-                        p_sDni: objUsu.DNI.toString().trim() + '',
-                        p_sEmail: objUsu.EMAIL.toString().trim() + '',
-                        p_sTelefon: objUsu.TELEFON.toString().trim() + '',
-                        p_sObs: v_sObs.toString().trim() + '',
-                        p_sCoord: v_sCoord.toString().trim() + '',
-                        p_sCodCarrer: v_sCodCarrer.toString().trim() + '',
-                        p_sNumPortal: v_sNumPortal.toString().trim() + '',
-                        p_sFoto: sSuFoto + '',
-                        p_sVoz: ''
-                    };
-                    var v_sRet = enviarComunicatPendienteWS(sParams);
-                    if (v_sRet[2] == 2) {
-                        //mensaje(v_sRet[3],"error");
-                        //break;
+                        var v_sObs = v_aComs[x].COMENTARI + '';
+                        var v_sCoord = v_aComs[x].COORD_X + ',' + aComs[x].COORD_Y + '';
+                        var v_sCodCarrer = v_aComs[x].CODCARRER + '';
+                        var v_sNumPortal = v_aComs[x].NUM + '';
+                        sParams = {
+                            p_sIdTipoInci: v_aComs[x].ITE_ID,
+                            p_sNom: objUsu.NOM.toString().trim() + '',
+                            p_sCognom1: objUsu.COGNOM1.toString().trim() + '',
+                            p_sCognom2: objUsu.COGNOM2.toString().trim() + '',
+                            p_sDni: objUsu.DNI.toString().trim() + '',
+                            p_sEmail: objUsu.EMAIL.toString().trim() + '',
+                            p_sTelefon: objUsu.TELEFON.toString().trim() + '',
+                            p_sObs: v_sObs.toString().trim() + '',
+                            p_sCoord: v_sCoord.toString().trim() + '',
+                            p_sCodCarrer: v_sCodCarrer.toString().trim() + '',
+                            p_sNumPortal: v_sNumPortal.toString().trim() + '',
+                            p_sFoto: sSuFoto + '',
+                            p_sVoz: ''
+                        };
+                        var v_sRet = enviarComunicatPendienteWS(sParams);
+                        if (v_sRet[2] == 2) {
+                            //mensaje(v_sRet[3],"error");
+                            //break;
+                            v_bError = true;
+                        }
+                        else {
+                            //si ha retornado un codigo ...
+                            objComunicat = new comunicat();
+                            objComunicat.ID = v_aComs[x].ID;
+                            objComunicat.REFERENCIA = v_sRet[0];
+                            objComunicat.ESTAT = 'NOTIFICAT';
+                            objComunicat.DATA = v_sRet[1];
+                            objComunicat.CODCARRER = v_aComs[x].CODCARRER;
+                            objComunicat.CARRER = v_aComs[x].CARRER;
+                            objComunicat.NUM = v_aComs[x].NUM;
+                            objComunicat.COORD_X = v_aComs[x].COORD_X;
+                            objComunicat.COORD_Y = v_aComs[x].COORD_Y;
+                            objComunicat.COMENTARI = v_aComs[x].COMENTARI;
+                            objComunicat.ITE_ID = v_aComs[x].ITE_ID;
+                            objComunicat.ITE_DESC = v_aComs[x].ITE_DESC;
+                            objComunicat.ID_MSG_MOV = v_sRet[1];
+                            //Actualizo con nuevo estado
+
+                            bBorrado = borraObjetoLocal('COMUNICAT_' + v_aComs[x].ID);
+
+                            guardaObjetoLocal('COMUNICAT_' + v_aComs[x].ID, objComunicat);
+
+                            //Elimino la foto que había guardado
+                            //bBorrado = borraObjetoLocal('FOTO_' + aComs[x].ID);
+                        }
+
+                    }
+                    else //Actualizar el estado del comunicado (de las que están en cualquier estado excepto TANCADES)
+                    {
+                        if (aComs[x].ESTAT != 'TANCAT') {
+                            sIdsActualizar += v_aComs[x].ID_MSG_MOV + "|" + v_aComs[x].ID + ",";
+                        }
+                    }
+                }
+
+                //Si hay posibles actualizaciones de comunicats
+                if (sIdsActualizar.length > 0) {
+                    sIdsActualizar = sIdsActualizar.substr(0, sIdsActualizar.length - 1);
+                    v_sError = ActualitzaComunicats(sIdsActualizar);
+                    if (v_sError != "") {
                         v_bError = true;
                     }
-                    else {
-                        //si ha retornado un codigo ...
-                        objComunicat = new comunicat();
-                        objComunicat.ID = v_aComs[x].ID;
-                        objComunicat.REFERENCIA = v_sRet[0];
-                        objComunicat.ESTAT = 'NOTIFICAT';
-                        objComunicat.DATA = v_sRet[1];
-                        objComunicat.CODCARRER = v_aComs[x].CODCARRER;
-                        objComunicat.CARRER = v_aComs[x].CARRER;
-                        objComunicat.NUM = v_aComs[x].NUM;
-                        objComunicat.COORD_X = v_aComs[x].COORD_X;
-                        objComunicat.COORD_Y = v_aComs[x].COORD_Y;
-                        objComunicat.COMENTARI = v_aComs[x].COMENTARI;
-                        objComunicat.ITE_ID = v_aComs[x].ITE_ID;
-                        objComunicat.ITE_DESC = v_aComs[x].ITE_DESC;
-                        objComunicat.ID_MSG_MOV = v_sRet[1];
-                        //Actualizo con nuevo estado
-
-                        bBorrado = borraObjetoLocal('COMUNICAT_' + v_aComs[x].ID);
-
-                        guardaObjetoLocal('COMUNICAT_' + v_aComs[x].ID, objComunicat);
-
-                        //Elimino la foto que había guardado
-                        //bBorrado = borraObjetoLocal('FOTO_' + aComs[x].ID);
-                    }
-
                 }
-                else //Actualizar el estado del comunicado (de las que están en cualquier estado excepto TANCADES)
-                {
-                    if (aComs[x].ESTAT != 'TANCAT') {
-                        sIdsActualizar += v_aComs[x].ID_MSG_MOV + "|" + v_aComs[x].ID + ",";
-                    }
+                if (p_inicio) {
+                    v_bError = false;
                 }
-            }
-
-            //Si hay posibles actualizaciones de comunicats
-            if (sIdsActualizar.length > 0) {
-                sIdsActualizar = sIdsActualizar.substr(0, sIdsActualizar.length - 1);
-                v_sError = ActualitzaComunicats(sIdsActualizar);
-                if (v_sError != "") {
-                    v_bError = true;
+                else {
+                    //y recargo la lista
+                    inicioPaginaConsultaIncidencias();
                 }
-            }
-            if (!p_inicio) {
-                //y recargo la lista
-                inicioPaginaConsultaIncidencias();
             }
         }
     }
     catch (ex) {
         v_bError=true;
-        //alert(ex.message);
+        alert(ex.message);
     }
     if(v_bError)
     {

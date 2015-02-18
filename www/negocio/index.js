@@ -27,28 +27,35 @@ var bPrimera;
 
 var TipoInciSel = "";
 // -------- Al INICIAR -----------------------------------------------------------------------
-window.addEventListener('load', function () {
-    if (phoneGapRun()) {
-        document.addEventListener("deviceReady", deviceReady, false);
-    } else {
+//window.addEventListener('load', function () {
+//    alert('1');
+//    if (phoneGapRun()) {
+//        document.addEventListener("deviceReady", deviceReady, false);
+//    } else {
+//        deviceReady();
+//    }
+//}, false);
+
+
+var app = {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
+    },
+    receivedEvent: function(id) {
         deviceReady();
     }
+};
 
-    getLocation();
-    GPSEstaActivado();
-    enviamentDePendents(true);
-
-    if (SinDatosCiudadano())
-    {
-        abrirPagina("pageIdentificacion", false);
-    }
-    else
-    {
-        inicioPaginaTipoIncidencia();
-    }
-}, false);
 
 function deviceReady() {
+    var v_error='';
     try {
         document.addEventListener("backbutton", handleBackButton, false);
 
@@ -59,34 +66,61 @@ function deviceReady() {
             pictureSource = navigator.camera.PictureSourceType;
             destinationType = navigator.camera.DestinationType;
         }
-        else {
-            //$('#labelInfo').text($('#labelInfo').text() + '\nAtenció : Phonegap no soportat');
+        else
+        {
+            v_error='phonegap no soportat'
         }
 
         //Hay localstorage ?
         if (!$.jStorage.storageAvailable()) {
-            //estadoBoton('buttonALTA', false);
-            //estadoBoton('buttonCONSULTA', false);
-            //$('#labelInfo').text($('#labelInfo').text() + '\nAtenció : localStorage no soportat');
-            return;
+            v_error="exception obrint l'app: localstorage no soportat";
         }
         else {
             try {
                 cargaConfigEnArray();
             }
-            catch (e) { mensaje('exception carregant llista de carrers : ' + e.message, 'error'); }
+            catch (e) { v_error='exception carregant llista de carrers : ' + e.message; }
         }
     }
     catch (ex) {
-        //alert(ex.message);
+        v_error="exception obrint l'app: "+ex.message;
     }
-   
+    if(v_error != ''){
+        mensaje(v_error,"error");
+        if (navigator.app) {
+            navigator.app.exitApp();
+        } else if (navigator.device) {
+            navigator.device.exitApp();
+        }
+    }
 
+    getLocation();
+    GPSEstaActivado();
+
+    try {
+        enviamentDePendents(true);
+    }
+    catch (ex){}
+    if (SinDatosCiudadano())
+    {
+        abrirPagina("pageIdentificacion", false);
+    }
+    else
+    {
+        abrirPagina("pageTipoIncidencia", false);
+    }
 }
 function handleBackButton() {
     try {
         //alert($.mobile.activePage.attr('id'));
         if ($.mobile.activePage.attr('id') == 'pageIndex') {
+            if (navigator.app) {
+                navigator.app.exitApp();
+            } else if (navigator.device) {
+                navigator.device.exitApp();
+            }
+        }
+        else if ($.mobile.activePage.attr('id') == 'pageTipoIncidencia') {
             if (navigator.app) {
                 navigator.app.exitApp();
             } else if (navigator.device) {
@@ -130,7 +164,7 @@ function abrirPagina(sPag, bComprueba) {
         });
 
         switch (sPag) {
-            case 'pageIndex':
+            case 'pageTipoIncidencia':
                 $.doTimeout(1500, inicioPaginaTipoIncidencia());
                 break;
             case 'pageIdentificacion':
@@ -259,7 +293,9 @@ function getLocation() {
         wathID = navigator.geolocation.watchPosition(onLocationSuccess, onLocationError, locOptions);
     }
     catch (ex){
-        mensaje(ex.message,"error");
+        //mensaje(ex.message,"error");
+        GPSActivado=false;
+        posicionGPS='';
     }
 }
 
@@ -274,17 +310,17 @@ function onLocationError(e) {
 }
 
 function GPSEstaActivado() {
-    Diagnostic.prototype.isLocationEnabled(GPSEstaActivadoOK, GPSEstaActivadoError);
+    try {
+        Diagnostic.prototype.isLocationEnabled(GPSEstaActivadoOK, GPSEstaActivadoError);
+    }
+    catch (ex) {
+    }
 }
 function GPSEstaActivadoError(error) {
 }
 
 function GPSEstaActivadoOK(result) {
-    if (result) {
-        //GPS Activado
-
-    }
-    else{
+    if (!result) {
         //GPS Desactivado
         var v_mensaje = "Mostrar els ajustos d'ubicació?";
         var v_titulo = "El GPS està desactivado";
@@ -303,15 +339,16 @@ function GPSEstaActivadoOK(result) {
                 MostrarAjustesUbicacion(2);
             }
         }
-
     }
 }
 
 function MostrarAjustesUbicacion(respuesta){
-    if(respuesta==1){
-        Diagnostic.prototype.switchToLocationSettings();
+    try {
+        if (respuesta == 1) {
+            Diagnostic.prototype.switchToLocationSettings();
+        }
     }
-
+    catch (ex){}
 }
 
 

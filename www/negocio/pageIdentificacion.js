@@ -140,7 +140,7 @@ function ComprobarUsuarioWS_OK(datos){
                 objUsu.TELEFON = $('#inputTELEFON').val();
             }
             guardaObjetoLocal('CIUTADA' , objUsu);
-            abrirPagina("pageIndex", false);
+            abrirPagina("pageTipoIncidencia", false);
 
         }
         else{

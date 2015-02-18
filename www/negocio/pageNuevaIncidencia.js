@@ -539,7 +539,7 @@ function enviarComunicat_WS(sParams,bNuevoComunicat){
                     limpiaVariables('pageNuevaIncidencia');
                     mensaje(sMensaje, sTitulo);
                     estadoControl('buttonEnviar',true);
-                    abrirPagina('pageIndex', false);
+                    abrirPagina('pageTipoIncidencia', false);
                 }
                 else
                 {
@@ -568,7 +568,7 @@ function enviarComunicat_WS(sParams,bNuevoComunicat){
                 sReferen = "ERROR";
                 mensaje(sMensaje, sTitulo);
                 estadoControl('buttonEnviar',true);
-                abrirPagina('pageIndex', false);
+                abrirPagina('pageTipoIncidencia', false);
             });
     }
     catch(e)
