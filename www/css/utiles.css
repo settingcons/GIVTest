@@ -1,0 +1,152 @@
+.mi-util a {
+    background-color:transparent;
+    margin:2px;
+    padding:4px;
+    display:block;
+}
+.mi-util a:hover {
+    background-color:#f9dce2;
+}
+
+
+.mi-img-menu
+{
+    margin:2px;
+    height:16px;
+    width:16px;
+    background-image: url('images/bars-white.png');
+    background-repeat: no-repeat;
+}
+
+.mi-cab-menu {
+    display:-webkit-box;
+    margin:-12px;
+    background-color:#fafafa;
+    color:#DB0D36;
+    font-size:0.9em;
+    font-weight:bold;
+}
+.mi-cab-menu-texto {
+    padding:14px;
+}
+.mi-ul {
+    list-style:none;
+    text-decoration:none;
+    font-size:0.85em;
+    -webkit-padding-start: 0px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.mi-selected {
+    color:#DB0D36;
+}
+.mi-ul li {
+    border-bottom:1px solid #fafafa;
+    padding-left:10px;
+}
+.mi-ul li:hover {
+    background-color: #f9dce2;
+}
+
+.mi-ul a {
+	padding: 10px 10px;
+	text-decoration: none;
+	zoom: 1; /* IE7 */
+    color:#333333;
+}
+
+.div-loading {
+    background: url(../images/gif-load.gif) ;
+    background-size: 2.875em 2.875em;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 45%;
+    text-align: center;
+    color: #B80529;
+    font-style: italic;
+    padding-top: 15px;
+}
+.div-mensaje {
+    text-align: center;
+    color: #B80529;
+    font-style: italic;
+    padding-top: 15px;
+}
+
+
+.tdSelect .ui-select .ui-btn {
+    background-color: transparent;
+    font-weight: normal;
+    font-size: 1em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #333333;
+}
+.tdSelect .ui-select .ui-btn:hover {
+    background-color: transparent;
+    font-weight: normal;
+    font-size: 1em;
+    color: #333333;
+}
+.tdSelect .ui-select .ui-btn:visited {
+    background-color: transparent;
+    font-weight: normal;
+    font-size: 1em;
+    color: #333333;
+}
+
+#listviewLista li{
+    padding: 0px;
+}
+
+#listviewLista li a{
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #333333;
+    padding-left: 2px;
+    padding-right: 2px;
+    background-color: #fefefe;
+    text-transform: none;
+}
+
+#divFicha label{
+    font-size: 1.05em;
+}
+#divFicha table{
+    font-size: 1.05em;
+}
+
+.fit-content{
+    position : absolute;
+}
+
+.fit-content {
+    top : 44px;
+    bottom : 20px;
+    left : 0;
+    right : 0;
+}
+.fit-content > div {
+    height : 100%;
+}
+
+#divTipoInci{
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    display: inline-table;
+}
+
+#divTipoInci a{
+    width: 110px;
+    height: 80px;
+    display: inherit;
+    margin: 5px;
+    text-align: center;
+    white-space: normal;
+    text-transform: none;
+}
+
+#divTipoInci a div {
+    line-height: 10px;
+}

@@ -1,0 +1,2379 @@
+<?xml version="1.0"?>
+<carrers>
+  <carrer_A>
+    <id>5</id>
+    <tipus>C/</tipus>
+    <nom>ABAT BLANCH</nom>
+    <nomGoogle>de l' ABAT BLANCH</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>10</id>
+    <tipus>PL</tipus>
+    <nom>ABAT BLANCH</nom>
+    <nomGoogle>de l' ABAT BLANCH</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>20</id>
+    <tipus>C/</tipus>
+    <nom>ABAT COPONS</nom>
+    <nomGoogle>de l' ABAT COPONS</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>27</id>
+    <tipus>PG</tipus>
+    <nom>AGERMANAMENTS</nom>
+    <nomGoogle>dels AGERMANAMENTS</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>25</id>
+    <tipus>PL</tipus>
+    <nom>AGORA</nom>
+    <nomGoogle>de l' AGORA</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>28</id>
+    <tipus>C/</tipus>
+    <nom>AGRICULTURA</nom>
+    <nomGoogle>de l' AGRICULTURA</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>30</id>
+    <tipus>PG</tipus>
+    <nom>ALBERT MOLINER</nom>
+    <nomGoogle>d' ALBERT MOLINER</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>40</id>
+    <tipus>PG</tipus>
+    <nom>ALCOVER</nom>
+    <nomGoogle>d' ALCOVER</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>50</id>
+    <tipus>C/</tipus>
+    <nom>ALGUER</nom>
+    <nomGoogle>de l' ALGUER</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>60</id>
+    <tipus>C/</tipus>
+    <nom>AMALIA SOLER</nom>
+    <nomGoogle>d' AMALIA SOLER</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>67</id>
+    <tipus>C/</tipus>
+    <nom>ANNA M. DE SAAVEDRA</nom>
+    <nomGoogle>d' ANNA M. DE SAAVEDRA</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>3210</id>
+    <tipus>C/</tipus>
+    <nom>ANTIC CAMÍ DE SANT MARTÍ, DE L`</nom>
+    <nomGoogle>de l' ANTIC CAMÍ DE SANT MARTÍ, DE L`</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>70</id>
+    <tipus>PG</tipus>
+    <nom>ANTONI MARTORELL</nom>
+    <nomGoogle>d' ANTONI MARTORELL</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>75</id>
+    <tipus>PL</tipus>
+    <nom>ANTONI MASSANELL I ESCLASSANS</nom>
+    <nomGoogle>d' ANTONI MASSANELL I ESCLASSANS</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>80</id>
+    <tipus>C/</tipus>
+    <nom>ANTONI MESTRES JANE</nom>
+    <nomGoogle>d' ANTONI MESTRES JANE</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>82</id>
+    <tipus>PG</tipus>
+    <nom>ANTONI SABATE MILL</nom>
+    <nomGoogle>d' ANTONI SABATE MILL</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>65</id>
+    <tipus>C/</tipus>
+    <nom>ANTONIO ACEDO DE SOPETRAN</nom>
+    <nomGoogle>d' ANTONIO ACEDO DE SOPETRAN</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>90</id>
+    <tipus>C/</tipus>
+    <nom>ARBOÇ</nom>
+    <nomGoogle>de l' ARBOÇ</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>92</id>
+    <tipus>PA</tipus>
+    <nom>ARROYOMOLINOS, D`</nom>
+    <nomGoogle>d' ARROYOMOLINOS, D`</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>93</id>
+    <tipus>PL</tipus>
+    <nom>ASSUMPCIO DOMENECH</nom>
+    <nomGoogle>d' ASSUMPCIO DOMENECH</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>95</id>
+    <tipus>C/</tipus>
+    <nom>ASSUMPTA TRENS</nom>
+    <nomGoogle>d' ASSUMPTA TRENS</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>100</id>
+    <tipus>C/</tipus>
+    <nom>ATENEU</nom>
+    <nomGoogle>de l' ATENEU</nomGoogle>
+  </carrer_A>
+  <carrer_A>
+    <id>110</id>
+    <tipus>C/</tipus>
+    <nom>AVINYONET</nom>
+    <nomGoogle>d' AVINYONET</nomGoogle>
+  </carrer_A>
+  <carrer_B>
+    <id>113</id>
+    <tipus>PG</tipus>
+    <nom>BAIX</nom>
+    <nomGoogle>de BAIX</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>115</id>
+    <tipus>C/</tipus>
+    <nom>BALCO DE LES CLOTES</nom>
+    <nomGoogle>del BALCO DE LES CLOTES</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>120</id>
+    <tipus>C/</tipus>
+    <nom>BALDOMER LOSTAU</nom>
+    <nomGoogle>de BALDOMER LOSTAU</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>130</id>
+    <tipus>C/</tipus>
+    <nom>BALTA DE CELA</nom>
+    <nomGoogle>de BALTA DE CELA</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>135</id>
+    <tipus>C/</tipus>
+    <nom>BANYERES DEL PENEDÈS, DE</nom>
+    <nomGoogle>de BANYERES DEL PENEDÈS, DE</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>140</id>
+    <tipus>C/</tipus>
+    <nom>BANYS</nom>
+    <nomGoogle>dels BANYS</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>150</id>
+    <tipus>AV</tipus>
+    <nom>BARCELONA</nom>
+    <nomGoogle>de BARCELONA</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>153</id>
+    <tipus>CR</tipus>
+    <nom>BARCELONA</nom>
+    <nomGoogle> BARCELONA</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>160</id>
+    <tipus>C/</tipus>
+    <nom>BENEFICENCIA</nom>
+    <nomGoogle>de la BENEFICENCIA</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>165</id>
+    <tipus>C/</tipus>
+    <nom>BISBAL DEL PENEDES</nom>
+    <nomGoogle>de la BISBAL DEL PENEDES</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>180</id>
+    <tipus>C/</tipus>
+    <nom>BISBE ESTALELLA</nom>
+    <nomGoogle>del BISBE ESTALELLA</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>170</id>
+    <tipus>C/</tipus>
+    <nom>BISBE MORGADES</nom>
+    <nomGoogle>del BISBE MORGADES</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>190</id>
+    <tipus>C/</tipus>
+    <nom>BISBE PANYELLES</nom>
+    <nomGoogle>del BISBE PANYELLES</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>1800</id>
+    <tipus>PL</tipus>
+    <nom>BISBE TORRAS I BAGES</nom>
+    <nomGoogle>del BISBE TORRAS I BAGES</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>3030</id>
+    <tipus>PG</tipus>
+    <nom>BLAT, DEL</nom>
+    <nomGoogle>del BLAT, DEL</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>200</id>
+    <tipus>C/</tipus>
+    <nom>BONAIRE</nom>
+    <nomGoogle>de BONAIRE</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>205</id>
+    <tipus>C/</tipus>
+    <nom>BONASTRE</nom>
+    <nomGoogle>de BONASTRE</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>210</id>
+    <tipus>BR</tipus>
+    <nom>BORDALLET (TERME)</nom>
+    <nomGoogle>del BORDALLET (TERME)</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>215</id>
+    <tipus>C/</tipus>
+    <nom>BOSC D`EN FERRAN</nom>
+    <nomGoogle>del BOSC D`EN FERRAN</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>223</id>
+    <tipus>PL</tipus>
+    <nom>BRIGADES INTERNACIONALS</nom>
+    <nomGoogle>de les BRIGADES INTERNACIONALS</nomGoogle>
+  </carrer_B>
+  <carrer_B>
+    <id>1894</id>
+    <tipus>C/</tipus>
+    <nom>BÜHL</nom>
+    <nomGoogle>de BÜHL</nomGoogle>
+  </carrer_B>
+  <carrer_C>
+    <id>3170</id>
+    <tipus>C/</tipus>
+    <nom>CAL CINTET, DE</nom>
+    <nomGoogle>de CAL CINTET, DE</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>3120</id>
+    <tipus>C/</tipus>
+    <nom>CAL CORAL, DE</nom>
+    <nomGoogle>de CAL CORAL, DE</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>3125</id>
+    <tipus>CO</tipus>
+    <nom>CAL RALET</nom>
+    <nomGoogle>de CAL RALET</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>224</id>
+    <tipus>C/</tipus>
+    <nom>CAL SABETA, DE</nom>
+    <nomGoogle>de CAL SABETA, DE</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>225</id>
+    <tipus>C/</tipus>
+    <nom>CALAFELL</nom>
+    <nomGoogle>de CALAFELL</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>232</id>
+    <tipus>C/</tipus>
+    <nom>CAMÍ CAL SALINES</nom>
+    <nomGoogle>del CAMÍ CAL SALINES</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>234</id>
+    <tipus>C/</tipus>
+    <nom>CAMI DE LA BLEDA</nom>
+    <nomGoogle>del CAMI DE LA BLEDA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>233</id>
+    <tipus>C/</tipus>
+    <nom>CAMI DE LA PEDRERA</nom>
+    <nomGoogle>del CAMI DE LA PEDRERA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>235</id>
+    <tipus>C/</tipus>
+    <nom>CAMI DE MOJA</nom>
+    <nomGoogle>del CAMI DE MOJA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>237</id>
+    <tipus>C/</tipus>
+    <nom>CAMÍ DEL PARQUET</nom>
+    <nomGoogle>del CAMÍ DEL PARQUET</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>236</id>
+    <tipus>C/</tipus>
+    <nom>CAMI D`EN MORATO</nom>
+    <nomGoogle>del CAMI D`EN MORATO</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>230</id>
+    <tipus>C/</tipus>
+    <nom>CAMI FARINER</nom>
+    <nomGoogle>del CAMI FARINER</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>239</id>
+    <tipus>C/</tipus>
+    <nom>CAMP DEL CELLEROT</nom>
+    <nomGoogle>del CAMP DEL CELLEROT</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>238</id>
+    <tipus>PS</tipus>
+    <nom>CAMP DELS ROLLS</nom>
+    <nomGoogle>del CAMP DELS ROLLS</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>250</id>
+    <tipus>PL</tipus>
+    <nom>CAMPANAR</nom>
+    <nomGoogle>del CAMPANAR</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>240</id>
+    <tipus>C/</tipus>
+    <nom>CAMPANAR</nom>
+    <nomGoogle>del CAMPANAR</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>260</id>
+    <tipus>PG</tipus>
+    <nom>CANYELLES</nom>
+    <nomGoogle>de CANYELLES</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>262</id>
+    <tipus>C/</tipus>
+    <nom>CARLES MUNTS</nom>
+    <nomGoogle>de CARLES MUNTS</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>265</id>
+    <tipus>C/</tipus>
+    <nom>CARLES RIBA</nom>
+    <nomGoogle>de CARLES RIBA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>287</id>
+    <tipus>C/</tipus>
+    <nom>CASTELLERS DE VILAFRANCA</nom>
+    <nomGoogle>dels CASTELLERS DE VILAFRANCA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>285</id>
+    <tipus>C/</tipus>
+    <nom>CASTELLET</nom>
+    <nomGoogle>de CASTELLET</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>290</id>
+    <tipus>C/</tipus>
+    <nom>CASTELLVI DE LA MARCA</nom>
+    <nomGoogle>de CASTELLVI DE LA MARCA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>295</id>
+    <tipus>AV</tipus>
+    <nom>CATALUNYA</nom>
+    <nomGoogle>de CATALUNYA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>3010</id>
+    <tipus>C/</tipus>
+    <nom>CELLER, DEL</nom>
+    <nomGoogle>del CELLER, DEL</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>3180</id>
+    <tipus>C/</tipus>
+    <nom>CIRERERS, DELS</nom>
+    <nomGoogle>dels CIRERERS, DELS</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>3050</id>
+    <tipus>PG</tipus>
+    <nom>CIVADA, DE LA</nom>
+    <nomGoogle>de la CIVADA, DE LA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>2035</id>
+    <tipus>PG</tipus>
+    <nom>COLL</nom>
+    <nomGoogle>del COLL</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>320</id>
+    <tipus>C/</tipus>
+    <nom>COLL</nom>
+    <nomGoogle>del COLL</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>330</id>
+    <tipus>C/</tipus>
+    <nom>COMERÇ</nom>
+    <nomGoogle>del COMERÇ</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>335</id>
+    <tipus>C/</tipus>
+    <nom>CONCA DE BARBERA</nom>
+    <nomGoogle>de la CONCA DE BARBERA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>340</id>
+    <tipus>C/</tipus>
+    <nom>CONSELLERS</nom>
+    <nomGoogle>dels CONSELLERS</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>360</id>
+    <tipus>C/</tipus>
+    <nom>CORTINA</nom>
+    <nomGoogle>de CORTINA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>364</id>
+    <tipus>C/</tipus>
+    <nom>CREIXELL</nom>
+    <nomGoogle>de CREIXELL</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>362</id>
+    <tipus>PL</tipus>
+    <nom>CREU DE SANTA DIGNA</nom>
+    <nomGoogle>de la CREU DE SANTA DIGNA</nomGoogle>
+  </carrer_C>
+  <carrer_C>
+    <id>365</id>
+    <tipus>C/</tipus>
+    <nom>CUBELLES</nom>
+    <nomGoogle>de CUBELLES</nomGoogle>
+  </carrer_C>
+  <carrer_D>
+    <id>367</id>
+    <tipus>PG</tipus>
+    <nom>DALT</nom>
+    <nomGoogle>de DALT</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>440</id>
+    <tipus>C/</tipus>
+    <nom>DE CAL BOLET</nom>
+    <nomGoogle>de DE CAL BOLET</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>310</id>
+    <tipus>PL</tipus>
+    <nom>DE LA CONSTITUCIO</nom>
+    <nomGoogle>de la DE LA CONSTITUCIO</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>350</id>
+    <tipus>C/</tipus>
+    <nom>DE LA CORT</nom>
+    <nomGoogle>de la DE LA CORT</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>570</id>
+    <tipus>C/</tipus>
+    <nom>DE LA FONT</nom>
+    <nomGoogle>de la DE LA FONT</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>600</id>
+    <tipus>C/</tipus>
+    <nom>DE LA FRUITA</nom>
+    <nomGoogle>de la DE LA FRUITA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>665</id>
+    <tipus>RB</tipus>
+    <nom>DE LA GENERALITAT</nom>
+    <nomGoogle>de la DE LA GENERALITAT</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>672</id>
+    <tipus>RB</tipus>
+    <nom>DE LA GIRADA</nom>
+    <nomGoogle>de la DE LA GIRADA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>840</id>
+    <tipus>C/</tipus>
+    <nom>DE LA LLUNA</nom>
+    <nomGoogle>de la DE LA LLUNA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>915</id>
+    <tipus>AV</tipus>
+    <nom>DE LA MEDITERRÀNIA</nom>
+    <nomGoogle>de la DE LA MEDITERRÀNIA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1219</id>
+    <tipus>PR</tipus>
+    <nom>DE LA PAU</nom>
+    <nomGoogle>de la DE LA PAU</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1245</id>
+    <tipus>AV</tipus>
+    <nom>DE LA PELEGRINA</nom>
+    <nomGoogle>de la DE LA PELEGRINA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1247</id>
+    <tipus>PS</tipus>
+    <nom>DE LA RENAIXENÇA</nom>
+    <nomGoogle>de la DE LA RENAIXENÇA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1255</id>
+    <tipus>PL</tipus>
+    <nom>DE LA SARDANA</nom>
+    <nomGoogle>de la DE LA SARDANA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1875</id>
+    <tipus>PL</tipus>
+    <nom>DE LA VEREMA</nom>
+    <nomGoogle>de la DE LA VEREMA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1920</id>
+    <tipus>PL</tipus>
+    <nom>DE LA VILA</nom>
+    <nomGoogle>de la DE LA VILA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1890</id>
+    <tipus>C/</tipus>
+    <nom>DE LA VINYA</nom>
+    <nomGoogle>de la DE LA VINYA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>217</id>
+    <tipus>PL</tipus>
+    <nom>DE LES ARTS</nom>
+    <nomGoogle>de les DE LES ARTS</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1895</id>
+    <tipus>PL</tipus>
+    <nom>DE LES AVANGUARDES</nom>
+    <nomGoogle>de les DE LES AVANGUARDES</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1893</id>
+    <tipus>RD</tipus>
+    <nom>DE MAR</nom>
+    <nomGoogle>de DE MAR</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>270</id>
+    <tipus>C/</tipus>
+    <nom>DEL CARME</nom>
+    <nomGoogle>del DEL CARME</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>280</id>
+    <tipus>C/</tipus>
+    <nom>DEL CASAL</nom>
+    <nomGoogle>del DEL CASAL</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>297</id>
+    <tipus>C/</tipus>
+    <nom>DEL CAVA</nom>
+    <nomGoogle>del DEL CAVA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>298</id>
+    <tipus>PA</tipus>
+    <nom>DEL CEP</nom>
+    <nomGoogle>del DEL CEP</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>300</id>
+    <tipus>C/</tipus>
+    <nom>DEL CID</nom>
+    <nomGoogle>del DEL CID</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>304</id>
+    <tipus>AV</tipus>
+    <nom>DEL FOIX</nom>
+    <nomGoogle>del DEL FOIX</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>307</id>
+    <tipus>AV</tipus>
+    <nom>DEL GARRAF</nom>
+    <nomGoogle>del DEL GARRAF</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>305</id>
+    <tipus>PL</tipus>
+    <nom>DEL GAS</nom>
+    <nomGoogle>del DEL GAS</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>308</id>
+    <tipus>PG</tipus>
+    <nom>DEL MODERNISME</nom>
+    <nomGoogle>del DEL MODERNISME</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1003</id>
+    <tipus>AV</tipus>
+    <nom>DEL MONTMELL</nom>
+    <nomGoogle>del DEL MONTMELL</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1060</id>
+    <tipus>C/</tipus>
+    <nom>DEL NORD</nom>
+    <nomGoogle>del DEL NORD</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1063</id>
+    <tipus>PG</tipus>
+    <nom>DEL NOUCENTISME</nom>
+    <nomGoogle>del DEL NOUCENTISME</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>530</id>
+    <tipus>PL</tipus>
+    <nom>DEL PENEDES</nom>
+    <nomGoogle>del DEL PENEDES</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1770</id>
+    <tipus>C/</tipus>
+    <nom>DEL SOL</nom>
+    <nomGoogle>del DEL SOL</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1883</id>
+    <tipus>C/</tipus>
+    <nom>DEL VI</nom>
+    <nomGoogle>del DEL VI</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>220</id>
+    <tipus>C/</tipus>
+    <nom>DELS BOTERS</nom>
+    <nomGoogle>dels DELS BOTERS</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>221</id>
+    <tipus>PL</tipus>
+    <nom>DELS BOTERS</nom>
+    <nomGoogle>dels DELS BOTERS</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>560</id>
+    <tipus>C/</tipus>
+    <nom>DELS FERRERS</nom>
+    <nomGoogle>dels DELS FERRERS</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1145</id>
+    <tipus>PL</tipus>
+    <nom>DELS PAÏSOS CATALANS</nom>
+    <nomGoogle>dels DELS PAÏSOS CATALANS</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>370</id>
+    <tipus>C/</tipus>
+    <nom>DOCTOR BADIA</nom>
+    <nomGoogle>del DOCTOR BADIA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>380</id>
+    <tipus>PL</tipus>
+    <nom>DOCTOR BONET</nom>
+    <nomGoogle>del DOCTOR BONET</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>390</id>
+    <tipus>C/</tipus>
+    <nom>DOCTOR FLEMING</nom>
+    <nomGoogle>del DOCTOR FLEMING</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>400</id>
+    <tipus>C/</tipus>
+    <nom>DOCTOR JANER</nom>
+    <nomGoogle>del DOCTOR JANER</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>410</id>
+    <tipus>C/</tipus>
+    <nom>DOCTOR PASTEUR</nom>
+    <nomGoogle>del DOCTOR PASTEUR</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>420</id>
+    <tipus>C/</tipus>
+    <nom>DOCTOR ZAMENHOF</nom>
+    <nomGoogle>del DOCTOR ZAMENHOF</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1080</id>
+    <tipus>C/</tipus>
+    <nom>D`OLERDOLA</nom>
+    <nomGoogle>d' D`OLERDOLA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>1953</id>
+    <tipus>C/</tipus>
+    <nom>DOLORS PIERA</nom>
+    <nomGoogle>de DOLORS PIERA</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>430</id>
+    <tipus>C/</tipus>
+    <nom>DOS DE MAIG</nom>
+    <nomGoogle>del DOS DE MAIG</nomGoogle>
+  </carrer_D>
+  <carrer_D>
+    <id>369</id>
+    <tipus>PL</tipus>
+    <nom>DRETS HUMANS</nom>
+    <nomGoogle>dels DRETS HUMANS</nomGoogle>
+  </carrer_D>
+  <carrer_E>
+    <id>442</id>
+    <tipus>C/</tipus>
+    <nom>ECONOMIA</nom>
+    <nomGoogle>de l' ECONOMIA</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>1865</id>
+    <tipus>AV</tipus>
+    <nom>EL VENDRELL</nom>
+    <nomGoogle>del EL VENDRELL</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>447</id>
+    <tipus>C/</tipus>
+    <nom>EMPORDÀ</nom>
+    <nomGoogle>de l' EMPORDÀ</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>448</id>
+    <tipus>C/</tipus>
+    <nom>ENOLOGIA</nom>
+    <nomGoogle>de l' ENOLOGIA</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>450</id>
+    <tipus>PG</tipus>
+    <nom>ENRIC REGULL</nom>
+    <nomGoogle>d' ENRIC REGULL</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>460</id>
+    <tipus>PL</tipus>
+    <nom>ERA ENRAJOLADA</nom>
+    <nomGoogle>de l' ERA ENRAJOLADA</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>470</id>
+    <tipus>C/</tipus>
+    <nom>ESCORXADOR</nom>
+    <nomGoogle>de l' ESCORXADOR</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>475</id>
+    <tipus>PT</tipus>
+    <nom>ESCORXADOR, DE L`</nom>
+    <nomGoogle>de l' ESCORXADOR, DE L`</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>480</id>
+    <tipus>C/</tipus>
+    <nom>ESCUDELLERS</nom>
+    <nomGoogle>dels ESCUDELLERS</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>490</id>
+    <tipus>CO</tipus>
+    <nom>ESCUDELLERS</nom>
+    <nomGoogle>dels ESCUDELLERS</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>495</id>
+    <tipus>PR</tipus>
+    <nom>ESPIGA, DE L`</nom>
+    <nomGoogle>de l' ESPIGA, DE L`</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>500</id>
+    <tipus>C/</tipus>
+    <nom>ESPIRALL</nom>
+    <nomGoogle>de l' ESPIRALL</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>505</id>
+    <tipus>PL</tipus>
+    <nom>ESPIRALL</nom>
+    <nomGoogle>de l' ESPIRALL</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>3200</id>
+    <tipus>PG</tipus>
+    <nom>ESPORT, DE L`</nom>
+    <nomGoogle>de l' ESPORT, DE L`</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>510</id>
+    <tipus>PL</tipus>
+    <nom>ESTACIO</nom>
+    <nomGoogle>de l' ESTACIO</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>520</id>
+    <tipus>C/</tipus>
+    <nom>EUGENI D`ORS</nom>
+    <nomGoogle>d' EUGENI D`ORS</nomGoogle>
+  </carrer_E>
+  <carrer_E>
+    <id>525</id>
+    <tipus>AV</tipus>
+    <nom>EUROPA</nom>
+    <nomGoogle>d' EUROPA</nomGoogle>
+  </carrer_E>
+  <carrer_F>
+    <id>527</id>
+    <tipus>C/</tipus>
+    <nom>FALCONS DE VILAFRANCA</nom>
+    <nomGoogle>dels FALCONS DE VILAFRANCA</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>540</id>
+    <tipus>PL</tipus>
+    <nom>FELIX MESTRE NUTO</nom>
+    <nomGoogle>de FELIX MESTRE NUTO</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>550</id>
+    <tipus>C/</tipus>
+    <nom>FERRAN</nom>
+    <nomGoogle>de FERRAN</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>575</id>
+    <tipus>C/</tipus>
+    <nom>FONT DE FONTANILLES</nom>
+    <nomGoogle>de la FONT DE FONTANILLES</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>573</id>
+    <tipus>C/</tipus>
+    <nom>FONT DE L`ATMETLLO</nom>
+    <nomGoogle>de la FONT DE L`ATMETLLO</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>572</id>
+    <tipus>C/</tipus>
+    <nom>FONT DE L`AVELLANER</nom>
+    <nomGoogle>de la FONT DE L`AVELLANER</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>577</id>
+    <tipus>C/</tipus>
+    <nom>FONT DE LES GRAUS</nom>
+    <nomGoogle>de la FONT DE LES GRAUS</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>3160</id>
+    <tipus>PR</tipus>
+    <nom>FONT DE MELIÓ, DE LA</nom>
+    <nomGoogle>de la FONT DE MELIÓ, DE LA</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>576</id>
+    <tipus>C/</tipus>
+    <nom>FONT DE SANT LLORENC</nom>
+    <nomGoogle>de la FONT DE SANT LLORENC</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>574</id>
+    <tipus>C/</tipus>
+    <nom>FONT DEL CUSCO</nom>
+    <nomGoogle>de la FONT DEL CUSCO</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>580</id>
+    <tipus>C/</tipus>
+    <nom>FONT-RUBI</nom>
+    <nomGoogle>de FONT-RUBI</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>585</id>
+    <tipus>C/</tipus>
+    <nom>FRANCESC CANDEL</nom>
+    <nomGoogle>de FRANCESC CANDEL</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>590</id>
+    <tipus>C/</tipus>
+    <nom>FRANCESC DE PAULA BOVE</nom>
+    <nomGoogle>de FRANCESC DE PAULA BOVE</nomGoogle>
+  </carrer_F>
+  <carrer_F>
+    <id>595</id>
+    <tipus>C/</tipus>
+    <nom>FRANCESC MACIA</nom>
+    <nomGoogle>de FRANCESC MACIA</nomGoogle>
+  </carrer_F>
+  <carrer_G>
+    <id>610</id>
+    <tipus>C/</tipus>
+    <nom>GALCERAN</nom>
+    <nomGoogle>de GALCERAN</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>306</id>
+    <tipus>PG</tipus>
+    <nom>GARBI</nom>
+    <nomGoogle>de GARBI</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>620</id>
+    <tipus>C/</tipus>
+    <nom>GELIDA</nom>
+    <nomGoogle>de GELIDA</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>630</id>
+    <tipus>C/</tipus>
+    <nom>GENERAL CORTIJO</nom>
+    <nomGoogle>del GENERAL CORTIJO</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>640</id>
+    <tipus>C/</tipus>
+    <nom>GENERAL PRIM</nom>
+    <nomGoogle>del GENERAL PRIM</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>650</id>
+    <tipus>C/</tipus>
+    <nom>GENERAL VALLES</nom>
+    <nomGoogle>del GENERAL VALLES</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>660</id>
+    <tipus>C/</tipus>
+    <nom>GENERAL ZURBANO</nom>
+    <nomGoogle>del GENERAL ZURBANO</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>667</id>
+    <tipus>PG</tipus>
+    <nom>GERMANES LARA</nom>
+    <nomGoogle>de les GERMANES LARA</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>670</id>
+    <tipus>C/</tipus>
+    <nom>GERMANOR</nom>
+    <nomGoogle>de GERMANOR</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>3090</id>
+    <tipus>C/</tipus>
+    <nom>GLÒRIA LASSO, DE</nom>
+    <nomGoogle>de GLÒRIA LASSO, DE</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>690</id>
+    <tipus>C/</tipus>
+    <nom>GRAUPERA</nom>
+    <nomGoogle>d'en GRAUPERA</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>693</id>
+    <tipus>PA</tipus>
+    <nom>GREGAL</nom>
+    <nomGoogle>del GREGAL</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>700</id>
+    <tipus>C/</tipus>
+    <nom>GUARDIOLA</nom>
+    <nomGoogle>de GUARDIOLA</nomGoogle>
+  </carrer_G>
+  <carrer_G>
+    <id>705</id>
+    <tipus>CR</tipus>
+    <nom>GUARDIOLA</nom>
+    <nomGoogle>de GUARDIOLA</nomGoogle>
+  </carrer_G>
+  <carrer_H>
+    <id>710</id>
+    <tipus>C/</tipus>
+    <nom>HERMENEGILD CLASCAR</nom>
+    <nomGoogle>d' HERMENEGILD CLASCAR</nomGoogle>
+  </carrer_H>
+  <carrer_I>
+    <id>720</id>
+    <tipus>C/</tipus>
+    <nom>IGNASI IGLESIAS</nom>
+    <nomGoogle>d' IGNASI IGLESIAS</nomGoogle>
+  </carrer_I>
+  <carrer_I>
+    <id>730</id>
+    <tipus>C/</tipus>
+    <nom>IGUALADA</nom>
+    <nomGoogle>d' IGUALADA</nomGoogle>
+  </carrer_I>
+  <carrer_I>
+    <id>735</id>
+    <tipus>CR</tipus>
+    <nom>IGUALADA</nom>
+    <nomGoogle> IGUALADA</nomGoogle>
+  </carrer_I>
+  <carrer_I>
+    <id>740</id>
+    <tipus>C/</tipus>
+    <nom>INDUSTRIA</nom>
+    <nomGoogle>de la INDUSTRIA</nomGoogle>
+  </carrer_I>
+  <carrer_J>
+    <id>750</id>
+    <tipus>C/</tipus>
+    <nom>JAUME BALMES</nom>
+    <nomGoogle>de JAUME BALMES</nomGoogle>
+  </carrer_J>
+  <carrer_J>
+    <id>770</id>
+    <tipus>PG</tipus>
+    <nom>JAUME I</nom>
+    <nomGoogle>de JAUME I</nomGoogle>
+  </carrer_J>
+  <carrer_J>
+    <id>760</id>
+    <tipus>PL</tipus>
+    <nom>JAUME I</nom>
+    <nomGoogle>de JAUME I</nomGoogle>
+  </carrer_J>
+  <carrer_J>
+    <id>775</id>
+    <tipus>C/</tipus>
+    <nom>JAUME SABATÉ</nom>
+    <nomGoogle>de JAUME SABATÉ</nomGoogle>
+  </carrer_J>
+  <carrer_J>
+    <id>785</id>
+    <tipus>PG</tipus>
+    <nom>JOAN FUSTER</nom>
+    <nomGoogle>de JOAN FUSTER</nomGoogle>
+  </carrer_J>
+  <carrer_J>
+    <id>780</id>
+    <tipus>C/</tipus>
+    <nom>JOAN XXIII</nom>
+    <nomGoogle>de JOAN XXIII</nomGoogle>
+  </carrer_J>
+  <carrer_J>
+    <id>790</id>
+    <tipus>PL</tipus>
+    <nom>JOSEP ANSELM CLAVE</nom>
+    <nomGoogle>de JOSEP ANSELM CLAVE</nomGoogle>
+  </carrer_J>
+  <carrer_J>
+    <id>792</id>
+    <tipus>C/</tipus>
+    <nom>JOSEP IRLA</nom>
+    <nomGoogle>de JOSEP IRLA</nomGoogle>
+  </carrer_J>
+  <carrer_J>
+    <id>794</id>
+    <tipus>C/</tipus>
+    <nom>JOSEP TARRADELLAS</nom>
+    <nomGoogle>de JOSEP TARRADELLAS</nomGoogle>
+  </carrer_J>
+  <carrer_J>
+    <id>565</id>
+    <tipus>C/</tipus>
+    <nom>J.V.FOIX</nom>
+    <nomGoogle>de J.V.FOIX</nomGoogle>
+  </carrer_J>
+  <carrer_L>
+    <id>675</id>
+    <tipus>C/</tipus>
+    <nom>LA GORNAL</nom>
+    <nomGoogle>de la LA GORNAL</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>680</id>
+    <tipus>C/</tipus>
+    <nom>LA GRANADA</nom>
+    <nomGoogle>de la LA GRANADA</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>830</id>
+    <tipus>C/</tipus>
+    <nom>LA LLACUNA</nom>
+    <nomGoogle>de la LA LLACUNA</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>1035</id>
+    <tipus>C/</tipus>
+    <nom>LA MUNIA</nom>
+    <nomGoogle>de la LA MUNIA</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>1190</id>
+    <tipus>C/</tipus>
+    <nom>LA PARELLADA</nom>
+    <nomGoogle>de la LA PARELLADA</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>1375</id>
+    <tipus>C/</tipus>
+    <nom>LA RAPITA</nom>
+    <nomGoogle>de la LA RAPITA</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>1835</id>
+    <tipus>C/</tipus>
+    <nom>LA TRAVESSIA</nom>
+    <nomGoogle>de la LA TRAVESSIA</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>3100</id>
+    <tipus>C/</tipus>
+    <nom>LAVERN, DE</nom>
+    <nomGoogle>de LAVERN, DE</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>810</id>
+    <tipus>C/</tipus>
+    <nom>LES CABANYES</nom>
+    <nomGoogle>de les LES CABANYES</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>820</id>
+    <tipus>PL</tipus>
+    <nom>LES CLOTES</nom>
+    <nomGoogle>de les LES CLOTES</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>834</id>
+    <tipus>PG</tipus>
+    <nom>LES SINIES</nom>
+    <nomGoogle>de les LES SINIES</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>833</id>
+    <tipus>PG</tipus>
+    <nom>L`HORT DEL GUINEU</nom>
+    <nomGoogle>de l' L`HORT DEL GUINEU</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>832</id>
+    <tipus>PG</tipus>
+    <nom>L`HORT DEL NIN</nom>
+    <nomGoogle>de l' L`HORT DEL NIN</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>835</id>
+    <tipus>PA</tipus>
+    <nom>LLEBEIG</nom>
+    <nomGoogle>del LLEBEIG</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>845</id>
+    <tipus>PR</tipus>
+    <nom>LLEVANT, DE</nom>
+    <nomGoogle>de LLEVANT, DE</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>847</id>
+    <tipus>C/</tipus>
+    <nom>LLORENÇ DEL PENEDÈS, DE</nom>
+    <nomGoogle>de LLORENÇ DEL PENEDÈS, DE</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>850</id>
+    <tipus>PL</tipus>
+    <nom>LLORENS I BARBA</nom>
+    <nomGoogle>de LLORENS I BARBA</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>852</id>
+    <tipus>AV</tipus>
+    <nom>LLUIS COMPANYS</nom>
+    <nomGoogle>de LLUIS COMPANYS</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>854</id>
+    <tipus>PL</tipus>
+    <nom>LLUIS MARIA XIRINACS</nom>
+    <nomGoogle>de LLUIS MARIA XIRINACS</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>858</id>
+    <tipus>C/</tipus>
+    <nom>LLUIS M.GUELL</nom>
+    <nomGoogle>de LLUIS M.GUELL</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>1880</id>
+    <tipus>PL</tipus>
+    <nom>LLUIS VIA</nom>
+    <nomGoogle>de LLUIS VIA</nomGoogle>
+  </carrer_L>
+  <carrer_L>
+    <id>855</id>
+    <tipus>PG</tipus>
+    <nom>LUIS MATA ACEDO</nom>
+    <nomGoogle>de LUIS MATA ACEDO</nomGoogle>
+  </carrer_L>
+  <carrer_M>
+    <id>857</id>
+    <tipus>C/</tipus>
+    <nom>MACABEU</nom>
+    <nomGoogle>del MACABEU</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>860</id>
+    <tipus>C/</tipus>
+    <nom>MAGAROLA</nom>
+    <nomGoogle>de MAGAROLA</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>145</id>
+    <tipus>C/</tipus>
+    <nom>MANUEL BARBA I ROCA</nom>
+    <nomGoogle>de MANUEL BARBA I ROCA</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>865</id>
+    <tipus>AV</tipus>
+    <nom>MARE DE DEU DEL VINYET</nom>
+    <nomGoogle>de la MARE DE DEU DEL VINYET</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>870</id>
+    <tipus>C/</tipus>
+    <nom>MARE RAFOLS</nom>
+    <nomGoogle>de la MARE RAFOLS</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>872</id>
+    <tipus>C/</tipus>
+    <nom>MARIA AURELIA CAPMANY</nom>
+    <nomGoogle>de MARIA AURELIA CAPMANY</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>875</id>
+    <tipus>PL</tipus>
+    <nom>MARIÀ MANENT</nom>
+    <nomGoogle>de MARIÀ MANENT</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>878</id>
+    <tipus>PG</tipus>
+    <nom>MARIA MARCE MARÇAL</nom>
+    <nomGoogle>de MARIA MARCE MARÇAL</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>879</id>
+    <tipus>PA</tipus>
+    <nom>MARINADA</nom>
+    <nomGoogle>de la MARINADA</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>880</id>
+    <tipus>C/</tipus>
+    <nom>MARQUES D`ALFARRAS</nom>
+    <nomGoogle>del MARQUES D`ALFARRAS</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>900</id>
+    <tipus>C/</tipus>
+    <nom>MARTORELL</nom>
+    <nomGoogle>de MARTORELL</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>910</id>
+    <tipus>C/</tipus>
+    <nom>MAS JORNET</nom>
+    <nomGoogle>de MAS JORNET</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>920</id>
+    <tipus>C/</tipus>
+    <nom>MELIO</nom>
+    <nomGoogle>de MELIO</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>925</id>
+    <tipus>C/</tipus>
+    <nom>MELZO</nom>
+    <nomGoogle>de MELZO</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>930</id>
+    <tipus>C/</tipus>
+    <nom>MENENDEZ PELAYO</nom>
+    <nomGoogle>de MENENDEZ PELAYO</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>935</id>
+    <tipus>PG</tipus>
+    <nom>MESTRAL</nom>
+    <nomGoogle>del MESTRAL</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>940</id>
+    <tipus>C/</tipus>
+    <nom>MESTRE J. RECASENS</nom>
+    <nomGoogle>del MESTRE J. RECASENS</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>947</id>
+    <tipus>PG</tipus>
+    <nom>MIG</nom>
+    <nomGoogle>del MIG</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>950</id>
+    <tipus>C/</tipus>
+    <nom>MIGDIA</nom>
+    <nomGoogle>del MIGDIA</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>953</id>
+    <tipus>PA</tipus>
+    <nom>MIGJORN</nom>
+    <nomGoogle>del MIGJORN</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>960</id>
+    <tipus>PL</tipus>
+    <nom>MILA I FONTANALS</nom>
+    <nomGoogle>de MILA I FONTANALS</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>1233</id>
+    <tipus>PA</tipus>
+    <nom>MILA I FONTANALS</nom>
+    <nomGoogle>de MILA I FONTANALS</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>965</id>
+    <tipus>C/</tipus>
+    <nom>MIQUEL TORRES CARBO</nom>
+    <nomGoogle>de MIQUEL TORRES CARBO</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>970</id>
+    <tipus>C/</tipus>
+    <nom>MISSER RUFET</nom>
+    <nomGoogle>de MISSER RUFET</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>985</id>
+    <tipus>CR</tipus>
+    <nom>MOJA</nom>
+    <nomGoogle>de MOJA</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>980</id>
+    <tipus>C/</tipus>
+    <nom>MOJA</nom>
+    <nomGoogle>de MOJA</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>995</id>
+    <tipus>PR</tipus>
+    <nom>MOLI D`EN ROVIRA</nom>
+    <nomGoogle>del MOLI D`EN ROVIRA</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>990</id>
+    <tipus>BR</tipus>
+    <nom>MOLI D`EN ROVIRA (TERME)</nom>
+    <nomGoogle>del MOLI D`EN ROVIRA (TERME)</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>1000</id>
+    <tipus>C/</tipus>
+    <nom>MONTBLANC</nom>
+    <nomGoogle>de MONTBLANC</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>1005</id>
+    <tipus>C/</tipus>
+    <nom>MONTÒNEC</nom>
+    <nomGoogle>del MONTÒNEC</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>1010</id>
+    <tipus>C/</tipus>
+    <nom>MONTSERRAT</nom>
+    <nomGoogle>de MONTSERRAT</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>1015</id>
+    <tipus>C/</tipus>
+    <nom>MONTSERRAT ROIG</nom>
+    <nomGoogle>de MONTSERRAT ROIG</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>1020</id>
+    <tipus>C/</tipus>
+    <nom>MORET</nom>
+    <nomGoogle>de MORET</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>1030</id>
+    <tipus>C/</tipus>
+    <nom>MOSSEN COY</nom>
+    <nomGoogle>de MOSSEN COY</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>3080</id>
+    <tipus>C/</tipus>
+    <nom>MOSSÈN TRENS, DE</nom>
+    <nomGoogle>de MOSSÈN TRENS, DE</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>1050</id>
+    <tipus>C/</tipus>
+    <nom>MURALLA DE SANT MAGI</nom>
+    <nomGoogle>de la MURALLA DE SANT MAGI</nomGoogle>
+  </carrer_M>
+  <carrer_M>
+    <id>1040</id>
+    <tipus>C/</tipus>
+    <nom>MURALLA DELS VALLETS</nom>
+    <nomGoogle>de la MURALLA DELS VALLETS</nomGoogle>
+  </carrer_M>
+  <carrer_N>
+    <id>1045</id>
+    <tipus>C/</tipus>
+    <nom>NOI MOLINER</nom>
+    <nomGoogle>del NOI MOLINER</nomGoogle>
+  </carrer_N>
+  <carrer_N>
+    <id>1070</id>
+    <tipus>RB</tipus>
+    <nom>NOSTRA SENYORA</nom>
+    <nomGoogle>de NOSTRA SENYORA</nomGoogle>
+  </carrer_N>
+  <carrer_N>
+    <id>1075</id>
+    <tipus>C/</tipus>
+    <nom>NOVO MESTO</nom>
+    <nomGoogle>de NOVO MESTO</nomGoogle>
+  </carrer_N>
+  <carrer_O>
+    <id>1117</id>
+    <tipus>PG</tipus>
+    <nom>OLESA DE BONESVALLS</nom>
+    <nomGoogle>d' OLESA DE BONESVALLS</nomGoogle>
+  </carrer_O>
+  <carrer_O>
+    <id>1090</id>
+    <tipus>PL</tipus>
+    <nom>OLI</nom>
+    <nomGoogle>de l' OLI</nomGoogle>
+  </carrer_O>
+  <carrer_O>
+    <id>1100</id>
+    <tipus>CO</tipus>
+    <nom>OLI</nom>
+    <nomGoogle>de l' OLI</nomGoogle>
+  </carrer_O>
+  <carrer_O>
+    <id>1115</id>
+    <tipus>PG</tipus>
+    <nom>OLIVELLA</nom>
+    <nomGoogle>d' OLIVELLA</nomGoogle>
+  </carrer_O>
+  <carrer_O>
+    <id>1085</id>
+    <tipus>PL</tipus>
+    <nom>ONZE DE SETEMBRE</nom>
+    <nomGoogle>de l' ONZE DE SETEMBRE</nomGoogle>
+  </carrer_O>
+  <carrer_O>
+    <id>3070</id>
+    <tipus>C/</tipus>
+    <nom>ORDAL, DE L`</nom>
+    <nomGoogle>de l' ORDAL, DE L`</nomGoogle>
+  </carrer_O>
+  <carrer_O>
+    <id>3040</id>
+    <tipus>PG</tipus>
+    <nom>ORDI, DE L`</nom>
+    <nomGoogle>de l' ORDI, DE L`</nomGoogle>
+  </carrer_O>
+  <carrer_O>
+    <id>1110</id>
+    <tipus>C/</tipus>
+    <nom>ORIENT</nom>
+    <nomGoogle>d' ORIENT</nomGoogle>
+  </carrer_O>
+  <carrer_O>
+    <id>1120</id>
+    <tipus>C/</tipus>
+    <nom>ORIOL</nom>
+    <nomGoogle>d' ORIOL</nomGoogle>
+  </carrer_O>
+  <carrer_O>
+    <id>1130</id>
+    <tipus>C/</tipus>
+    <nom>OVIEDO</nom>
+    <nomGoogle>d' OVIEDO</nomGoogle>
+  </carrer_O>
+  <carrer_P>
+    <id>1140</id>
+    <tipus>C/</tipus>
+    <nom>PACS</nom>
+    <nomGoogle>de PACS</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1150</id>
+    <tipus>C/</tipus>
+    <nom>PALMA</nom>
+    <nomGoogle>de la PALMA</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1160</id>
+    <tipus>CO</tipus>
+    <nom>PALMA</nom>
+    <nomGoogle>de la PALMA</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1165</id>
+    <tipus>PL</tipus>
+    <nom>PALMERES, DE LES</nom>
+    <nomGoogle>de les PALMERES, DE LES</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1170</id>
+    <tipus>C/</tipus>
+    <nom>PALOMA</nom>
+    <nomGoogle>de la PALOMA</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1180</id>
+    <tipus>C/</tipus>
+    <nom>PAPIOL</nom>
+    <nomGoogle>del PAPIOL</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>2077</id>
+    <tipus>PR</tipus>
+    <nom>PARC SANT SALVADOR</nom>
+    <nomGoogle>de PARC SANT SALVADOR</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1200</id>
+    <tipus>C/</tipus>
+    <nom>PARE MANYANET</nom>
+    <nomGoogle>del PARE MANYANET</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1205</id>
+    <tipus>C/</tipus>
+    <nom>PARE MARTI GRIVE</nom>
+    <nomGoogle>del PARE MARTI GRIVE</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1210</id>
+    <tipus>C/</tipus>
+    <nom>PARLAMENT</nom>
+    <nomGoogle>del PARLAMENT</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1287</id>
+    <tipus>PT</tipus>
+    <nom>PATI DE LA SERRA</nom>
+    <nomGoogle>de la PATI DE LA SERRA</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1350</id>
+    <tipus>C/</tipus>
+    <nom>PATI DEL GALL</nom>
+    <nomGoogle>del PATI DEL GALL</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1285</id>
+    <tipus>PT</tipus>
+    <nom>PATI DELS POLLANCRES</nom>
+    <nomGoogle>dels PATI DELS POLLANCRES</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1220</id>
+    <tipus>C/</tipus>
+    <nom>PAU BENACH</nom>
+    <nomGoogle>de PAU BENACH</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1225</id>
+    <tipus>PL</tipus>
+    <nom>PAU BOADA</nom>
+    <nomGoogle>de PAU BOADA</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1230</id>
+    <tipus>PL</tipus>
+    <nom>PAU CASALS</nom>
+    <nomGoogle>de PAU CASALS</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1235</id>
+    <tipus>PL</tipus>
+    <nom>PEDRO</nom>
+    <nomGoogle>del PEDRO</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1240</id>
+    <tipus>C/</tipus>
+    <nom>PEGUERA</nom>
+    <nomGoogle>de PEGUERA</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1248</id>
+    <tipus>PR</tipus>
+    <nom>PELEGRINA, DE LA</nom>
+    <nomGoogle>de la PELEGRINA, DE LA</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1250</id>
+    <tipus>C/</tipus>
+    <nom>PERE ALAGRET</nom>
+    <nomGoogle>de PERE ALAGRET</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1253</id>
+    <tipus>C/</tipus>
+    <nom>PERE BOHIGAS</nom>
+    <nomGoogle>de PERE BOHIGAS</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1270</id>
+    <tipus>C/</tipus>
+    <nom>PERE EL GRAN</nom>
+    <nomGoogle>de PERE EL GRAN</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1275</id>
+    <tipus>C/</tipus>
+    <nom>PERE GIRÓ</nom>
+    <nomGoogle>de PERE GIRÓ</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1277</id>
+    <tipus>C/</tipus>
+    <nom>PERE GRASES</nom>
+    <nomGoogle>de PERE GRASES</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1278</id>
+    <tipus>C/</tipus>
+    <nom>PERE MAS I PERERA</nom>
+    <nomGoogle>de PERE MAS I PERERA</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1260</id>
+    <tipus>C/</tipus>
+    <nom>PERE PAU</nom>
+    <nomGoogle>de PERE PAU</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1960</id>
+    <tipus>BR</tipus>
+    <nom>PERE PAU (TERME)</nom>
+    <nomGoogle>de PERE PAU (TERME)</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1280</id>
+    <tipus>C/</tipus>
+    <nom>PINES</nom>
+    <nomGoogle>de PINES</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1281</id>
+    <tipus>PG</tipus>
+    <nom>PISCINES, DE LES</nom>
+    <nomGoogle>de les PISCINES, DE LES</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1282</id>
+    <tipus>AV</tipus>
+    <nom>PLA DEL DIABLE</nom>
+    <nomGoogle>del PLA DEL DIABLE</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1284</id>
+    <tipus>C/</tipus>
+    <nom>PLA DEL VIVER</nom>
+    <nomGoogle>del PLA DEL VIVER</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>3150</id>
+    <tipus>C/</tipus>
+    <nom>PLÀTANS, DELS</nom>
+    <nomGoogle>dels PLÀTANS, DELS</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1288</id>
+    <tipus>PR</tipus>
+    <nom>POBLE NOU, DEL</nom>
+    <nomGoogle>del POBLE NOU, DEL</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1290</id>
+    <tipus>C/</tipus>
+    <nom>PONENT</nom>
+    <nomGoogle>de PONENT</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>3065</id>
+    <tipus>C/</tipus>
+    <nom>PONT DEL CARRIL, DEL</nom>
+    <nomGoogle>del PONT DEL CARRIL, DEL</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1300</id>
+    <tipus>C/</tipus>
+    <nom>PONTONS</nom>
+    <nomGoogle>de PONTONS</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1310</id>
+    <tipus>C/</tipus>
+    <nom>POU DE LA PINA</nom>
+    <nomGoogle>del POU DE LA PINA</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>3020</id>
+    <tipus>C/</tipus>
+    <nom>POUS D`EN ROSSELL, DELS</nom>
+    <nomGoogle>dels POUS D`EN ROSSELL, DELS</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1315</id>
+    <tipus>C/</tipus>
+    <nom>PRIORAT</nom>
+    <nomGoogle>del PRIORAT</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1320</id>
+    <tipus>C/</tipus>
+    <nom>PROGRES</nom>
+    <nomGoogle>del PROGRES</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1323</id>
+    <tipus>C/</tipus>
+    <nom>PUERTO CABEZAS</nom>
+    <nomGoogle>de PUERTO CABEZAS</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1325</id>
+    <tipus>PG</tipus>
+    <nom>PUIGDALBER</nom>
+    <nomGoogle>de PUIGDALBER</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1340</id>
+    <tipus>PL</tipus>
+    <nom>PUIGMOLTO</nom>
+    <nomGoogle>de PUIGMOLTO</nomGoogle>
+  </carrer_P>
+  <carrer_P>
+    <id>1330</id>
+    <tipus>C/</tipus>
+    <nom>PUIGMOLTO</nom>
+    <nomGoogle>de PUIGMOLTO</nomGoogle>
+  </carrer_P>
+  <carrer_R>
+    <id>1355</id>
+    <tipus>C/</tipus>
+    <nom>RABASSAIRES</nom>
+    <nomGoogle>dels RABASSAIRES</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1360</id>
+    <tipus>PS</tipus>
+    <nom>RAFAEL SOLER</nom>
+    <nomGoogle>de RAFAEL SOLER</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1370</id>
+    <tipus>C/</tipus>
+    <nom>RAMON FREIXAS</nom>
+    <nomGoogle>de RAMON FREIXAS</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1377</id>
+    <tipus>PL</tipus>
+    <nom>RAMONA VIA</nom>
+    <nomGoogle>de RAMONA VIA</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1380</id>
+    <tipus>C/</tipus>
+    <nom>RAVAL DE LA FONT</nom>
+    <nomGoogle>del RAVAL DE LA FONT</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1390</id>
+    <tipus>C/</tipus>
+    <nom>RIBERA</nom>
+    <nomGoogle>de RIBERA</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1392</id>
+    <tipus>PR</tipus>
+    <nom>RIERA DE L`ADOBERIA</nom>
+    <nomGoogle>de la RIERA DE L`ADOBERIA</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1393</id>
+    <tipus>C/</tipus>
+    <nom>RIERA DE LLITRÀ</nom>
+    <nomGoogle>de la RIERA DE LLITRÀ</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1394</id>
+    <tipus>C/</tipus>
+    <nom>RIERA GRAN</nom>
+    <nomGoogle>de la RIERA GRAN</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1395</id>
+    <tipus>C/</tipus>
+    <nom>RODOLF LLORENS I JORDANA</nom>
+    <nomGoogle>de RODOLF LLORENS I JORDANA</nomGoogle>
+  </carrer_R>
+  <carrer_R>
+    <id>1400</id>
+    <tipus>PG</tipus>
+    <nom>ROMA DE SAAVEDRA</nom>
+    <nomGoogle>de ROMA DE SAAVEDRA</nomGoogle>
+  </carrer_R>
+  <carrer_S>
+    <id>1410</id>
+    <tipus>BR</tipus>
+    <nom>SALINES (TERME)</nom>
+    <nomGoogle>de SALINES (TERME)</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1413</id>
+    <tipus>C/</tipus>
+    <nom>SALVADOR ESPRIU</nom>
+    <nomGoogle>de SALVADOR ESPRIU</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1414</id>
+    <tipus>PL</tipus>
+    <nom>SALVADOR PUIG ANTICH</nom>
+    <nomGoogle>de SALVADOR PUIG ANTICH</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1415</id>
+    <tipus>C/</tipus>
+    <nom>SALVADOR SEGUI</nom>
+    <nomGoogle>de SALVADOR SEGUI</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1420</id>
+    <tipus>C/</tipus>
+    <nom>SANT ANTONI</nom>
+    <nomGoogle>de SANT ANTONI</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1430</id>
+    <tipus>C/</tipus>
+    <nom>SANT ANTONI MARIA CLARET</nom>
+    <nomGoogle>de SANT ANTONI MARIA CLARET</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1440</id>
+    <tipus>C/</tipus>
+    <nom>SANT BERNAT</nom>
+    <nomGoogle>de SANT BERNAT</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1450</id>
+    <tipus>C/</tipus>
+    <nom>SANT CRISTOFOR</nom>
+    <nomGoogle>de SANT CRISTOFOR</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1455</id>
+    <tipus>C/</tipus>
+    <nom>SANT CUGAT SESGARRIGUES</nom>
+    <nomGoogle>de SANT CUGAT SESGARRIGUES</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1460</id>
+    <tipus>C/</tipus>
+    <nom>SANT FELIX</nom>
+    <nomGoogle>de SANT FELIX</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1470</id>
+    <tipus>RB</tipus>
+    <nom>SANT FRANCESC </nom>
+    <nomGoogle>de SANT FRANCESC</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1480</id>
+    <tipus>C/</tipus>
+    <nom>SANT JAUME</nom>
+    <nomGoogle>de SANT JAUME</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1490</id>
+    <tipus>CR</tipus>
+    <nom>SANT JAUME DELS DOMENYS</nom>
+    <nomGoogle>de SANT JAUME DELS DOMENYS</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1530</id>
+    <tipus>PL</tipus>
+    <nom>SANT JOAN</nom>
+    <nomGoogle>de SANT JOAN</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1540</id>
+    <tipus>PG</tipus>
+    <nom>SANT JOAN</nom>
+    <nomGoogle>de SANT JOAN</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1520</id>
+    <tipus>C/</tipus>
+    <nom>SANT JOAN</nom>
+    <nomGoogle>de SANT JOAN</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1550</id>
+    <tipus>C/</tipus>
+    <nom>SANT JOAN DESPI</nom>
+    <nomGoogle>de SANT JOAN DESPI</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1500</id>
+    <tipus>C/</tipus>
+    <nom>SANT JOCUND</nom>
+    <nomGoogle>de SANT JOCUND</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1510</id>
+    <tipus>C/</tipus>
+    <nom>SANT JORDI</nom>
+    <nomGoogle>de SANT JORDI</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1570</id>
+    <tipus>PL</tipus>
+    <nom>SANT JULIA</nom>
+    <nomGoogle>de SANT JULIA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1560</id>
+    <tipus>C/</tipus>
+    <nom>SANT JULIA</nom>
+    <nomGoogle>de SANT JULIA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1565</id>
+    <tipus>PR</tipus>
+    <nom>SANT JULIÀ, DE</nom>
+    <nomGoogle>de SANT JULIÀ, DE</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1575</id>
+    <tipus>C/</tipus>
+    <nom>SANT MARÇAL</nom>
+    <nomGoogle>de SANT MARÇAL</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1580</id>
+    <tipus>CR</tipus>
+    <nom>SANT MARTI SARROCA</nom>
+    <nomGoogle>de SANT MARTI SARROCA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1587</id>
+    <tipus>C/</tipus>
+    <nom>SANT MIQUEL D`OLÈRDOLA, DE (VILAFRANCA)</nom>
+    <nomGoogle>de SANT MIQUEL D`OLÈRDOLA, DE (VILAFRANCA)</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1585</id>
+    <tipus>C/</tipus>
+    <nom>SANT MIQUEL D`OLERDOLA (OLERDOLA)</nom>
+    <nomGoogle>de (Olèrdola) SANT MIQUEL D`OLERDOLA (OLERDOLA)</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1590</id>
+    <tipus>C/</tipus>
+    <nom>SANT PAU</nom>
+    <nomGoogle>de SANT PAU</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1592</id>
+    <tipus>BR</tipus>
+    <nom>SANT PAU, DE</nom>
+    <nomGoogle>de SANT PAU, DE</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1600</id>
+    <tipus>C/</tipus>
+    <nom>SANT PERE</nom>
+    <nomGoogle>de SANT PERE</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1610</id>
+    <tipus>C/</tipus>
+    <nom>SANT RAIMON DE PENYAFORT</nom>
+    <nomGoogle>de SANT RAIMON DE PENYAFORT</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1620</id>
+    <tipus>PG</tipus>
+    <nom>SANT RAMON</nom>
+    <nomGoogle>de SANT RAMON</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1625</id>
+    <tipus>C/</tipus>
+    <nom>SANT ROC</nom>
+    <nomGoogle>de SANT ROC</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>325</id>
+    <tipus>CR</tipus>
+    <nom>SANT SADURNÍ ANOIA, COMARCAL C-243A</nom>
+    <nomGoogle>de SANT SADURNÍ ANOIA, COMARCAL C-243A</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1630</id>
+    <tipus>C/</tipus>
+    <nom>SANT SADURNI D`ANOIA</nom>
+    <nomGoogle>de SANT SADURNI D`ANOIA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1640</id>
+    <tipus>C/</tipus>
+    <nom>SANT SEBASTIA</nom>
+    <nomGoogle>de SANT SEBASTIA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1650</id>
+    <tipus>C/</tipus>
+    <nom>SANTA CLARA</nom>
+    <nomGoogle>de SANTA CLARA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1660</id>
+    <tipus>C/</tipus>
+    <nom>SANTA DIGNA</nom>
+    <nomGoogle>de SANTA DIGNA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1670</id>
+    <tipus>C/</tipus>
+    <nom>SANTA FE DEL PENEDES</nom>
+    <nomGoogle>de SANTA FE DEL PENEDES</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1680</id>
+    <tipus>C/</tipus>
+    <nom>SANTA JOAQUIMA DE VEDRUNA</nom>
+    <nomGoogle>de SANTA JOAQUIMA DE VEDRUNA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1690</id>
+    <tipus>C/</tipus>
+    <nom>SANTA MAGDALENA</nom>
+    <nomGoogle>de SANTA MAGDALENA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1700</id>
+    <tipus>C/</tipus>
+    <nom>SANTA MARGARIDA I ELS MONJOS</nom>
+    <nomGoogle>de SANTA MARGARIDA I ELS MONJOS</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1720</id>
+    <tipus>PL</tipus>
+    <nom>SANTA MARIA</nom>
+    <nomGoogle>de SANTA MARIA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1710</id>
+    <tipus>C/</tipus>
+    <nom>SANTA MARIA</nom>
+    <nomGoogle>de SANTA MARIA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>3130</id>
+    <tipus>C/</tipus>
+    <nom>SANTA MARIA DEL HORTS, DE</nom>
+    <nomGoogle>de SANTA MARIA DEL HORTS, DE</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1740</id>
+    <tipus>C/</tipus>
+    <nom>SARRIERA</nom>
+    <nomGoogle>de SARRIERA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>445</id>
+    <tipus>PL</tipus>
+    <nom>SEGADORS </nom>
+    <nomGoogle>dels SEGADORS</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1745</id>
+    <tipus>PG</tipus>
+    <nom>SERRA D`ANCOSA</nom>
+    <nomGoogle>de la SERRA D`ANCOSA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1750</id>
+    <tipus>CO</tipus>
+    <nom>SERRAULLS</nom>
+    <nomGoogle>de SERRAULLS</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1755</id>
+    <tipus>C/</tipus>
+    <nom>SÍNIA DEL MENESCAL, DE LA</nom>
+    <nomGoogle>de la SÍNIA DEL MENESCAL, DE LA</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1760</id>
+    <tipus>PG</tipus>
+    <nom>SITGES</nom>
+    <nomGoogle>de SITGES</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>3060</id>
+    <tipus>PR</tipus>
+    <nom>SITGES, DE LES</nom>
+    <nomGoogle>de les SITGES, DE LES</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1780</id>
+    <tipus>C/</tipus>
+    <nom>SOLEDAT</nom>
+    <nomGoogle>de la SOLEDAT</nomGoogle>
+  </carrer_S>
+  <carrer_S>
+    <id>1785</id>
+    <tipus>C/</tipus>
+    <nom>SUBIRATS</nom>
+    <nomGoogle>de SUBIRATS</nomGoogle>
+  </carrer_S>
+  <carrer_T>
+    <id>1790</id>
+    <tipus>AV</tipus>
+    <nom>TARRAGONA</nom>
+    <nomGoogle>de TARRAGONA</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1980</id>
+    <tipus>TR</tipus>
+    <nom>TERME MUNICIPAL</nom>
+    <nomGoogle> TERME MUNICIPAL</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1795</id>
+    <tipus>C/</tipus>
+    <nom>TERRA ALTA</nom>
+    <nomGoogle>de la TERRA ALTA</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1797</id>
+    <tipus>PG</tipus>
+    <nom>TERRAL</nom>
+    <nomGoogle>del TERRAL</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1799</id>
+    <tipus>PG</tipus>
+    <nom>TIL·LERS</nom>
+    <nomGoogle>dels TIL·LERS</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1805</id>
+    <tipus>PR</tipus>
+    <nom>TÍVOLI, DEL</nom>
+    <nomGoogle>del TÍVOLI, DEL</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1810</id>
+    <tipus>CO</tipus>
+    <nom>TORRE</nom>
+    <nomGoogle>de la TORRE</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1820</id>
+    <tipus>C/</tipus>
+    <nom>TORRELLES DE FOIX</nom>
+    <nomGoogle>de TORRELLES DE FOIX</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1830</id>
+    <tipus>C/</tipus>
+    <nom>TOSSA DE MAR</nom>
+    <nomGoogle>de TOSSA DE MAR</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1833</id>
+    <tipus>PA</tipus>
+    <nom>TRAMUNTANA</nom>
+    <nomGoogle>de la TRAMUNTANA</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1840</id>
+    <tipus>C/</tipus>
+    <nom>TRINITARIS</nom>
+    <nomGoogle>dels TRINITARIS</nomGoogle>
+  </carrer_T>
+  <carrer_T>
+    <id>1845</id>
+    <tipus>C/</tipus>
+    <nom>TURISME</nom>
+    <nomGoogle>del TURISME</nomGoogle>
+  </carrer_T>
+  <carrer_V>
+    <id>1850</id>
+    <tipus>PL</tipus>
+    <nom>VALL DEL CASTELL</nom>
+    <nomGoogle>del VALL DEL CASTELL</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>3140</id>
+    <tipus>C/</tipus>
+    <nom>VALLMOLL, DE</nom>
+    <nomGoogle>de VALLMOLL, DE</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>1860</id>
+    <tipus>C/</tipus>
+    <nom>VALLS</nom>
+    <nomGoogle>de VALLS</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>1870</id>
+    <tipus>C/</tipus>
+    <nom>VERDAGUER</nom>
+    <nomGoogle>de VERDAGUER</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>825</id>
+    <tipus>C/</tipus>
+    <nom>VIAL DE LES CLOTES</nom>
+    <nomGoogle> VIAL DE LES CLOTES</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>1897</id>
+    <tipus>C/</tipus>
+    <nom>VIAL DEL CEMENTIRI</nom>
+    <nomGoogle> VIAL DEL CEMENTIRI</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>1900</id>
+    <tipus>C/</tipus>
+    <nom>VIDAL</nom>
+    <nomGoogle>de VIDAL</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>1910</id>
+    <tipus>C/</tipus>
+    <nom>VIDUA ALMIRALL</nom>
+    <nomGoogle>de la VIDUA ALMIRALL</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>1925</id>
+    <tipus>AV</tipus>
+    <nom>VILAFRANCA DEL PENEDES</nom>
+    <nomGoogle>de VILAFRANCA DEL PENEDES</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>1940</id>
+    <tipus>AV</tipus>
+    <nom>VILANOVA I LA GELTRU</nom>
+    <nomGoogle>de VILANOVA I LA GELTRU</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>1885</id>
+    <tipus>PL</tipus>
+    <nom>VILANOVA I LA GELTRU</nom>
+    <nomGoogle>de VILANOVA I LA GELTRU</nomGoogle>
+  </carrer_V>
+  <carrer_V>
+    <id>1930</id>
+    <tipus>C/</tipus>
+    <nom>VILOBI</nom>
+    <nomGoogle>de VILOBI</nomGoogle>
+  </carrer_V>
+  <carrer_X>
+    <id>1943</id>
+    <tipus>PA</tipus>
+    <nom>XALOC, DEL</nom>
+    <nomGoogle>del XALOC, DEL</nomGoogle>
+  </carrer_X>
+  <carrer_X>
+    <id>1945</id>
+    <tipus>C/</tipus>
+    <nom>XAREL.LO</nom>
+    <nomGoogle>del XAREL.LO</nomGoogle>
+  </carrer_X>
+  <carrer_X>
+    <id>1947</id>
+    <tipus>C/</tipus>
+    <nom>XICOTS DE VILAFRANCA</nom>
+    <nomGoogle>dels XICOTS DE VILAFRANCA</nomGoogle>
+  </carrer_X>
+  <carrer_Z>
+    <id>3190</id>
+    <tipus>AV</tipus>
+    <nom>ZONA ESPORTIVA, DE LA</nom>
+    <nomGoogle>de la ZONA ESPORTIVA, DE LA</nomGoogle>
+  </carrer_Z>
+</carrers>
