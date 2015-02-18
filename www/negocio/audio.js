@@ -63,7 +63,7 @@ function TransformarFicheroAudioToBase64(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         var base64Data = evt.target.result;
-        miGlobal_inciAudio  =   base64Data.replace(/^data:audio\/mpeg;base64,/, "");
+        miGlobal_inciAudio  =   base64Data.toString().substring(miGlobal_inciAudio.toString().indexOf(",")+1);
         miGlobal_inciAudio  +=  miGlobal_inciAudio.replace('+', ' ');
         //miGlobal_inciAudio = evt.target.result;
         //alert(miGlobal_inciAudio);

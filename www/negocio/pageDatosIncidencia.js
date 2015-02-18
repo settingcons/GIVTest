@@ -31,7 +31,7 @@ function inicioPaginaDatosIncidencia() {
         //cargarPaginaDatosIncidencia();
     }
     catch (ex){
-        alert(ex.message);
+        //alert(ex.message);
         cargarPaginaDatosIncidencia();
     }
 }
