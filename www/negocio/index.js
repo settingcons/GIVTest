@@ -225,10 +225,6 @@ function limpiaVariables(sPag){
     }
 }
 
-function reposicionaMapa(){
-    actualizarComboCalle();
-    iniciaMapaFoto(true);
-}
 
 function inicioPaginaTipoIncidencia() {
 
@@ -383,8 +379,8 @@ function MostrarAjustesUbicacion(respuesta){
     try {
         if (respuesta == 1) {
             Diagnostic.prototype.switchToLocationSettings();
-            $.doTimeout( 1000, function() {
-            });
+            $.doTimeout(2000, function(){});
+
         }
     }
     catch (ex){}

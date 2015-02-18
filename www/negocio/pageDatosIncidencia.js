@@ -14,6 +14,18 @@ function inicioPaginaDatosIncidencia() {
     $('#divMapa').hide();
     $('#divDireccion').hide();
     try{
+        sFoto='';
+        document.getElementById('imgFoto').src ='';
+        $('#TipusInciImg').attr({"src":''});
+        $('#TipusInciText').html('');
+        posAlta="";
+        $('#labelDireccion').text('');
+
+        $('#inputNUM').val('');
+        $('#selectCARRER').text('');
+        $('#textareaComentari').val('');
+
+        miGlobal_inciAudio='';
 
         navigator.camera.getPicture(hacerfotoOK, hacerFotoERROR, { quality: 20, destinationType: Camera.DestinationType.DATA_URL, correctOrientation: true,sourceType:  Camera.PictureSourceType.CAMERA,  saveToPhotoAlbum: false });
         //cargarPaginaDatosIncidencia();
@@ -65,6 +77,7 @@ function MostrarUbicacion(){
     if(!GPSActivado){
         //Se vuelve a mirar si el GPS está activado
         GPSEstaActivado();
+        $.doTimeout(2000, function(){});
     }
 
     if (GPSActivado){
