@@ -7,7 +7,6 @@ var GPSwathId=false;
 var GPScurrentposition=false;
 var wathID=null;
 var GPSActivado=false;
-var GPSErrorNum = 0;
 
 var bAbroPagina = true;
 var aGlobalCarrers = null;
@@ -97,14 +96,7 @@ function deviceReady() {
     }
 
     getLocation();
-    GPSEstaActivado();
-    if(!GPSActivado)
-    {
-        if(GPSErrorNum==0){
-            MostrarAjustesUbicacionConfirm();
-        }
-
-    }
+    GPSEstaActivado(true);
     try {
         enviamentDePendents(true);
     }
@@ -338,19 +330,30 @@ function onLocationError1(e) {
     GPScurrentposition=false;
 }
 
-function GPSEstaActivado() {
+function GPSEstaActivado(p_inicio) {
     try {
-        GPSErrorNum=0;
-        Diagnostic.prototype.isLocationEnabled(GPSEstaActivadoOK, GPSEstaActivadoError);
+        if(p_inicio){
+            Diagnostic.prototype.isLocationEnabled(GPSEstaActivadoOKIni, GPSEstaActivadoError);
+        }
+        else{
+            Diagnostic.prototype.isLocationEnabled(GPSEstaActivadoOK, GPSEstaActivadoError);
+        }
     }
     catch (ex) {
-        GPSErrorNum=1;
     }
 }
 function GPSEstaActivadoError(error) {
-    GPSErrorNum=1;
 }
 
+function GPSEstaActivadoOKIni(result) {
+    if (result) {
+        GPSActivado=true;
+    }
+    else{
+        GPSActivado=false;
+        MostrarAjustesUbicacionConfirm();
+    }
+}
 function GPSEstaActivadoOK(result) {
     if (result) {
         GPSActivado=true;

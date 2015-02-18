@@ -76,7 +76,7 @@ function MostrarUbicacion(){
     var v_bMostrarCombos=false;
     if(!GPSActivado){
         //Se vuelve a mirar si el GPS está activado
-        GPSEstaActivado();
+        GPSEstaActivado(false);
         $.doTimeout(2000, function(){});
     }
 
