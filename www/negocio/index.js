@@ -292,7 +292,6 @@ function getLocation() {
     catch (ex){
         //mensaje(ex.message,"error");
         GPSwathId=false;
-        posicionGPS='';
     }
 }
 

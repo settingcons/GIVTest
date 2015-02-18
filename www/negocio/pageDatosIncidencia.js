@@ -98,7 +98,7 @@ function MostrarUbicacion(){
                 //Falla la obtención de la current position y el wathID sigue sin ir
                 if(!GPSwathId){
                     //No hay última posición de GPS
-                    if(posicionGPS==''){
+                    if(posicionGPS==null || posicionGPS=='' || posicionGPS.coords==null || posicionGPS.coords=='' || posicionGPS.coords.latitude==null || posicionGPS.coords.latitude==''){
                         v_bMostrarCombos=true;
                         mensaje("No es pot obtenir les coordenades de GPS","error");
                     }

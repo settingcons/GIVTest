@@ -43,7 +43,7 @@ function CrearComunicadoWS(sParams){
     try {
         $.ajax({
             type: 'POST',
-            url: 'http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus_v1',
+            url: _wsURLCrearIncidencia,
             data: sParams,
             success: CrearComunicadoWS_OK,
             error: CrearComunicadoWS_ERROR,
