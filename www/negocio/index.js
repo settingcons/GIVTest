@@ -79,8 +79,14 @@ function deviceReady() {
         }
     }
 
-    getLocation();
-    GPSEstaActivado(true);
+    try{
+        getLocation();
+    }
+    catch (ex){}
+    try{
+        GPSEstaActivado(true);
+    }
+    catch (ex){}
     try {
         enviamentDePendents(true);
     }

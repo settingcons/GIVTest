@@ -86,7 +86,9 @@ function cargarPaginaDatosIncidencia() {
 
 function MostrarUbicacion() {
     try {
-        var v_bMostrarCombos = false;
+        var nLetra = 65;
+        var combo = $('#selectLletraIniCARRER');
+        cargaLetrasAbcdario(combo, 'lletra inicial', nLetra);
 
         if (GPSActivado) {
             if (GPSwathId) {
@@ -96,7 +98,7 @@ function MostrarUbicacion() {
                 //Si hay error al recuperar posición (puede que esté sin cobertura)
                 //Se obtiene la current position por si acaso
                 getPosition();
-                $.doTimeout(2000, function () {
+                $.doTimeout(3000, function () {
                     if (GPScurrentposition) {
                         posicionOK(posicionGPS);
                     }
@@ -105,7 +107,10 @@ function MostrarUbicacion() {
                         if (!GPSwathId) {
                             //No hay última posición de GPS
                             if (posicionGPS == null || posicionGPS == '' || posicionGPS.coords == null || posicionGPS.coords == '' || posicionGPS.coords.latitude == null || posicionGPS.coords.latitude == '') {
-                                v_bMostrarCombos = true;
+                                $('#divCargarMapaAlta').hide();
+                                $('#divMapa').hide();
+                                $('#divMensajeMapa').hide();
+                                $('#divDireccion').show();
                                 mensaje("No es pot obtenir les coordenades de GPS", "error");
                             }
                             else {
@@ -119,18 +124,11 @@ function MostrarUbicacion() {
         }
         else {
             //GPS no está activado
-            v_bMostrarCombos = true;
-        }
-
-        if (v_bMostrarCombos) {
             $('#divCargarMapaAlta').hide();
             $('#divMapa').hide();
             $('#divMensajeMapa').hide();
             $('#divDireccion').show();
         }
-        var nLetra = 65;
-        var combo = $('#selectLletraIniCARRER');
-        cargaLetrasAbcdario(combo, 'lletra inicial', nLetra);
     }
     catch (ex) {
         //alert("MostrarUbicacion: "+ex.message);
@@ -207,7 +205,7 @@ function posicionOK(position){
 
     }
     catch(ex){
-    alert("posicionOK: "+ex.message);
+    mensaje("ERROR al mostrar el mapa:\n"+ex.message,"error");
         posAlta = "";
         $('#divCargarMapaAlta').hide();
         $('#divMapa').hide();
@@ -237,6 +235,8 @@ function cogerDireccion(pos, bSoloCalleYnum) {
 }
 
 function direccionObtenida1(datos, param) {
+    sDireccionAlta='sense adreça';
+
     if (datos == null) return;
     var sDireccion = $(datos).find('formatted_address').text();
     var n = 0;

@@ -235,11 +235,9 @@ function enviamentDePendents(p_inicio) {
         var sIdsActualizar = "";
         var nIndexAct = 0;
 
-        var v_aComs = new Array();
-        v_aComs = getComunicats();
+        var v_aComs = getComunicats();
 
         if (v_aComs != null && v_aComs.length != 0) {
-
             var objUsu = getDatosUsuario();
             var v_email = objUsu.EMAIL;
             if (v_email.toString().trim() != "") {
@@ -308,7 +306,7 @@ function enviamentDePendents(p_inicio) {
                     }
                     else //Actualizar el estado del comunicado (de las que están en cualquier estado excepto TANCADES)
                     {
-                        if (aComs[x].ESTAT != 'TANCAT') {
+                        if (v_aComs[x].ESTAT != 'TANCAT') {
                             sIdsActualizar += v_aComs[x].ID_MSG_MOV + "|" + v_aComs[x].ID + ",";
                         }
                     }
@@ -317,6 +315,7 @@ function enviamentDePendents(p_inicio) {
                 //Si hay posibles actualizaciones de comunicats
                 if (sIdsActualizar.length > 0) {
                     sIdsActualizar = sIdsActualizar.substr(0, sIdsActualizar.length - 1);
+
                     var v_sretorno=ActualitzaComunicats(sIdsActualizar);
                     if (v_sretorno != "") {
                         v_bError = true;
@@ -337,7 +336,7 @@ function enviamentDePendents(p_inicio) {
         v_bError=true;
         v_sError=v_sError+ex.message;
     }
-    if(!p_inicio && v_bError)
+    if(v_bError)
     {
         mensaje("Actualització feta amb errors\n"+v_sError,"avis");
     }
