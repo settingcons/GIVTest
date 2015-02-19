@@ -96,7 +96,6 @@ function crearMarcadorEventoClick1( map){
 
             if(res==true)
             {
-                var bDirEsLatLon = false;
 
                     eliminarMarcadorMapa();
 
@@ -105,6 +104,17 @@ function crearMarcadorEventoClick1( map){
 
                 sDireccionAlta = '';
                 cogerDireccion(event.latLng, true);   //true ==> solo calle y num
+
+                $.doTimeout(700, function(){
+                    if(sDireccionAlta == '')
+                    {
+                        sDireccionAlta  = event.latLng.lat() + " , " + event.latLng.lng();
+                        $('#labelDireccion').text(sDireccionAlta);
+                    }
+                    eliminarMarcadorMapa();
+                    nuevoMarcadorSobrePlanoClickInfoWindow1(sMODO, map, event.latLng, '',null);
+
+                });
             }
     });
 }
