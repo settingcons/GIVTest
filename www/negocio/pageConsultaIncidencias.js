@@ -292,7 +292,7 @@ function enviamentDePendents(p_inicio) {
                             objComunicat.COMENTARI = v_aComs[x].COMENTARI;
                             objComunicat.ITE_ID = v_aComs[x].ITE_ID;
                             objComunicat.ITE_DESC = v_aComs[x].ITE_DESC;
-                            objComunicat.ID_MSG_MOV = v_sRet[1];
+                            objComunicat.ID_MSG_MOV = v_sRet[0];
                             //Actualizo con nuevo estado
 
                             bBorrado = borraObjetoLocal('COMUNICAT_' + v_aComs[x].ID);
@@ -504,7 +504,7 @@ function GuardaActualizacionComunicats(aResultados){
             aDatos['comentari'] = objComunicatEXISTENTE.COMENTARI + '';
             aDatos['ite_id'] = objComunicatEXISTENTE.ITE_ID + '';
             aDatos['ite_desc'] = objComunicatEXISTENTE.ITE_DESC + '';
-            aDatos['id_msg_mov'] = aRegistro[nPosId][1] + '';
+            aDatos['id_msg_mov'] = aRegistro[nPosRefUlls][1] + '';
 
             var objComunicatACTUALIZADO = new comunicat(aDatos);
 
