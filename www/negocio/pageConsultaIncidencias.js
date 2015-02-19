@@ -322,10 +322,7 @@ function enviamentDePendents(p_inicio) {
                         v_sError =v_sError+v_sretorno+"\n";
                     }
                 }
-                if (p_inicio) {
-                    v_bError = false;
-                }
-                else {
+                if (!p_inicio) {
                     //y recargo la lista
                     inicioPaginaConsultaIncidencias();
                 }
@@ -336,7 +333,7 @@ function enviamentDePendents(p_inicio) {
         v_bError=true;
         v_sError=v_sError+ex.message;
     }
-    if(v_bError)
+    if(!p_inicio && v_bError)
     {
         mensaje("Actualització feta amb errors\n"+v_sError,"avis");
     }
