@@ -402,13 +402,13 @@
                 </table>
                 <table cellpadding="1" cellspacing="0" border="0" style="width: 98%;table-layout: fixed;margin-left: 5px">
                     <tr>
-                        <td><div style="float: left;width: 15%;font-weight: bold;">inci.:</div><div style="float: right;width:85%" ><label id="labelCOMUNICAT_REFERENCIA"></label></div></td>
+                        <td><div style="float: left;width: 16%;font-weight: bold;">inci.:</div><div style="float: right;width:84%" ><label id="labelCOMUNICAT_REFERENCIA"></label></div></td>
                     </tr>
                     <tr>
-                    <td><div style="float: left;width: 15%;font-weight: bold;">data:</div><div style="float: right;width: 85%" ><label id="labelCOMUNICAT_DATA"></label></div></td>
+                    <td><div style="float: left;width: 16%;font-weight: bold;">data:</div><div style="float: right;width: 84%" ><label id="labelCOMUNICAT_DATA"></label></div></td>
                 </tr>
                     <tr id="fecharesuelta">
-                        <td><div style="float: left;width: 15%;font-weight: bold;">tancada:</div><div style="float: right;width: 85%" ><label id="labelCOMUNICAT_DATARES"></label></div></td>
+                        <td><div style="float: left;width: 16%;font-weight: bold;">tancat:</div><div style="float: right;width: 84%" ><label id="labelCOMUNICAT_DATARES"></label></div></td>
                     </tr>
                 </table>
                 <table cellpadding="1" cellspacing="0" border="0" style="width: 98%;table-layout: fixed;margin-left: 5px">
@@ -447,30 +447,6 @@
             cargaCarrersEnArray(); //rellena el array de calles que empiezan por esa letra desde el fic XML
             cargaCalles();  //rellena el combo desde el array de Carrers
         });
-
-        function muestraDireccion() {
-            var sSelComboCarrer = indefinidoOnullToVacio($('#selectCARRER').find(":selected").text());
-            if (sSelComboCarrer != '' && sSelComboCarrer != 'Seleccioni el carrer') {
-                var sTipoVia = sSelComboCarrer.split("(")[1].substr(0, (sSelComboCarrer.split("(")[1].length - 1));
-                var sCalle = sSelComboCarrer.split("(")[0];
-                $('#labelDireccion').text(sTipoVia + ' ' + sCalle + ', ' + $('#inputNUM').val());
-                sCoords = '';
-                sCoord_X = '';
-                sCoord_Y = '';
-
-                return sTipoVia + ' ' + sCalle + ', ' + $('#inputNUM').val();
-                //return sTipoVia + ' ' + sCalle + ', ' + nNumCalle;
-            }
-            else {
-                //return new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                iniciaMapaFoto(true);
-            }
-        }
-
-        function actualizaDireccion() {
-            if (muestraDireccion() == '') return;
-            crearMarcadorDesdeCalleNum();
-        }
 
 
         $(document).bind("mobileinit", function () { $.mobile.page.prototype.options.addBackBtn = true; });

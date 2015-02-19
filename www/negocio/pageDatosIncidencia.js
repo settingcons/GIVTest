@@ -64,67 +64,78 @@ function cargarPaginaDatosIncidencia() {
         $('#TipusInciImg').attr({"src":dicImagenes[TipoInciSel]});
         $('#TipusInciText').html(dicAyuda[TipoInciSel]);
 
-        if(!GPSActivado){
-            //Se vuelve a mirar si el GPS está activado
-            GPSEstaActivado(false);
-            $.doTimeout(3000, MostrarUbicacion());
+        //mostrar plano o callejero
+        if(phoneGapRun()) {
+            if (!GPSActivado) {
+                //Se vuelve a mirar si el GPS está activado
+                GPSEstaActivado(false);
+                $.doTimeout(3000, MostrarUbicacion());
+            }
+            else {
+                MostrarUbicacion();
+            }
         }
         else{
             MostrarUbicacion();
         }
-
     }
     catch(ex) {
         //alert("cargarPaginaDatosIncidencia:"+ ex.message);
     }
 }
 
-function MostrarUbicacion(){
+function MostrarUbicacion() {
+    try {
+        var v_bMostrarCombos = false;
 
-    var v_bMostrarCombos=false;
-
-    if (GPSActivado){
-        if(GPSwathId){
-            posicionOK(posicionGPS);
-        }
-        else{
-            //Si hay error al recuperar posición (puede que esté sin cobertura)
-            //Se obtiene la current position por si acaso
-            getPosition();
-            if(GPScurrentposition){
+        if (GPSActivado) {
+            if (GPSwathId) {
                 posicionOK(posicionGPS);
             }
-            else{
-                //Falla la obtención de la current position y el wathID sigue sin ir
-                if(!GPSwathId){
-                    //No hay última posición de GPS
-                    if(posicionGPS==null || posicionGPS=='' || posicionGPS.coords==null || posicionGPS.coords=='' || posicionGPS.coords.latitude==null || posicionGPS.coords.latitude==''){
-                        v_bMostrarCombos=true;
-                        mensaje("No es pot obtenir les coordenades de GPS","error");
+            else {
+                //Si hay error al recuperar posición (puede que esté sin cobertura)
+                //Se obtiene la current position por si acaso
+                getPosition();
+                $.doTimeout(2000, function () {
+                    if (GPScurrentposition) {
+                        posicionOK(posicionGPS);
                     }
-                    else{
-                        //Hay última posición de GPS, preguntar si la quiere o no
-                        UltimaUbicacionConfirm();
+                    else {
+                        //Falla la obtención de la current position y el wathID sigue sin ir
+                        if (!GPSwathId) {
+                            //No hay última posición de GPS
+                            if (posicionGPS == null || posicionGPS == '' || posicionGPS.coords == null || posicionGPS.coords == '' || posicionGPS.coords.latitude == null || posicionGPS.coords.latitude == '') {
+                                v_bMostrarCombos = true;
+                                mensaje("No es pot obtenir les coordenades de GPS", "error");
+                            }
+                            else {
+                                //Hay última posición de GPS, preguntar si la quiere o no
+                                UltimaUbicacionConfirm();
+                            }
+                        }
                     }
-                }
+                });
             }
-
         }
+        else {
+            //GPS no está activado
+            v_bMostrarCombos = true;
+        }
+
+        if (v_bMostrarCombos) {
+            $('#divCargarMapaAlta').hide();
+            $('#divMapa').hide();
+            $('#divMensajeMapa').hide();
+            $('#divDireccion').show();
+        }
+        var nLetra = 65;
+        var combo = $('#selectLletraIniCARRER');
+        cargaLetrasAbcdario(combo, 'lletra inicial', nLetra);
     }
-    else{
-        //GPS no está activado
-        v_bMostrarCombos=true;
+    catch (ex) {
+        //alert("MostrarUbicacion: "+ex.message);
     }
 
-    if(v_bMostrarCombos){
-        $('#divCargarMapaAlta').hide();
-        $('#divMapa').hide();
-        $('#divMensajeMapa').hide();
-        $('#divDireccion').show();
-    }
-    var nLetra = 65;
-    var combo = $('#selectLletraIniCARRER');
-    cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
 }
 
 
@@ -148,19 +159,16 @@ function UltimaUbicacionConfirm(){
     }
 
 }
-function UltimaUbicacion(respuesta){
-    try {
-        if (respuesta == 1) {
-            posicionOK(posicionGPS)
-        }
-        else{
-            $('#divCargarMapaAlta').hide();
-            $('#divMapa').hide();
-            $('#divMensajeMapa').hide();
-            $('#divDireccion').show();
-        }
+function UltimaUbicacion(respuesta) {
+    if (respuesta == 1) {
+        posicionOK(posicionGPS)
     }
-    catch (ex){}
+    else {
+        $('#divCargarMapaAlta').hide();
+        $('#divMapa').hide();
+        $('#divMensajeMapa').hide();
+        $('#divDireccion').show();
+    }
 }
 
 function posicionOK(position){
@@ -174,22 +182,23 @@ function posicionOK(position){
             zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true,
-            accuracy: 5,
+            //accuracy: 5,
             enabledHighAccuracy: true,
-            overviewMapControl: false,
+            //overviewMapControl: false,
             panControl: false,
             rotateControl: false,
             scaleControl: false,
             zoomControl: false,
             streetViewControl: false,
-            center: posAlta,
-            maximumAge: 0//,timeout:1000
+            disableDefaultUI: true,
+            center: posAlta
+            //maximumAge: 0//,timeout:1000
         };
         mapAlta = new google.maps.Map(document.getElementById('divMapaAlta'), mapOptions);
-        crearMarcadorEventoClick('ALTA', mapAlta, true, 'labelDireccion', false);
+        crearMarcadorEventoClick1(mapAlta);
 
         //mapAlta.setCenter(posAlta);
-        sDireccionAlta = cogerDireccion(posAlta, true);
+        cogerDireccion(posAlta, true);
         $('#labelDireccion').text(sDireccionAlta);
         try{
             $('#divMapaAlta').gmap('refresh');
@@ -218,18 +227,16 @@ function posicionError(error){
 function cogerDireccion(pos, bSoloCalleYnum) {
     var llamaWS = "http://maps.googleapis.com/maps/api/geocode/xml";
     var sParam = "latlng=" + pos.toString().replace(" ", "").replace("(", "").replace(")", "") + "&sensor=true";
-    var sDireccion = '';
     try {
         //function LlamaWebService (sTipoLlamada,sUrl,   sParametros,sContentType,                        bCrossDom, sDataType, bProcData, bCache, nTimeOut, funcion,           pasaParam,      asincro, bProcesar, tag)
-        var datos = LlamaWebService('GET', llamaWS, sParam, 'application/x-www-form-urlencoded', true, 'xml', false, false, 10000, direccionObtenida, bSoloCalleYnum, true, false, null);
+        var datos = LlamaWebService('GET', llamaWS, sParam, 'application/x-www-form-urlencoded', true, 'xml', false, false, 10000, direccionObtenida1, bSoloCalleYnum, true, false, null);
     }
     catch (e) {
         mensaje('ERROR (exception) en cogerDireccion : \n' + e.code + '\n' + e.message);
     }
-    //return sDireccion;
 }
 
-function direccionObtenida(datos, param) {
+function direccionObtenida1(datos, param) {
     if (datos == null) return;
     var sDireccion = $(datos).find('formatted_address').text();
     var n = 0;
@@ -244,20 +251,9 @@ function direccionObtenida(datos, param) {
             sDireccion = cogerCalleNumDeDireccion(sDireccion);
 
     sDireccionAlta = sDireccion;
-    var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">comunicat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
 
-    //alert('direccionObtenida. bPrimera: ' + bPrimera);
-    if (bPrimera == true)
-        nuevoMarcadorSobrePlanoClickInfoWindow('ALTA', mapAlta, posAlta, null, null,'labelDireccion');
-    else {
-        if (bPrimera == false)
-        { }
-        else
-        {
-            nuevoMarcadorSobrePlanoClickInfoWindow('ALTA', mapAlta, posAlta, null, null,'labelDireccion');
-            bPrimera = true;
-        }
-    }
+    nuevoMarcadorSobrePlanoClickInfoWindow1('ALTA', mapAlta, posAlta, null, null);
+
 
     $('#labelDireccion').text(sDireccionAlta);
     $('#divMapaAlta').gmap('refresh');
@@ -311,21 +307,54 @@ function enviarIncidencia(){
         }
 
         //Validar Datos
+        var v_sRetorno = ValidarIncidencia();
 
-        //Construir parámetros
-        //var  sParams = {sId:$('#IdItem').val()+'',sDescItem:$('#labelItem').text()+'' ,sNom:$('#inputNOM').val() + '',sCognom1:$('#inputCOGNOM1').val() + '',sCognom2:$('#inputCOGNOM2').val() + '',sDni:$('#inputDNI').val() + '',sEmail:$('#inputEMAIL').val() + '',sTelefon:$('#inputTELEFON').val() + '',sObs:sComentario + '',sCoord:sCoords + '',sCodCarrer:$('#selectCARRER').val() + '',sCarrer:$('#selectCARRER').find(':selected').text() + '',sNumPortal:$('#inputNUM').val() + '',sFoto: sFoto};
-
-        abrirPagina("pageInfoEnvio",false)
-        //var objUsu = getDatosUsuario();
-        //
-        //var  sParams = {sId:TipoInciSel+'',sDescItem:sDescItem+'' ,sNom:objUsu.NOM + '',sCognom1:objUsu.COGNOM1 + '',sCognom2:objUsu.COGNOM2 + '',sDni:objUsu.DNI + '',sEmail:objUsu.EMAIL + '',sTelefon:objUsu.TELEFON + '',sObs:sComentario + '',sCoord:sCoords + '',sCodCarrer:$('#selectCARRER').val() + '',sCarrer:$('#selectCARRER').find(':selected').text() + '',sNumPortal:$('#inputNUM').val() + '',sFoto: sFoto};
-        //
-        ////Enviar
-        //var ref = enviarComunicat_WS(sParams, true);
-
+        if (v_sRetorno==""){
+            abrirPagina("pageInfoEnvio",false)
+        }
+        else{
+            mensaje("Falten dades obligatòries;\n"+v_sRetorno,"avís");
+        }
     }
     catch (ex){
-        alert("enviarIncidencia: "+ex.message);
+        mensaje("ERROR: "+ex.message,"error");
     }
 }
 
+function ValidarIncidencia(){
+    var v_sMensaje ='';
+    //datos obligatorios:
+    //  tipo de incidencia, foto, ubicación (cooordenadas o calle y número)
+    if(TipoInciSel.toString().trim()==''){
+        v_sMensaje="El tipus d'incidència es obligatori\n"
+    }
+    if(sFoto.toString().trim()==''){
+        v_sMensaje=v_sMensaje+"La foto es obligatòria\n"
+    }
+
+    var v_bTieneCoordenadas=false;
+    var v_bTieneDireccion=false;
+
+    if (posAlta !="") {
+        var v_sCoords="";
+        v_sCoords = posAlta.toString().replace(" ", "").replace("(", "").replace(")", "");
+        if (v_sCoords != null && v_sCoords.trim() != '') {
+            v_bTieneCoordenadas=true;
+        }
+    }
+
+    if(!v_bTieneCoordenadas){
+        var v_sCodCarrer=$('#selectCARRER').val();
+        var v_sNumPortal=$('#inputNUM').val();
+        if(v_sCodCarrer.toString().trim()!='' && v_sNumPortal.toString().trim()!=''){
+            v_bTieneDireccion=true;
+        }
+    }
+
+    if(!v_bTieneCoordenadas && ! v_bTieneDireccion)
+    {
+        v_sMensaje=v_sMensaje+"L'adreça o les coordenades són obligatòries"
+    }
+
+    return v_sMensaje;
+}

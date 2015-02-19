@@ -53,7 +53,7 @@ function cargaListaComunicats(){
         //sFila +=" <tr><td><div style='width:40%;float: left'><b>id:</b> "+aComs[x].ID+"</div><div style='width: 60%;float: right' ><b>ref:</b> "+aComs[x].REFERENCIA+"</div></td></tr>";
         sFila +=" <tr><td><b style='font-size: 0.85em' >id:</b> "+aComs[x].ID+"</td></tr>";
         sFila +=" <tr><td><b style='font-size: 0.85em'>inc:</b> "+aComs[x].REFERENCIA+"</td></tr>";
-        sFila +=" <tr><td style='text-align: right;color:#DB0D36'>"+ParseEstado(aComs[x].ESTAT)+"</td></tr>";
+        sFila +=" <tr><td style='text-align: right;color:#DB0D36'>"+aComs[x].ESTAT+"</td></tr>";
         //sFila +=" <tr><td style='text-align: right;font-size: 0.75em'>"+aComs[x].DATA+"</td></tr>";
         sFila +=" </table></div>";
 
@@ -106,7 +106,7 @@ function verDatosComunicat(x){
         $('#labelCOMUNICAT_REFERENCIA').text(aComs[x].REFERENCIA);
         $('#labelCOMUNICAT_ESTAT').text(aComs[x].ESTAT);
         $('#labelCOMUNICAT_DATA').text(aComs[x].DATA);
-        if(aComs[x].ESTA=="TANCAT") {
+        if(aComs[x].ESTAT=="TANCAT") {
             $('#labelCOMUNICAT_DATARES').text(aComs[x].DATARES);
             $('#fecharesuelta').show();
         }
@@ -162,7 +162,7 @@ function mostrarEnPlano() {
 
 
                     var sTxt = x;
-                    nuevoMarcadorSobrePlanoClickInfoWindow('CONSULTA', mapConsulta, pos, sTxt, aComs[x].ID, '');
+                    nuevoMarcadorSobrePlanoClickInfoWindow1('CONSULTA', mapConsulta, pos, sTxt, aComs[x].ID);
                     v_numMarcadores = v_numMarcadores + 1;
                 }
 
@@ -230,7 +230,6 @@ function borrarHistoricoComunicados(respuesta){
 
 function enviamentDePendents(p_inicio) {
     try {
-//alert(p_inicio);
         var v_bError=false;
         var v_sError="";
         var sIdsActualizar = "";
@@ -239,7 +238,7 @@ function enviamentDePendents(p_inicio) {
         var v_aComs = new Array();
         v_aComs = getComunicats();
 
-        if (v_aComs == null || v_aComs.length == 0) {
+        if (v_aComs != null && v_aComs.length != 0) {
 
             var objUsu = getDatosUsuario();
             var v_email = objUsu.EMAIL;
@@ -255,7 +254,9 @@ function enviamentDePendents(p_inicio) {
                         sSuFoto = leeObjetoLocal('FOTO_' + v_aComs[x].ID, '');
 
                         var v_sObs = v_aComs[x].COMENTARI + '';
-                        var v_sCoord = v_aComs[x].COORD_X + ',' + aComs[x].COORD_Y + '';
+                        var v_sCoordX=v_aComs[x].COORD_X +'';
+                        var v_sCoordY=v_aComs[x].COORD_Y +'';
+                        var v_sCoord =v_sCoordX + ',' + v_sCoordY+'';
                         var v_sCodCarrer = v_aComs[x].CODCARRER + '';
                         var v_sNumPortal = v_aComs[x].NUM + '';
                         sParams = {
@@ -275,9 +276,8 @@ function enviamentDePendents(p_inicio) {
                         };
                         var v_sRet = enviarComunicatPendienteWS(sParams);
                         if (v_sRet[2] == 2) {
-                            //mensaje(v_sRet[3],"error");
-                            //break;
                             v_bError = true;
+                            v_sError= v_sError+ v_sRet[3]+"\n";
                         }
                         else {
                             //si ha retornado un codigo ...
@@ -317,9 +317,10 @@ function enviamentDePendents(p_inicio) {
                 //Si hay posibles actualizaciones de comunicats
                 if (sIdsActualizar.length > 0) {
                     sIdsActualizar = sIdsActualizar.substr(0, sIdsActualizar.length - 1);
-                    v_sError = ActualitzaComunicats(sIdsActualizar);
-                    if (v_sError != "") {
+                    var v_sretorno=ActualitzaComunicats(sIdsActualizar);
+                    if (v_sretorno != "") {
                         v_bError = true;
+                        v_sError =v_sError+v_sretorno+"\n";
                     }
                 }
                 if (p_inicio) {
@@ -334,10 +335,11 @@ function enviamentDePendents(p_inicio) {
     }
     catch (ex) {
         v_bError=true;
+        v_sError=v_sError+ex.message;
     }
-    if(v_bError)
+    if(!p_inicio && v_bError)
     {
-        mensaje("Actualització feta amb errors","avis");
+        mensaje("Actualització feta amb errors\n"+v_sError,"avis");
     }
 
 }
@@ -370,7 +372,7 @@ function enviarComunicatPendienteWS(sParams) {
                                 v_Campo[2] = $(this).text();
                             }
                             else if (this.tagName == "desError") {
-                                v_Campo[3] = $(this).text();
+                                v_Campo[3] = 'ERROR en enviarComunicatPendienteWS : \n' +$(this).text();
                             }
                         });
                     });
@@ -397,7 +399,6 @@ function ActualitzaComunicats(sParams){
     if(sParams.indexOf(',') == sParams.length-1) sParams = sParams.substr(0, sParms.length - 1);
 
     var v_error = "";
-
     var aParams = {sIds:sParams};
     $.ajax({
         type: 'POST',
@@ -434,7 +435,6 @@ function ActualitzaComunicats(sParams){
                             aCampo[0] = this.tagName;
                             aCampo[1] = $(this).text();
                             aRegistro[c++] = aCampo;
-
                         });
                         aResultados[r++] = aRegistro;
                     });

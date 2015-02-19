@@ -10,7 +10,7 @@ function inicioPaginaInfoEnvio() {
 
         var v_sCodCarrer='';
         var v_sNumPortal='';
-        if(!GPSActivado){
+        if(sCoords.toString().trim()==""){
             v_sCodCarrer=$('#selectCARRER').val();
             v_sNumPortal=$('#inputNUM').val();
         }

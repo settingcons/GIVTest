@@ -29,9 +29,6 @@ function salir() {
     }
 }
 
-function enrere() {
-    navigator.app.backHistory();
-}
 
 function localStorageSupport() {
     if ("localStorage" in window && window["localStorage"] != null)
@@ -53,29 +50,17 @@ function mensaje(msg,titulo) {
 }
 
 
-function abrirPopUp(pag){
-    $.mobile.changePage("#" + pag, { transition: "pop", role: "dialog", reverse: true, changeHash: true });
-    //$(".ui-dialog a[data-icon='delete']").remove();
-}
-
-function cerrarPopUp(pag){
-    $("#" + pag).dialog("close");
-}
-
-function eliminarMarcadorMapa(){
-    if(globalMarcadorMapa != null)
-    {
+function eliminarMarcadorMapa() {
+    if (globalMarcadorMapa != null) {
         globalMarcadorMapa.setMap(null);
         globalMarcadorMapa = null;
     }
 }
 
-function nuevoMarcadorSobrePlanoClickInfoWindow(sMODO, mapa, pos,htmlText, nIcono, labelMostrarDir) {
+
+function nuevoMarcadorSobrePlanoClickInfoWindow1(sMODO, mapa, pos,htmlText, nIcono) {
     try {
 
-        //if(bSoloUnMarcadorSobreMapa) {
-        //    eliminarMarcadorMapa();
-        //}
 
 
         var sIcono = '';
@@ -89,7 +74,6 @@ function nuevoMarcadorSobrePlanoClickInfoWindow(sMODO, mapa, pos,htmlText, nIcon
         globalMarcadorMapa = marcador;
 
         if (sMODO == 'ALTA') {
-            if (indefinidoOnullToVacio(labelMostrarDir) != '') $('#' + labelMostrarDir).text(sDireccionAlta);
             mapa.setCenter(pos);
         }
         else {
@@ -106,248 +90,25 @@ function nuevoMarcadorSobrePlanoClickInfoWindow(sMODO, mapa, pos,htmlText, nIcon
 
 }
 
-function crearMarcadorEventoClick(sMODO, map, bSoloUnMarcadorSobreMapa , labelMostrarDir, bActualizarControlesManualesCalleNum){
+function crearMarcadorEventoClick1( map){
     google.maps.event.addListener(map, 'click', function(event) {
-
-        if(bPrimera!=true)
-        {
-            var bDirEsLatLon = false;
-
-            if(bSoloUnMarcadorSobreMapa) {
-                eliminarMarcadorMapa();
-            }
-
-            if(sMODO == 'ALTA')
-            {
-                posAlta = event.latLng; //por si es una alta, que envie al WS las coordenadas correctas
-                map.setCenter(posAlta); //hgs 170214 asquito centrado
-            }
-
-            sDireccionAlta == '';
-            cogerDireccion(event.latLng, true);   //true ==> solo calle y num
-            $.doTimeout(700, function(){
-                //alert('sDireccion en CrearMarcadorEventoClick es ' +  sDireccionAlta);
-                //actualizarComboCalle();
-                if(sDireccionAlta == '')
-                {
-                    sDireccionAlta  = event.latLng.lat() + " , " + event.latLng.lng();
-                    $('#labelDireccion').text(sDireccionAlta); //hgs 101213
-                    //hgs asquito
-                    //alert('a limpiar combos calles');
-                    //actualizarComboCalle();
-                    bDirEsLatLon = true;
-                }
-                else
-                {
-                    bDirEsLatLon = false;
-                }
-
-                var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">detectat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
-                //alert('crearMarcadorEventoClick');
-                nuevoMarcadorSobrePlanoClickInfoWindow(sMODO, map, event.latLng, sTxt,null, 300, true, true, labelMostrarDir);
-
-                //if(sMODO == 'ALTA')
-                //    if(indefinidoOnullToVacio(bActualizarControlesManualesCalleNum) != '' && !bDirEsLatLon)
-                //        if(bActualizarControlesManualesCalleNum) autoRellenoCalleNum();
-
-            });
-        }
-        else
-        {
             var res = confirm('Està segur de voler canviar la ubicació?');
 
             if(res==true)
             {
                 var bDirEsLatLon = false;
 
-                if(bSoloUnMarcadorSobreMapa) {
                     eliminarMarcadorMapa();
-                }
 
-                if(sMODO == 'ALTA')
-                {
-                    posAlta = event.latLng; //por si es una alta, que envie al WS las coordenadas correctas
-                    map.setCenter(posAlta); //hgs 170214 asquito centrado
-                }
+                    posAlta = event.latLng;
+                    map.setCenter(posAlta);
 
-                sDireccionAlta == '';
+                sDireccionAlta = '';
                 cogerDireccion(event.latLng, true);   //true ==> solo calle y num
-                $.doTimeout(700, function(){
-                    //alert('sDireccion en CrearMarcadorEventoClick es ' +  sDireccionAlta);
-                    //actualizarComboCalle();
-                    if(sDireccionAlta == '')
-                    {
-                        sDireccionAlta  = event.latLng.lat() + " , " + event.latLng.lng();
-                        $('#labelDireccion').text(sDireccionAlta); //hgs 101213
-                        //hgs asquito
-                        //alert('a limpiar combos calles');
-                        //actualizarComboCalle();
-                        bDirEsLatLon = true;
-                    }
-                    else
-                    {
-                        bDirEsLatLon = false;
-                    }
-
-                    /*        if(sMODO == 'ALTA' && indefinidoOnullToVacio(labelMostrarDir) != '')  $('#' + labelMostrarDir).text(sDir);
-                     if(sMODO == 'ALTA')      sDireccionAlta = sDir;*/
-
-                    var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">detectat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
-                    //alert('crearMarcadorEventoClick');
-                    nuevoMarcadorSobrePlanoClickInfoWindow(sMODO, map, event.latLng, sTxt,null, 300, true, true, labelMostrarDir);
-
-                    //if(sMODO == 'ALTA')
-                    //    if(indefinidoOnullToVacio(bActualizarControlesManualesCalleNum) != '' && !bDirEsLatLon)
-                    //        if(bActualizarControlesManualesCalleNum) autoRellenoCalleNum();
-
-                });
             }
-        }
-
     });
 }
 
-
-function crearMarcadorDesdeCalleNumOriginal(){
-    if($('#selectCARRER').find(":selected").text().trim() == '' || $('#inputNUM').val().trim() == '' ) return;
-
-    var sTipoVia =  "";
-    var sCalle =  "";
-    var num ="";
-
-    var sCodCalle = $('#selectCARRER').find(":selected").val();
-    var sCalleGoogle = NomCalleGoogle(sCodCalle);
-
-    if(sCalleGoogle != "")
-    {
-        sTipoVia = "";
-        sCalle = sCalleGoogle;
-    }
-    else
-    {
-        var calle = $('#selectCARRER').find(":selected").text().trim();
-        sTipoVia = calle.split("(")[1].substr(0,calle.split("(")[1].indexOf(")")).trim();
-        sCalle = calle.split("(")[0].trim();
-        num = $('#inputNUM').val().trim();
-    }
-
-    var num = $('#inputNUM').val().trim();
-
-    var ciudad = getConfigKey('ciudad');
-    var region = getConfigKey('region');
-    var pais = getConfigKey('pais');
-
-    showAddress('ALTA',mapAlta, sTipoVia,sCalle, num ,ciudad ,region,pais);
-}
-function crearMarcadorDesdeCalleNum(){
-    if($('#selectCARRER').find(":selected").text().trim() == '' || $('#inputNUM').val().trim() == '' ) return;
-
-
-    var sTipoVia =  "";
-    var sCalle =  "";
-    var num = "";
-
-    var sCodCalle = $('#selectCARRER').find(":selected").val();
-    //hgs bona var sCalleGoogle = NomCalleGoogle(sCodCalle);
-    var sCalleGoogle = Carrer(sCodCalle);
-
-    if(sCalleGoogle != "")
-    {
-        sTipoVia = "";
-        sCalle = sCalleGoogle;
-    }
-    else
-    {
-        var calle = $('#selectCARRER').find(":selected").text().trim();
-        sTipoVia = calle.split("(")[1].substr(0,calle.split("(")[1].indexOf(")")).trim();
-        sCalle = calle.split("(")[0].trim();
-    }
-    var num = $('#inputNUM').val().trim();
-    var ciudad = getConfigKey('ciudad');
-    var region = getConfigKey('region');
-    var pais = getConfigKey('pais');
-    showAddress('ALTA',mapAlta, sTipoVia,sCalle, num ,ciudad ,region,pais);
-}
-
-function NomCalleGoogle(sCodCalle){
-    var sDev = "";
-    for(var x=0; x<aCarrers.length ; x++)
-    {
-        if(aCarrers[x][0][1] == sCodCalle)
-        {
-            sDev =  aCarrers[x][3][1];
-            break;
-        }
-    }
-    return sDev ;
-}
-
-//hgs nova per controlar quan es una plaça
-function TipusCarrer(sCodCalle){
-    var sDev = "";
-    for(var x=0; x<aCarrers.length ; x++)
-    {
-        if(aCarrers[x][0][1] == sCodCalle)
-        {
-            sDev =  aCarrers[x][1][1];
-            break;
-        }
-    }
-    return sDev ;
-}
-
-function Carrer(sCodCalle){
-    var sDev = "";
-    for(var x=0; x<aCarrers.length ; x++)
-    {
-        if(aCarrers[x][0][1] == sCodCalle)
-        {
-            sDev =  aCarrers[x][2][1];
-            break;
-        }
-    }
-    return sDev ;
-}
-
-
-function showAddress(sMODO,map, sTipoVia,sCalle,num,ciudad,region,pais) {
-    sDireccionAlta = sTipoVia + " " + sCalle + ", " + num;
-
-    var direccion = sDireccionAlta.trim() + ", " + ciudad + ", " + region + ", " + pais;
-    //alert('estoy en show address direccion ' +direccion);
-
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode( { 'address': direccion}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            //hgs afegit aquest if
-           // if (results[0]){
-           //     alert("resultat" + results[0].address.location);
-                var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">comunicat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
-                nuevoMarcadorSobrePlanoClickInfoWindow(sMODO,map, results[0].geometry.location , sTxt ,null, 300 , true, true, 'labelDireccion',true);
-                map.setCenter(results[0].geometry.location);
-           // }
-           // else
-           // {alert("No s'han trobat resultats");}
-
-        } else {
-            //alert('La localització sobre plànol no ha estat posible per: ' + status);
-            $('#divMensajeMapa').show();
-            $('#divMapaAlta').hide();
-           // $('#divContieneMapa').hide();
-        }
-    });
-}
-
-function getCurrentPositionError(errorFlag) {
-    var content = '';
-    if (errorFlag) {
-        content = 'Error en el servei de geolocalització.';
-    } else {
-        content = 'Error: el seu navegador no soporta geolocalització';
-    }
-    //mensaje(content);
-    //$('#labelMensajeMapsa').show();
-}
 
 function cogerCalleNumDeDireccion(sDireccion){
     var sDev = '';
@@ -448,30 +209,6 @@ function indefinidoOnullToVacio(algo){
     return algo;
 }
 
-function ParseEstado(sEstat){
-    switch(sEstat)
-    {
-        case 'D' :
-            return 'DESESTIMAT';
-            break;
-
-        case 'TANC' :
-            return 'TANCAT';
-            break;
-
-        case 'ACEP' :
-            return 'ACCEPTAT';
-            break;
-
-        case 'GES' :
-            return 'GESTIONANT';
-            break;
-
-        default :
-            return sEstat;
-            break;
-    }
-}
 
 function esEmail(email) {
     if(indefinidoOnullToVacio(email) != '') {
