@@ -4,8 +4,9 @@ var sDireccionConsulta = '';
 var aComs=null;
 
 function inicioPaginaConsultaIncidencias(){
-    aComs=(getComunicats());
-    cargaListaComunicats();
+        document.getElementById('divEsperaReportats').style.display="none";
+        aComs=(getComunicats());
+        cargaListaComunicats();
 }
 
 function cargaListaComunicats(){
@@ -106,7 +107,7 @@ function verDatosComunicat(x){
         $('#labelCOMUNICAT_REFERENCIA').text(aComs[x].REFERENCIA);
         $('#labelCOMUNICAT_ESTAT').text(aComs[x].ESTAT);
         $('#labelCOMUNICAT_DATA').text(aComs[x].DATA);
-        if(aComs[x].ESTAT=="TANCAT") {
+        if(aComs[x].ESTAT=="RESOLTA") {
             $('#labelCOMUNICAT_DATARES').text(aComs[x].DATARES);
             $('#fecharesuelta').show();
         }
@@ -228,6 +229,9 @@ function borrarHistoricoComunicados(respuesta){
     }
 }
 
+function enviamentDePendents1(){
+    enviamentDePendents(false);
+}
 function enviamentDePendents(p_inicio) {
     try {
         var v_bError=false;
@@ -282,7 +286,7 @@ function enviamentDePendents(p_inicio) {
                             objComunicat = new comunicat();
                             objComunicat.ID = v_aComs[x].ID;
                             objComunicat.REFERENCIA = v_sRet[0];
-                            objComunicat.ESTAT = 'NOTIFICAT';
+                            objComunicat.ESTAT = 'PENDENT';
                             objComunicat.DATA = v_sRet[1];
                             objComunicat.CODCARRER = v_aComs[x].CODCARRER;
                             objComunicat.CARRER = v_aComs[x].CARRER;
@@ -306,7 +310,7 @@ function enviamentDePendents(p_inicio) {
                     }
                     else //Actualizar el estado del comunicado (de las que están en cualquier estado excepto TANCADES)
                     {
-                        if (v_aComs[x].ESTAT != 'TANCAT') {
+                        if (v_aComs[x].ESTAT != 'RESOLTA') {
                             sIdsActualizar += v_aComs[x].ID_MSG_MOV + "|" + v_aComs[x].ID + ",";
                         }
                     }
@@ -324,7 +328,7 @@ function enviamentDePendents(p_inicio) {
                 }
                 if (!p_inicio) {
                     //y recargo la lista
-                    inicioPaginaConsultaIncidencias();
+                    //inicioPaginaConsultaIncidencias();
                 }
             }
         }
@@ -333,9 +337,17 @@ function enviamentDePendents(p_inicio) {
         v_bError=true;
         v_sError=v_sError+ex.message;
     }
-    if(!p_inicio && v_bError)
+    //$('#divEsperaReportats').hide();
+
+    if(!p_inicio)
     {
-        mensaje("Actualització feta amb errors\n"+v_sError,"avis");
+
+        if(v_bError){
+            mensaje("Actualització feta amb errors\n"+v_sError,"avis");
+        }
+        else{
+            mensaje("Actualització feta","avis");
+        }
     }
 
 }
@@ -486,11 +498,11 @@ function GuardaActualizacionComunicats(aResultados){
             aDatos['referencia'] = aRegistro[nPosRefUlls][1] + '';
             aDatos['data'] = objComunicatEXISTENTE.DATA + '';
             if(aRegistro[nPosEstado][1]=="T"){
-                aDatos['estat'] = 'TANCAT';
+                aDatos['estat'] = 'RESOLTA';
                 aDatos['datares'] = aRegistro[nPosFecha][1] + '';
             }
             else{
-                aDatos['estat'] = 'NOTIFICAT';
+                aDatos['estat'] = 'PENDENT';
                 aDatos['datares'] = '';
             }
             aDatos['codcarrer'] = objComunicatEXISTENTE.CODCARRER + '';

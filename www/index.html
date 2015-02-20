@@ -269,7 +269,7 @@
             </a></td></tr></table></div>
         </div>
     </div>
-    <div data-role="page" id="pageConsultaIncidencias">
+    <div data-role="page" id="pageConsultaIncidencias" >
         <div data-role="panel" id="leftmenu3" data-display="overlay" data-position="left" data-theme="c" style="background-color:#f3f3f3" class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-open">
             <div class="mi-cab-menu">
                 <img alt="" src="images/Logo.png" width="42" /><div class="mi-cab-menu-texto">Ajuntament de Vilafranca</div>
@@ -302,8 +302,8 @@
                         <a  href="" id="buttonBorrarHistoricoComunicados" onclick="borrarHistoricoComunicadosConfirm()"  ><img alt="" src="images/delete-white.png" width="20" /></a>
                     </div></td>
                 <td align="rigth">
-                    <div class="mi-util" >
-                        <a  href="" id="buttonEnviamentDePendents" onclick="enviamentDePendents(false)" ><img alt="" src="css/themes/Rojos/images/icons-png/refresh-white.png" width="20" /></a>
+                    <div class="mi-util">
+                        <a  id="buttonEnviamentDePendents" onclick="enviamentDePendents1()" ><img alt=""  src="css/themes/Rojos/images/icons-png/refresh-white.png" width="20" /></a>
                     </div></td>
                 <td align="rigth">
             <div class="mi-util" >
@@ -316,6 +316,11 @@
                             <ul id="listviewLista" style="list-style: none;margin: 0.5em;padding: 0em">
                             </ul>
                         </div>
+            </div>
+            <div id="divEsperaReportats" class="fit-content" style="display: none">
+                <div class="divCargar">
+                </div>
+                <div class="div-loading divCargarDatos" style="height: 15%" ><label>actualitzant dades...</label></div>
             </div>
         </div>
     </div>
@@ -353,7 +358,7 @@
                 </div></td></tr></table>
         </div>
 
-        <div data-role="content" data-theme="c" class="fit-content" style="padding: 0px">
+        <div data-role="content" data-theme="c" class="fit-content" style="padding: 2px">
                 <div id="divSobreMapaConsulta">
                     <div id="divMapaConsulta" style="width: 100%;height: 100%">
                     </div>
@@ -402,13 +407,13 @@
                 </table>
                 <table cellpadding="1" cellspacing="0" border="0" style="width: 98%;table-layout: fixed;margin-left: 5px">
                     <tr>
-                        <td><div style="float: left;width: 18%;font-weight: bold;">inci.:</div><div style="float: right;width:82%" ><label id="labelCOMUNICAT_REFERENCIA"></label></div></td>
+                        <td><div style="float: left;width: 30%;font-weight: bold;">incidència:</div><div style="float: right;width:70%" ><label id="labelCOMUNICAT_REFERENCIA"></label></div></td>
                     </tr>
                     <tr>
-                    <td><div style="float: left;width: 18%;font-weight: bold;">data:</div><div style="float: right;width: 82%" ><label id="labelCOMUNICAT_DATA"></label></div></td>
+                    <td><div style="float: left;width: 30%;font-weight: bold;">data:</div><div style="float: right;width: 70%" ><label id="labelCOMUNICAT_DATA"></label></div></td>
                 </tr>
                     <tr id="fecharesuelta">
-                        <td><div style="float: left;width: 18%;font-weight: bold;">tancat:</div><div style="float: right;width: 82%" ><label id="labelCOMUNICAT_DATARES"></label></div></td>
+                        <td><div style="float: left;width: 30%;font-weight: bold;">resolta:</div><div style="float: right;width: 70%" ><label id="labelCOMUNICAT_DATARES"></label></div></td>
                     </tr>
                 </table>
                 <table cellpadding="1" cellspacing="0" border="0" style="width: 98%;table-layout: fixed;margin-left: 5px">
@@ -431,11 +436,14 @@
             </tr>
             </table>
         </div>
-        <div data-role="content" data-theme="c" style="padding: 0px;" >
+        <div data-role="content" data-theme="c" style="padding:2px;" >
             <div>
                 <img id="imgZoomFoto" src="" border='1' width="100%" />
             </div>
         </div>
+    </div>
+
+    <div data-role="popup" id="pageActualiza"  >
     </div>
 
     <script type="text/javascript">
@@ -453,7 +461,7 @@
 
         $(window.document).on("mobileinit", function () {
             $.mobile.loader.prototype.options.text = "loading";
-            $.mobile.loader.prototype.options.textVisible = false;
+            $.mobile.loader.prototype.options.textVisible = true;
             $.mobile.loader.prototype.options.theme = "c";
             $.mobile.loader.prototype.options.html = "";
         });

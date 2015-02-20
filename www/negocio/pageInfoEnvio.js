@@ -94,12 +94,12 @@ function CrearComunicadoWS_OK(datos){
 
             if(v_codError=="0"){
                 v_sMensaje = 'Comunicació notificada [' + v_sReferen + ']\n' + 'Gràcies per la seva col·laboració';
-                v_sEstado = "NOTIFICAT";
+                v_sEstado = "PENDENT";
 
             }
             else if(v_codError=="1"){
                 v_sMensaje = "Comunicació notificada  però amb problemes. [" +v_sReferen + "]\n"+v_desError;
-                v_sEstado = "NOTIFICAT";
+                v_sEstado = "PENDENT";
             }
             else{
                 v_sMensaje = 'Comunicació NO notificada : \n ' + v_desError;

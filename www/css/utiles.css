@@ -122,7 +122,7 @@
 
 .fit-content {
     top : 40px;
-    bottom : 10px;
+    bottom : 1px;
     left : 0;
     right : 0;
 }
@@ -149,4 +149,26 @@
 
 #divTipoInci a div {
     line-height: 10px;
+}
+
+.divCargar{
+    text-align: center;
+    align-content: center;
+    background-color: #393939;
+    filter: Alpha(Opacity=30);
+    opacity: .3;
+}
+
+.divCargarDatos{
+    height: 15%;
+    position: absolute;
+    width: 50%;
+    top: 30%;
+    left: 25%;
+    background-color: #ffffff;
+    min-height: 130px;
+    min-width: 180px;
+    -webkit-box-shadow: 0 0 12px #a80929 /*{c-active-background-color}*/;
+    -moz-box-shadow: 0 0 12px #a80929 /*{c-active-background-color}*/;
+    box-shadow: 0 0 12px #a80929 /*{c-active-background-color}*/;
 }
