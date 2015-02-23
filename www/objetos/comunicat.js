@@ -42,7 +42,7 @@ function comunicat(aDatos) {
         this.ITE_DESC= aDatos['ite_desc'] + '';
 
         return this;
-    } catch (e) { alert('creant objecte : comunicat  ERROR : ' + e.message); return null; }
+    } catch (e) { mensaje('creant objecte : comunicat  ERROR : ' + e.message,"error"); return null; }
 }
 
 //"ID", "REFERENCIA", "ESTAT", "DATA", "CARRER", "NUM", "COORD_X", "COORD_Y", "COMENTARI"

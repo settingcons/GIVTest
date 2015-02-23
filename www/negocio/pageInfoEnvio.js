@@ -26,7 +26,7 @@ function inicioPaginaInfoEnvio() {
             p_sCodCarrer:v_sCodCarrer.toString().trim()+'',
             p_sNumPortal:v_sNumPortal.toString().trim()+'',
             p_sFoto:sFoto + '',
-            p_sVoz: miGlobal_inciAudio + ''
+            p_sVoz: _inciAudioFichero + ''
         };
 
 
@@ -111,11 +111,11 @@ function CrearComunicadoWS_OK(datos){
 
             var v_nIdCom = guardaIncidencia(v_sReferen, v_sEstado,v_sFecha);
 
-            //if(!v_bEnvioCorrecto)
-            //{
             guardaFotoEnLocal(v_nIdCom, sFoto);
-            guardaAudioEnLocal(v_nIdCom, miGlobal_inciAudio);
-            //}
+            if(!v_bEnvioCorrecto)
+            {
+            guardaAudioEnLocal(v_nIdCom, _inciAudioFichero);
+            }
 
             //eliminarFoto();
 

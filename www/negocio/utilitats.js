@@ -1,4 +1,6 @@
 ﻿var globalMarcadorMapa = null;
+var _mapaMarcador=null;
+var _mapaEvento=null;
 
 var lista_ERROR_SQL = new Array();
 lista_ERROR_SQL[0] = 'ERROR desconegut';
@@ -85,40 +87,68 @@ function nuevoMarcadorSobrePlanoClickInfoWindow1(sMODO, mapa, pos,htmlText, nIco
         }
     }
     catch (ex) {
-        alert(ex.message);
+        mensaje(ex.message,"error");
     }
 
 }
 
 function crearMarcadorEventoClick1( map){
     google.maps.event.addListener(map, 'click', function(event) {
-            var res = confirm('Està segur de voler canviar la ubicació?');
-
-            if(res==true)
-            {
-
-                    eliminarMarcadorMapa();
-
-                    posAlta = event.latLng;
-                    map.setCenter(posAlta);
-
-                sDireccionAlta = '';
-                cogerDireccion(event.latLng, true);   //true ==> solo calle y num
-
-                $.doTimeout(700, function(){
-                    if(sDireccionAlta == '')
-                    {
-                        sDireccionAlta  = event.latLng.lat() + " , " + event.latLng.lng();
-                        $('#labelDireccion').text(sDireccionAlta);
-                    }
-                    eliminarMarcadorMapa();
-                    nuevoMarcadorSobrePlanoClickInfoWindow1(sMODO, map, event.latLng, '',null);
-
-                });
-            }
+        _mapaMarcador=map;
+        _mapaEvento=event;
+        CambiarMarcadorConfirm();
     });
 }
 
+function CambiarMarcadorConfirm() {
+    var v_mensaje = "'Està segur de voler canviar la ubicació?";
+    var v_titulo = "Ubicació";
+    var v_botones = "SI,NO";
+
+    if(navigator.notification && navigator.notification.confirm){
+        navigator.notification.confirm(v_mensaje,CambiarMarcador,v_titulo,v_botones);
+    }
+    else
+    {
+        var v_retorno = confirm(v_mensaje);
+        if (v_retorno){
+
+            CambiarMarcador(1);
+        }
+        else {
+            CambiarMarcador(2);
+        }
+    }
+}
+
+function CambiarMarcador(p_respuesta) {
+    try {
+
+        if (p_respuesta == 1) {
+            eliminarMarcadorMapa();
+
+            posAlta = _mapaEvento.latLng;
+            _mapaMarcador.setCenter(posAlta);
+
+            sDireccionAlta = '';
+            cogerDireccion(_mapaEvento.latLng, true);   //true ==> solo calle y num
+
+            $.doTimeout(700, function () {
+                if (sDireccionAlta == '') {
+                    sDireccionAlta = _mapaEvento.latLng.lat() + " , " + _mapaEvento.latLng.lng();
+                    $('#labelDireccion').text(sDireccionAlta);
+                }
+                eliminarMarcadorMapa();
+                nuevoMarcadorSobrePlanoClickInfoWindow1("ALTA", _mapaMarcador, _mapaEvento.latLng, '', null);
+
+            });
+        }
+    }
+    catch (ex){
+        mensaje(ex.message,"error");
+    }
+
+}
 
 function cogerCalleNumDeDireccion(sDireccion){
     var sDev = '';

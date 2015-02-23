@@ -147,7 +147,7 @@ function handleBackButton() {
 function abrirPagina(sPag, bComprueba) {
 
     if (bComprueba && SinDatosCiudadano()) {
-            mensaje("El telefon es obligatori per utilitzar aquesta app","error")
+            mensaje("L'adreça electrònica es obligatoria per utilitzar aquesta app","error")
    }
     else
     {
@@ -240,7 +240,7 @@ function leeXMLIconos() {
             });
         },
         error: function () {
-            alert("Error processant arxiu XML");
+            mensaje("Error processant arxiu XML","error");
         }, async: false
     });
 }
@@ -365,7 +365,7 @@ function GPSEstaActivadoOK(result) {
 
 function MostrarAjustesUbicacionConfirm(){
     var v_mensaje = "Mostrar els ajustos d'ubicació?";
-    var v_titulo = "El GPS està desactivado";
+    var v_titulo = "El GPS està desactivat";
     var v_botones = "SI,NO";
 
     if(navigator.notification && navigator.notification.confirm){

@@ -5,8 +5,8 @@ function AudioGrabacionConfirma() {
         var v_botones = "Finalitzar,Descartar";
 
         //Iniciar Grabación
-        miGlobal_mediaAudio = new Media(miGlobal_mediaAudiosrc,onSuccessAudio,onErrorAudio);
-        miGlobal_mediaAudio.startRecord();
+        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudio,onErrorAudio);
+        _mediaAudio.startRecord();
 
         if(navigator.notification && navigator.notification.confirm){
             navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
@@ -28,20 +28,19 @@ function onSuccessAudio() {
 }
 
 function onErrorAudio(error) {
-    miGlobal_inciAudio='';
+    _inciAudioFichero='';
     mensaje(error.message,"error");
 }
 
 function AudioGrabacion(respuesta){
     try{
         //Finalizar grabación
-        miGlobal_mediaAudio.stopRecord();
+        _mediaAudio.stopRecord();
         if (respuesta==1) {
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudio);
-            //miGlobal_inciAudio=miGlobal_mediaAudiosrc;
         }
         else{
-            miGlobal_inciAudio='';
+            _inciAudioFichero='';
         }
     }
     catch (ex){mensaje(ex.message,"error");}
@@ -49,7 +48,7 @@ function AudioGrabacion(respuesta){
 }
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
-    fileSystem.root.getFile(miGlobal_mediaAudiosrc, null, LeerFicheroAudio, onErrorAudio);
+    fileSystem.root.getFile(_mediaAudioFichero, null, LeerFicheroAudio, onErrorAudio);
 }
 function LeerFicheroAudio(fileEntry) {
     fileEntry.file(LeerFicheroAudioOK, onErrorAudio);
@@ -62,13 +61,9 @@ function LeerFicheroAudioOK(file){
 function TransformarFicheroAudioToBase64(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
-        miGlobal_inciAudio = evt.target.result;
-        miGlobal_inciAudio  =   miGlobal_inciAudio.toString().substring(miGlobal_inciAudio.toString().indexOf(",")+1);
-        //miGlobal_inciAudio = evt.target.result;
-        //alert(miGlobal_inciAudio);
-        //miGlobal_inciAudio =miGlobal_inciAudio.toString().substring(miGlobal_inciAudio.toString().indexOf(",")+1);
-        //alert(miGlobal_inciAudio);
-};
+        _inciAudioFichero = evt.target.result;
+        _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
+    };
     reader.readAsDataURL(file);
 }
 

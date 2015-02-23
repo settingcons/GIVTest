@@ -25,7 +25,7 @@ function inicioPaginaDatosIncidencia() {
         $('#selectCARRER').text('');
         $('#textareaComentari').val('');
 
-        miGlobal_inciAudio='';
+        _inciAudioFichero='';
 
         navigator.camera.getPicture(hacerfotoOK, hacerFotoERROR, { quality: 20, destinationType: Camera.DestinationType.DATA_URL, correctOrientation: true,sourceType:  Camera.PictureSourceType.CAMERA,  saveToPhotoAlbum: false });
         //cargarPaginaDatosIncidencia();
@@ -215,7 +215,7 @@ function posicionOK(position){
 }
 
 function posicionError(error){
-        alert("posicionError: "+ error.code+" "+error.message);
+        mensaje("posicionError: "+ error.code+" "+error.message,"error");
         posAlta = "";
         $('#divCargarMapaAlta').hide();
         $('#divMapa').hide();

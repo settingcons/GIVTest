@@ -19,7 +19,7 @@ function carrer(aDatos) {
         this.TIPUS = aDatos['tipus'] + '';
         this.CARRER = aDatos['carrer'] + '';
         return this;
-    } catch (e) { alert('creant objecte : carrer  ERROR : ' + e.message); return null; }
+    } catch (e) { mensaje('creant objecte : carrer  ERROR : ' + e.message,"error"); return null; }
 }
 
 

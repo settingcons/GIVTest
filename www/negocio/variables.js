@@ -12,9 +12,8 @@ var _wsURLLogin="http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/Log
 //var _wsURLLogin="http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/Login_v1";
 
 
-var miGlobal_mediaAudio;
-var mi_mediaAudioReproducir;
-var miGlobal_mediaAudiosrc = "givaudio.mpeg";
+var _mediaAudio;
+var _mediaAudioFichero = "givaudio.mpeg";
 
 
-var miGlobal_inciAudio;
+var _inciAudioFichero;

@@ -247,13 +247,14 @@ function enviamentDePendents(p_inicio) {
             if (v_email.toString().trim() != "") {
                 var objComunicat = null;
                 var bBorrado = false;
+                var v_audio="";
                 var sParams = {};
-
 
                 for (var x = 0; x < v_aComs.length; x++) {
                     if (v_aComs[x].ESTAT == 'PENDENT_ENVIAMENT' || v_aComs[x].ESTAT == 'ERROR_ENVIAMENT') {
 
                         sSuFoto = leeObjetoLocal('FOTO_' + v_aComs[x].ID, '');
+                        v_audio = leeObjetoLocal('AUDIO_' + v_aComs[x].ID, '');
 
                         var v_sObs = v_aComs[x].COMENTARI + '';
                         var v_sCoordX=v_aComs[x].COORD_X +'';
@@ -274,7 +275,7 @@ function enviamentDePendents(p_inicio) {
                             p_sCodCarrer: v_sCodCarrer.toString().trim() + '',
                             p_sNumPortal: v_sNumPortal.toString().trim() + '',
                             p_sFoto: sSuFoto + '',
-                            p_sVoz: ''
+                            p_sVoz: v_audio+''
                         };
                         var v_sRet = enviarComunicatPendienteWS(sParams);
                         if (v_sRet[2] == 2) {
@@ -303,8 +304,8 @@ function enviamentDePendents(p_inicio) {
 
                             guardaObjetoLocal('COMUNICAT_' + v_aComs[x].ID, objComunicat);
 
-                            //Elimino la foto que había guardado
-                            //bBorrado = borraObjetoLocal('FOTO_' + aComs[x].ID);
+                            //Elimino audio que había guardado
+                            bBorrado = borraObjetoLocal('AUDIO_' + aComs[x].ID);
                         }
 
                     }
