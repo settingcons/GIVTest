@@ -4,7 +4,7 @@ var sDireccionConsulta = '';
 var aComs=null;
 
 function inicioPaginaConsultaIncidencias(){
-        document.getElementById('divEsperaReportats').style.display="none";
+    $('#divConsultaIncidenciasEspera').hide();
         aComs=(getComunicats());
         cargaListaComunicats();
 }
@@ -181,6 +181,10 @@ function mostrarEnPlano() {
     catch (ex) {
         mensaje(ex.message, "error");
     }
+}
+
+function MostrarEsperaConsultaIncidencias(){
+    $('#divConsultaIncidenciasEspera').show();
 }
 
 function borrarHistoricoComunicadosConfirm() {

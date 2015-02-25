@@ -108,11 +108,11 @@
         </div>
     </div>
     <div data-role="page" id="pageDatosIncidencia">
-        <div data-role="header" data-theme="c">
+        <div data-role="header"  data-theme="c" style="border: 0px">
             <h3>   </h3>
         </div>
-        <div data-role="content" data-theme="c" style="padding-top:10px">
-            <div style="display:table;width:100%">
+        <div data-role="content" data-theme="c" style="padding:0px">
+            <div style="display:table;width:100%;padding-top: 5px;padding-left:5px;padding-right: 5px ">
                 <div id="divFoto" style="float:left;width:70%;">
                     <img id="imgFoto" src="images/sinFoto.png" style="max-height:130px;max-width:100%; border:1px solid #dddddd" onclick="abrirPagina('pageZoomFoto', false);" />
                 </div>
@@ -121,7 +121,7 @@
                     <div id="TipusInciText" style="padding-top:7px;font-size:14px;color:#DB0D36;"></div>
                 </div>
             </div>
-            <div>
+            <div style="padding-left:5px;padding-right: 5px">
                 <table style="width: 100%;border:1px solid #dddddd">
                     <tr>
                         <td>
@@ -166,7 +166,7 @@
                     </tr>
                 </table>
             </div>
-            <div style="width:100%">
+            <div style="width:100%;padding-left:5px;padding-right: 5px">
                 <table style="width:100%">
                     <tr>
                         <td>
@@ -181,19 +181,21 @@
                     </tr>
                 </table>
             </div>
-            <div>
-                <a href="#" id="buttonEnviar" onclick="enviarIncidencia()"
-                   data-mini="true" data-inline="false" data-role="button" data-theme="c" style="width:90%;height:25px ;padding-top:10px;text-align:center;margin:auto">
+            <div style="padding-left:5px;padding-right: 5px">
+                <a href="#" id="buttonEnviar"  data-mini="true" data-inline="false" data-role="button" data-theme="c" style="width:90%;height:25px ;padding-top:10px;text-align:center;margin:auto">
                     Enviar
                 </a>
             </div>
             <div id="divDatosIncidenciaEspera" class="fit-content" style="display: none">
-                <div class="divCargar"></div>
+                <div class="divCargar">
+
+                </div>
+                <div class="div-loading divCargarDatos"  style="height: 15%" ></div>
             </div>
         </div>
     </div>
     <div data-role="page" id="pageInfoEnvio">
-        <div data-role="header" data-theme="c">
+        <div data-role="header"  data-theme="c" style="border: 0px">
             <h3>   </h3>
         </div>
         <div data-role="content" data-theme="c">
@@ -303,11 +305,11 @@
             </h3></td>
                 <td align="rigth">
                     <div class="mi-util" >
-                        <a  href="" id="buttonBorrarHistoricoComunicados" onclick="borrarHistoricoComunicadosConfirm()"  ><img alt="" src="images/delete-white.png" width="20" /></a>
+                        <a  href="" id="buttonBorrarHistoricoComunicados" ><img alt="" src="images/delete-white.png" width="20" /></a>
                     </div></td>
                 <td align="rigth">
                     <div class="mi-util">
-                        <a  id="buttonEnviamentDePendents" onclick="enviamentDePendents1()" ><img alt=""  src="css/themes/Rojos/images/icons-png/refresh-white.png" width="20" /></a>
+                        <a  id="buttonEnviamentDePendents"  ><img alt=""  src="css/themes/Rojos/images/icons-png/refresh-white.png" width="20" /></a>
                     </div></td>
                 <td align="rigth">
             <div class="mi-util" >
@@ -321,7 +323,7 @@
                             </ul>
                         </div>
             </div>
-            <div id="divEsperaReportats" class="fit-content" style="display: none">
+            <div id="divConsultaIncidenciasEspera" class="fit-content" style="display: none">
                 <div class="divCargar">
                 </div>
                 <div class="div-loading divCargarDatos" style="height: 15%" ><label>actualitzant dades...</label></div>
@@ -447,8 +449,6 @@
         </div>
     </div>
 
-    <div data-role="popup" id="pageActualiza"  >
-    </div>
 
     <script type="text/javascript">
         // EVENTOS ----------------------------------------------------------------------------------------------------------

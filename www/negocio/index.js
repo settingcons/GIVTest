@@ -54,6 +54,10 @@ function deviceReady() {
         document.addEventListener("backbutton", handleBackButton, false);
         document.getElementById('buttonEnviar').addEventListener("touchstart", MostrarEsperaDatosIncidencia, false);
         document.getElementById('buttonEnviar').addEventListener("touchend", enviarIncidencia, false);
+        document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchstart", MostrarEsperaConsultaIncidencias, false);
+        document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchend", borrarHistoricoComunicadosConfirm, false);
+        document.getElementById('buttonbuttonEnviamentDePendentsEnviar').addEventListener("touchstart", MostrarEsperaConsultaIncidencias, false);
+        document.getElementById('buttonEnviamentDePendents').addEventListener("touchend", enviamentDePendents1, false);
 
         if (phoneGapRun()) {
             pictureSource = navigator.camera.PictureSourceType;
