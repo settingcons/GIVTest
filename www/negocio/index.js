@@ -58,6 +58,8 @@ function deviceReady() {
         document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchend", borrarHistoricoComunicadosConfirm, false);
         document.getElementById('buttonEnviamentDePendents').addEventListener("touchstart", MostrarEsperaConsultaIncidencias, false);
         document.getElementById('buttonEnviamentDePendents').addEventListener("touchend", enviamentDePendents1, false);
+        document.getElementById('buttonAudioPlay').addEventListener("touchstart", MostrarAudioReproducir, false);
+        document.getElementById('buttonAudioPlay').addEventListener("touchend", AudioReproducir, false);
 
         if (phoneGapRun()) {
             pictureSource = navigator.camera.PictureSourceType;
@@ -179,9 +181,7 @@ function abrirPagina(sPag, bComprueba) {
    }
     else
     {
-        $.mobile.changePage('#' + sPag, {
-            transition: "none"
-        });
+        $.mobile.changePage('#' + sPag, {transition: "none"});
 
         switch (sPag) {
             case 'pageTipoIncidencia':

@@ -231,8 +231,9 @@ function borrarHistoricoComunicados(respuesta){
 
 
         }
+    }
+    else{
         $('#divConsultaIncidenciasEspera').hide();
-
     }
 }
 

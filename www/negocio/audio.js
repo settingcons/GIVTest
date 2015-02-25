@@ -4,6 +4,9 @@ function AudioGrabacionConfirma() {
         var v_titulo = "Gravació";
         var v_botones = "Finalitzar,Descartar";
 
+        var v_imagen = document.getElementById('imgAudioPlay');
+        v_imagen.src = "images/play_gray.png";
+
         //Iniciar Grabación
         _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudio,onErrorAudio);
         _mediaAudio.startRecord();
@@ -42,7 +45,6 @@ function AudioGrabacion(respuesta){
         else{
             _inciAudioFichero='';
             var imagen = document.getElementById('buttonAudioPlay');
-            imagen.style.display = 'block';
             imagen.src = "images/play_gray.png";
         }
     }
@@ -66,21 +68,67 @@ function TransformarFicheroAudioToBase64(file) {
     reader.onloadend = function(evt) {
         _inciAudioFichero = evt.target.result;
         _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
-        var imagen = document.getElementById('buttonAudioPlay');
-        imagen.style.display = 'block';
+        var imagen = document.getElementById('imgAudioPlay');
         imagen.src = "images/play_red.png";
     };
     reader.readAsDataURL(file);
 }
 
+function MostrarAudioReproducir(){
+    if (_inciAudioFichero !='') {
+        $('#divDatosIncidenciaAudioPlay').show();
+    }
+    else{
+        mensaje("No hi ha fitxer d'àudio per reproduir","avís");
+    }
+}
 function AudioReproducir(){
 
     if (_inciAudioFichero !=''){
         //Iniciar Grabación
         _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudioPlay,onErrorAudioPlay);
         _mediaAudio.play();
+        if (_mediaTimer == null) {
+            _mediaTimer = setInterval(function() {
+                // get my_media position
+                _mediaAudio.getCurrentPosition(
+                    // success callback
+                    function(position) {
+                        if (position > -1) {
+                            var iPos = parseInt(position);
+                            if (iPos < 10) {
+                                setAudioPosition("0:0" + (iPos), 0);
+                            }
+                            else
+                            {
+                                setAudioPosition("0:" + (iPos), 0);
+                            }
+                            if (iPos==0){
+                                setAudioPosition("", 0);
+                            }
+                        }
+                    },
+                    // error callback
+                    function(e) {
+                        setAudioPosition("Error: " + e, 1);
+                    }
+                );
+            }, setInt * 100);
+        }
     }
 
+}
+
+function setAudioPosition(position, iColor) {
+    document.getElementById('audio_position').innerHTML = position;
+    if (iColor == 0) {
+        // Negro
+        document.getElementById('audio_position').style.color='#ffffff';
+    }
+    else{
+        // Rojo
+        document.getElementById('audio_position').style.color='#b80529';
+    }
 }
 
 function onSuccessAudioPlay() {
@@ -89,3 +137,27 @@ function onSuccessAudioPlay() {
 function onErrorAudioPlay(error) {
     mensaje(error.message,"error");
 }
+
+function stopAudio() {
+    if(_mediaAudio){
+        _mediaAudio.stop();
+    }
+    _mediaTimer=null;
+}
+
+function pauseAudio() {
+    if(_mediaAudio) {
+        _mediaAudio.pause();
+    }
+}
+
+
+function cerrarAudio() {
+    if(_mediaAudio) {
+        _mediaAudio.stop();
+    }
+    _mediaAudio=null;
+    _mediaTimer=null;
+    $('#divDatosIncidenciaAudioPlay').hide();
+}
+

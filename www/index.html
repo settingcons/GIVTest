@@ -179,7 +179,7 @@
                             </a>
                         </td>
                         <td style="width:30px">
-                            <a id="buttonAudioPlay" href="#" onclick="AudioReproducir()">
+                            <a id="buttonAudioPlay" href="#" >
                                 <img id="imgAudioPlay" src="images/play_gray.png" style="width:30px;float:right" />
                             </a>
                         </td>
@@ -196,6 +196,41 @@
 
                 </div>
                 <div class="div-loading divCargarDatos"  style="height: 15%" ><label>pocessant dades...</label></div>
+            </div>
+            <div id="divDatosIncidenciaAudioPlay" class="fit-content" style="display: block">
+                <div class="divCargar">
+
+                </div>
+                <div class="divCargarDatos"  style="height: 130px" >
+                    <table width="100%">
+                        <tr><td colspan="3">
+                            <a  id="buttonAudioPlayCerrar" onclick="cerrarAudio()"   ><img alt=""  src="images/delete-red.png" style="width:20px;float:right" /></a>
+
+                        </td></tr>
+                        <tr>                    <td width="100px" valign="center" colspan="3" style="min-height: 20px">
+                            <p id="audio_position" style="font-family: Arial; font-size: 14pt ; font-weight: bold; height: 25px;"></p>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td style="align-content: flex-start">
+                                <a id="buttonAudioPlayPlay" href="#" onclick="AudioReproducir()">
+                                    <img id="imgAudioPlayPlay" src="images/play_red.png" style="width:30px;float:left" />
+                                </a>
+                            </td>
+                            <td style="width:30px">
+                                <a id="buttonAudioPlayPause" href="#" onclick="pauseAudio()">
+                                    <img id="imgAudioPlayPause" src="images/pause_red.png" style="width:30px;float:right" />
+                                </a>
+                            </td>
+                            <td style="width:30px">
+                                <a id="buttonAudioPlayStop" href="#" onclick="stopAudio()">
+                                    <img id="imgAudioPlayStop" src="images/stop_red.png" style="width:30px;float:right" />
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
             </div>
         </div>
     </div>
