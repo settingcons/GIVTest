@@ -27,9 +27,11 @@ function inicioPaginaDatosIncidencia() {
         $('#textareaComentari').val('');
 
         _inciAudioFichero='';
+        var imagen = document.getElementById('buttonAudioPlay');
+        imagen.style.display = 'block';
+        imagen.src = "images/play_gray.png";
 
         navigator.camera.getPicture(hacerfotoOK, hacerFotoERROR, { quality: 20, destinationType: Camera.DestinationType.DATA_URL, correctOrientation: true,sourceType:  Camera.PictureSourceType.CAMERA,  saveToPhotoAlbum: false });
-        //cargarPaginaDatosIncidencia();
     }
     catch (ex){
         //alert(ex.message);

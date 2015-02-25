@@ -213,35 +213,30 @@ function abrirPagina(sPag, bComprueba) {
     }
 }
 
-function limpiaVariables(sPag){
-    switch(sPag)
-    {
-        case 'pageNuevaIncidencia' :
-            sFoto = '';
+function limpiaVariablesInci(){
+            TipoInciSel='';
             sDireccionAlta = '';
             posAlta = '';
+            sCoords='';
+            sCoord_X='';
+            sCoord_Y='';
             mapAlta = null;
-            $('#IdItem').text('');
-            $('#labelItem').text('');
-            $('#textareaComentari').val('');
-            $('#inputNUM').val('');
-            $('#labelDireccion').text('');
-            $('#selectCARRER').text('');
-            break;
 
-        case 'pageConsultaIncidencias' :
-            sDireccionConsulta = '';
-            posConsulta = '';
-            mapConsulta = null;
-            break;
+            sId='';
+            sDescItem='';
 
-    }
+            //Comentario
+            sComentario = '';
+
+            sFoto = '';
+            _inciAudioFichero='';
+
 }
 
 
 function inicioPaginaTipoIncidencia() {
 
-    TipoInciSel="";
+    limpiaVariablesInci();
 
     //cargo los iconos
     leeXMLIconos();

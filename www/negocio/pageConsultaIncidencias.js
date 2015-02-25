@@ -231,7 +231,7 @@ function borrarHistoricoComunicados(respuesta){
 
 
         }
-        $('#divConsultaIncidenciasEspera').show();
+        $('#divConsultaIncidenciasEspera').hide();
 
     }
 }
@@ -347,7 +347,7 @@ function enviamentDePendents(p_inicio) {
     }
     //$('#divEsperaReportats').hide();
 
-    $('#divConsultaIncidenciasEspera').show();
+    $('#divConsultaIncidenciasEspera').hide();
 
     if(!p_inicio)
     {

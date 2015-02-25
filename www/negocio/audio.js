@@ -41,6 +41,9 @@ function AudioGrabacion(respuesta){
         }
         else{
             _inciAudioFichero='';
+            var imagen = document.getElementById('buttonAudioPlay');
+            imagen.style.display = 'block';
+            imagen.src = "images/play_gray.png";
         }
     }
     catch (ex){mensaje(ex.message,"error");}
@@ -63,12 +66,26 @@ function TransformarFicheroAudioToBase64(file) {
     reader.onloadend = function(evt) {
         _inciAudioFichero = evt.target.result;
         _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
+        var imagen = document.getElementById('buttonAudioPlay');
+        imagen.style.display = 'block';
+        imagen.src = "images/play_red.png";
     };
     reader.readAsDataURL(file);
 }
 
-function AudioReproducir(p_nId){
+function AudioReproducir(){
 
-    var sAudio = leeObjetoLocal('AUDIO_' + p_nID , '');
+    if (_inciAudioFichero !=''){
+        //Iniciar Grabación
+        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudioPlay,onErrorAudioPlay);
+        _mediaAudio.play();
+    }
 
+}
+
+function onSuccessAudioPlay() {
+}
+
+function onErrorAudioPlay(error) {
+    mensaje(error.message,"error");
 }
