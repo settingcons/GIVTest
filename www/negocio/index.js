@@ -56,7 +56,7 @@ function deviceReady() {
         document.getElementById('buttonEnviar').addEventListener("touchend", enviarIncidencia, false);
         document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchstart", MostrarEsperaConsultaIncidencias, false);
         document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchend", borrarHistoricoComunicadosConfirm, false);
-        document.getElementById('buttonbuttonEnviamentDePendentsEnviar').addEventListener("touchstart", MostrarEsperaConsultaIncidencias, false);
+        document.getElementById('buttonEnviamentDePendents').addEventListener("touchstart", MostrarEsperaConsultaIncidencias, false);
         document.getElementById('buttonEnviamentDePendents').addEventListener("touchend", enviamentDePendents1, false);
 
         if (phoneGapRun()) {
