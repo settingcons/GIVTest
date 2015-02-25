@@ -109,6 +109,7 @@
     </div>
     <div data-role="page" id="pageDatosIncidencia">
         <div data-role="header" data-theme="c">
+            <h3>   </h3>
         </div>
         <div data-role="content" data-theme="c" style="padding-top:10px">
             <div style="display:table;width:100%">
@@ -173,7 +174,6 @@
                                    data-clear-btn="true" />
                         </td>
                         <td style="width:30px">
-                            <!--<a id="buttonAudio" href="#" onclick="AudioGrabacionConfirma()">-->
                                 <a id="buttonAudio" href="#" onclick="AudioGrabacionConfirma()">
                                 <img id="imgAudio" src="images/micro.png" style="width:30px;float:right" />
                             </a>
@@ -187,10 +187,14 @@
                     Enviar
                 </a>
             </div>
+            <div id="divDatosIncidenciaEspera" class="fit-content" style="display: none">
+                <div class="divCargar"></div>
+            </div>
         </div>
     </div>
     <div data-role="page" id="pageInfoEnvio">
         <div data-role="header" data-theme="c">
+            <h3>   </h3>
         </div>
         <div data-role="content" data-theme="c">
             <div id="divInfoEspera" class="div-loading" style="height: 185px;">

@@ -9,6 +9,7 @@ var sCoord_Y = '';
 var sComentario = '';
 
 function inicioPaginaDatosIncidencia() {
+    $('#divDatosIncidenciaEspera').hide();
     $('#divCargarMapaAlta').show();
     $('#divMensajeMapa').hide();
     $('#divMapa').hide();
@@ -279,7 +280,9 @@ function cargaCalles(){
     }
 }
 
-
+function MostrarEsperaDatosIncidencia(){
+    $('#divDatosIncidenciaEspera').show();
+}
 
 function enviarIncidencia(){
     try{
@@ -313,6 +316,8 @@ function enviarIncidencia(){
             abrirPagina("pageInfoEnvio",false)
         }
         else{
+            $('#divDatosIncidenciaEspera').hide();
+
             mensaje("Falten dades obligatòries;\n"+v_sRetorno,"avís");
         }
     }

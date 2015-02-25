@@ -31,7 +31,13 @@ var app = {
         this.bindEvents();
     },
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        if(phoneGapRun()) {
+            document.addEventListener('deviceready', this.onDeviceReady, false);
+        }
+        else
+        {
+            deviceReady();
+        }
     },
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
@@ -46,6 +52,8 @@ function deviceReady() {
     var v_error='';
     try {
         document.addEventListener("backbutton", handleBackButton, false);
+        document.getElementById('buttonEnviar').addEventListener("touchstart", MostrarEsperaDatosIncidencia, false);
+        document.getElementById('buttonEnviar').addEventListener("touchend", enviarIncidencia, false);
 
         if (phoneGapRun()) {
             pictureSource = navigator.camera.PictureSourceType;
@@ -70,6 +78,7 @@ function deviceReady() {
     catch (ex) {
         v_error="exception obrint l'app: "+ex.message;
     }
+
     if(v_error != ''){
         mensaje(v_error,"error");
         if (navigator.app) {
@@ -91,6 +100,7 @@ function deviceReady() {
         enviamentDePendents(true);
     }
     catch (ex){}
+
     $.doTimeout( 3000, function(){
         if (SinDatosCiudadano())
         {
@@ -119,12 +129,26 @@ function handleBackButton() {
                 navigator.device.exitApp();
             }
         }
-        else if ($.mobile.activePage.attr('id') == 'pageIdentificacion' && SinDatosCiudadano()) {
-            if (navigator.app) {
-                navigator.app.exitApp();
-            } else if (navigator.device) {
-                navigator.device.exitApp();
+        else if ($.mobile.activePage.attr('id') == 'pageIdentificacion') {
+            if(SinDatosCiudadano()){
+                if (navigator.app) {
+                    navigator.app.exitApp();
+                } else if (navigator.device) {
+                    navigator.device.exitApp();
+                }
             }
+            else{
+                abrirPagina("pageTipoIncidencia", false);
+            }
+        }
+        else if ($.mobile.activePage.attr('id') == 'pageDatosIncidencia') {
+            abrirPagina("pageTipoIncidencia", false);
+        }
+        else if ($.mobile.activePage.attr('id') == 'pageInfoEnvio') {
+            abrirPagina("pageTipoIncidencia", false);
+        }
+        else if ($.mobile.activePage.attr('id') == 'pageConsultaIncidencias') {
+            abrirPagina("pageTipoIncidencia", false);
         }
         else{
             if (navigator.app) {
