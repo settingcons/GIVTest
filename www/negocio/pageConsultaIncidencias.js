@@ -208,6 +208,7 @@ function borrarHistoricoComunicadosConfirm() {
 }
 
 function borrarHistoricoComunicados(respuesta){
+
     if (respuesta==1) {
 
         var nComunicats = leeObjetoLocal('COMUNICATS_NEXTVAL', -1);
@@ -230,6 +231,8 @@ function borrarHistoricoComunicados(respuesta){
 
 
         }
+        $('#divConsultaIncidenciasEspera').show();
+
     }
 }
 
@@ -343,6 +346,8 @@ function enviamentDePendents(p_inicio) {
         v_sError=v_sError+ex.message;
     }
     //$('#divEsperaReportats').hide();
+
+    $('#divConsultaIncidenciasEspera').show();
 
     if(!p_inicio)
     {
