@@ -110,10 +110,10 @@ function AudioReproducir(){
                     },
                     // error callback
                     function(e) {
-                        setAudioPosition("Error: " + e, 1);
+                        setAudioPosition("Error: " + e.message, 1);
                     }
                 );
-            }, setInt * 100);
+            }, 1000);
         }
     }
 
@@ -123,11 +123,11 @@ function setAudioPosition(position, iColor) {
     document.getElementById('audio_position').innerHTML = position;
     if (iColor == 0) {
         // Negro
-        document.getElementById('audio_position').style.color='#ffffff';
+        document.getElementById('audio_position').style.color='#b80529';
     }
     else{
         // Rojo
-        document.getElementById('audio_position').style.color='#b80529';
+        document.getElementById('audio_position').style.color='#ffffff';
     }
 }
 
@@ -139,21 +139,21 @@ function onErrorAudioPlay(error) {
 }
 
 function stopAudio() {
-    if(_mediaAudio){
+    if(_mediaAudio!=null && _mediaAudio){
         _mediaAudio.stop();
     }
     _mediaTimer=null;
 }
 
 function pauseAudio() {
-    if(_mediaAudio) {
+    if(_mediaAudio!=null && _mediaAudio) {
         _mediaAudio.pause();
     }
 }
 
 
 function cerrarAudio() {
-    if(_mediaAudio) {
+    if(_mediaAudio!=null && _mediaAudio) {
         _mediaAudio.stop();
     }
     _mediaAudio=null;

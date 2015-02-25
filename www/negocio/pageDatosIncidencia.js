@@ -10,6 +10,7 @@ var sComentario = '';
 
 function inicioPaginaDatosIncidencia() {
     $('#divDatosIncidenciaEspera').hide();
+    //$('#divDatosIncidenciaAudioPlay').hide();
     $('#divCargarMapaAlta').show();
     $('#divMensajeMapa').hide();
     $('#divMapa').hide();
