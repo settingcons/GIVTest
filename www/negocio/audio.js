@@ -85,8 +85,14 @@ function MostrarAudioReproducir(){
 function AudioReproducir(){
 
     if (_inciAudioFichero !=''){
-        //Iniciar Grabación
-        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudioPlay,onErrorAudioPlay);
+        //var v_imagen1 = document.getElementById('imgAudioPlayPlay');
+        //v_imagen1.src = "images/play_gray.png";
+        //var v_imagen2 = document.getElementById('imgAudioPlayStop');
+        //v_imagen2.src = "images/play_gray.png";
+
+        //Iniciar Reprodución
+        var v_src="data:audio/mpeg;base64," +_inciAudioFichero;
+        _mediaAudio = new Media(v_src,onSuccessAudioPlay,onErrorAudioPlay);
         _mediaAudio.play();
         if (_mediaTimer == null) {
             _mediaTimer = setInterval(function() {
