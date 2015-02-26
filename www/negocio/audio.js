@@ -96,21 +96,12 @@ function AudioReproducir(){
                     function(position) {
                         if (position > -1) {
                             var iPos = parseInt(position);
-                            if (iPos < 10) {
-                                setAudioPosition("0:0" + (iPos), 0);
-                            }
-                            else
-                            {
-                                setAudioPosition("0:" + (iPos), 0);
-                            }
-                            if (iPos==0){
-                                setAudioPosition("", 0);
-                            }
+                            setAudioPosition(iPos+" seg.");
                         }
                     },
                     // error callback
                     function(e) {
-                        setAudioPosition("Error: " + e.message, 1);
+                        setAudioPosition("Error: " + e.message);
                     }
                 );
             }, 1000);
@@ -119,29 +110,25 @@ function AudioReproducir(){
 
 }
 
-function setAudioPosition(position, iColor) {
+function setAudioPosition(position) {
     document.getElementById('audio_position').innerHTML = position;
-    if (iColor == 0) {
-        // Negro
-        document.getElementById('audio_position').style.color='#b80529';
-    }
-    else{
-        // Rojo
-        document.getElementById('audio_position').style.color='#ffffff';
-    }
+    document.getElementById('audio_position').style.color='#b80529';
 }
 
 function onSuccessAudioPlay() {
 }
 
 function onErrorAudioPlay(error) {
-    mensaje(error.message,"error");
+    if(error!=null && error.message!=null) {
+        mensaje(error.message, "error");
+    }
 }
 
 function stopAudio() {
     if(_mediaAudio!=null && _mediaAudio){
         _mediaAudio.stop();
     }
+    clearInterval(_mediaTimer);
     _mediaTimer=null;
 }
 
