@@ -91,8 +91,8 @@ function AudioReproducir(){
         //v_imagen2.src = "images/play_gray.png";
 
         //Iniciar Reprodución
-        var v_src="data:audio/mpeg;base64," +_inciAudioFichero;
-        _mediaAudio = new Media(v_src,onSuccessAudioPlay,onErrorAudioPlay);
+        //var v_src="data:audio/mpeg;base64," +_inciAudioFichero;
+        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudioPlay,onErrorAudioPlay);
         _mediaAudio.play();
         if (_mediaTimer == null) {
             _mediaTimer = setInterval(function() {
