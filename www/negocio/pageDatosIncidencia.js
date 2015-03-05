@@ -314,6 +314,7 @@ function enviarIncidencia(){
             $('#divDatosIncidenciaEspera').hide();
 
             mensaje("Falten dades obligatòries;\n"+v_sRetorno,"avís");
+
         }
     }
     catch (ex){

@@ -7,6 +7,9 @@
 .mi-util a:hover {
     background-color:#f9dce2;
 }
+.mi-util a:visited {
+    background-color:transparent;
+}
 
 
 .mi-img-menu
