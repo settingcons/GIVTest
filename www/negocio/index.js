@@ -186,12 +186,12 @@ function abrirPagina(sPag, bComprueba) {
                 $.doTimeout(1500, inicioPaginaInfoEnvio());
                 break;
             case 'pageConsultaIncidencias':
-                $.doTimeout(1000, inicioPaginaConsultaIncidencias());
+                $.doTimeout(1500, inicioPaginaConsultaIncidencias());
                 break;
             case 'pageConsultaIncidenciasFicha':
                 break;
             case 'pageConsultaIncidenciasMapa':
-                $.doTimeout(1000, mostrarEnPlano());
+                $.doTimeout(1500, mostrarEnPlano());
                 break;
             case 'pageZoomFoto' :
                 var imagen = document.getElementById('imgZoomFoto');

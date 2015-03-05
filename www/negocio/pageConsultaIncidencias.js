@@ -7,7 +7,7 @@ function inicioPaginaConsultaIncidencias(){
     $('#divConsultaIncidenciasEspera').hide();
         aComs=(getComunicats());
         cargaListaComunicats();
-    setTimeout(function() { $('#listviewLista').focus(); }, 100);
+    setTimeout(function() { $('#listviewLista').click(); }, 100);
     //$('#buttonBorrarHistoricoComunicados').removeClass($.mobile.activeBtnClass);
     //$('#buttonEnviamentDePendents').removeClass($.mobile.activeBtnClass);
     //$('#buttonMostrarEnPlano').removeClass($.mobile.activeBtnClass);
@@ -248,7 +248,7 @@ function borrarHistoricoComunicados(respuesta){
         $('#divConsultaIncidenciasEspera').hide();
     }
     //$('#buttonBorrarHistoricoComunicados').removeClass($.mobile.activeBtnClass);
-    setTimeout(function() { $('#listviewLista').focus(); }, 100);
+    setTimeout(function() { $('#listviewLista').click(); }, 100);
 }
 
 function enviamentDePendents1(){
