@@ -130,6 +130,12 @@ function verDatosComunicat(x){
 
 function mostrarEnPlano() {
     try {
+        try{
+            $('#buttonMostrarEnLista').removeClass($.mobile.activeBtnClass);
+        }
+        catch (ex){
+
+        }
         if (aComs == null || aComs.length == 0) {
             return false;
         }
@@ -357,6 +363,7 @@ function enviamentDePendents(p_inicio) {
 
     if(!p_inicio)
     {
+        $('#buttonEnviamentDePendents').removeClass($.mobile.activeBtnClass);
 
         if(v_bError){
             mensaje("Actualització feta amb errors\n"+v_sError,"avís");
