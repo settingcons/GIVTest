@@ -7,7 +7,7 @@ function inicioPaginaConsultaIncidencias(){
     $('#divConsultaIncidenciasEspera').hide();
         aComs=(getComunicats());
         cargaListaComunicats();
-    setTimeout(function() { $('#listviewLista').click(); }, 100);
+    //setTimeout(function() { $('#listviewLista').un.click(); }, 100);
     //$('#buttonBorrarHistoricoComunicados').removeClass($.mobile.activeBtnClass);
     //$('#buttonEnviamentDePendents').removeClass($.mobile.activeBtnClass);
     //$('#buttonMostrarEnPlano').removeClass($.mobile.activeBtnClass);
@@ -187,7 +187,7 @@ function mostrarEnPlano() {
             $('#divMapaConsulta').gmap('refresh');
         } catch (ex) {
         }
-        setTimeout(function() { $('#divMapaConsulta').focus(); }, 100);
+        setTimeout(function() { $('#divMapaConsulta').touch(); }, 100);
 
     }
     catch (ex) {
@@ -248,7 +248,7 @@ function borrarHistoricoComunicados(respuesta){
         $('#divConsultaIncidenciasEspera').hide();
     }
     //$('#buttonBorrarHistoricoComunicados').removeClass($.mobile.activeBtnClass);
-    setTimeout(function() { $('#listviewLista').click(); }, 100);
+    setTimeout(function() { $('#listviewLista').touch(); }, 100);
 }
 
 function enviamentDePendents1(){
@@ -374,7 +374,7 @@ function enviamentDePendents(p_inicio) {
         else{
             mensaje("Actualització feta","avís");
         }
-        setTimeout(function() { $('#listviewLista').focus(); }, 100);
+        setTimeout(function() { $('#listviewLista').touch(); }, 100);
     }
 
 }
