@@ -347,14 +347,14 @@
             </h3></td>
                 <td align="rigth">
                     <div class="mi-util" >
-                        <a  href="" id="buttonBorrarHistoricoComunicados" data-theme="" ><img alt="" src="images/delete-white.png" width="20" /></a>
+                        <a  href="" id="buttonBorrarHistoricoComunicados" ><img alt="" src="images/delete-white.png" width="20" /></a>
                     </div></td>
                 <td align="rigth">
                     <div class="mi-util">
-                        <a  href="" id="buttonEnviamentDePendents" data-theme=""  ><img alt=""  src="css/themes/Rojos/images/icons-png/refresh-white.png" width="20" /></a>
+                        <a  href="" id="buttonEnviamentDePendents" ><img alt=""  src="css/themes/Rojos/images/icons-png/refresh-white.png" width="20" /></a>
                     </div></td>
                 <td align="rigth">
-            <div class="mi-util" aria-selected="false" >
+            <div class="mi-util">
             <a id="buttonMostrarEnPlano" href="" onclick="abrirPagina('pageConsultaIncidenciasMapa', false)"><img alt="" src="css/themes/Rojos/images/icons-png/location-white.png" width="20" /></a>
                 </div></td></tr></table>
         </div>
@@ -503,13 +503,14 @@
         });
 
 
-        $(document).bind("mobileinit", function () { $.mobile.page.prototype.options.addBackBtn = true; });
+        $(document).bind("mobileinit", function () { $.mobile.page.prototype.options.addBackBtn = true; $.mobile.activeBtnClass="none"; });
 
         $(window.document).on("mobileinit", function () {
             $.mobile.loader.prototype.options.text = "loading";
             $.mobile.loader.prototype.options.textVisible = true;
             $.mobile.loader.prototype.options.theme = "c";
             $.mobile.loader.prototype.options.html = "";
+            $.mobile.activeBtnClass="none";
         });
         $.mobile.loading("show", {
             text: "foo",
