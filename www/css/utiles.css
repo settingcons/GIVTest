@@ -1,14 +1,22 @@
+
 .mi-util a {
-    background-color:transparent;
+    background-color:transparent !important;;
     margin:2px;
     padding:4px;
     display:block;
 }
-.mi-util a:hover {
-    background-color:#f9dce2;
+.mi-util a:visited  {
+    background-color:transparent !important;
 }
-.mi-util a:visited {
-    background-color:transparent;
+.mi-util a:link {
+    background-color:transparent !important;
+}
+.mi-util a:active {
+    background-color:transparent !important;
+}
+
+.mi-util a:hover {
+    background-color:#f9dce2 !important;;
 }
 
 
