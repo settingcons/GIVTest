@@ -317,6 +317,7 @@ function enviarIncidencia(){
         }
     }
     catch (ex){
+        $('#divDatosIncidenciaEspera').hide();
         mensaje("ERROR: "+ex.message,"error");
     }
 }

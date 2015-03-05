@@ -7,6 +7,9 @@ function inicioPaginaConsultaIncidencias(){
     $('#divConsultaIncidenciasEspera').hide();
         aComs=(getComunicats());
         cargaListaComunicats();
+    $('#buttonBorrarHistoricoComunicados').removeClass($.mobile.activeBtnClass);
+    $('#buttonEnviamentDePendents').removeClass($.mobile.activeBtnClass);
+    $('#buttonMostrarEnPlano').removeClass($.mobile.activeBtnClass);
 }
 
 function cargaListaComunicats(){
@@ -235,6 +238,8 @@ function borrarHistoricoComunicados(respuesta){
     else{
         $('#divConsultaIncidenciasEspera').hide();
     }
+    $('#buttonBorrarHistoricoComunicados').removeClass($.mobile.activeBtnClass);
+
 }
 
 function enviamentDePendents1(){
@@ -354,10 +359,10 @@ function enviamentDePendents(p_inicio) {
     {
 
         if(v_bError){
-            mensaje("Actualització feta amb errors\n"+v_sError,"avis");
+            mensaje("Actualització feta amb errors\n"+v_sError,"avís");
         }
         else{
-            mensaje("Actualització feta","avis");
+            mensaje("Actualització feta","avís");
         }
     }
 
