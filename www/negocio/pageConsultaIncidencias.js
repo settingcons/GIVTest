@@ -5,12 +5,10 @@ var aComs=null;
 
 function inicioPaginaConsultaIncidencias(){
     $('#divConsultaIncidenciasEspera').hide();
-        aComs=(getComunicats());
+    $('#buttonMostrarEnPlano').css("background-color","transparent");
+
+    aComs=(getComunicats());
         cargaListaComunicats();
-    //setTimeout(function() { $('#listviewLista').un.click(); }, 100);
-    //$('#buttonBorrarHistoricoComunicados').removeClass($.mobile.activeBtnClass);
-    //$('#buttonEnviamentDePendents').removeClass($.mobile.activeBtnClass);
-    //$('#buttonMostrarEnPlano').removeClass($.mobile.activeBtnClass);
 }
 
 function cargaListaComunicats(){
@@ -131,12 +129,8 @@ function verDatosComunicat(x){
 
 function mostrarEnPlano() {
     try {
-        try{
-            //$('#buttonMostrarEnLista').removeClass($.mobile.activeBtnClass);
-        }
-        catch (ex){
+        $('#buttonMostrarEnLista').css("background-color","transparent");
 
-        }
         if (aComs == null || aComs.length == 0) {
             return false;
         }
@@ -187,19 +181,23 @@ function mostrarEnPlano() {
             $('#divMapaConsulta').gmap('refresh');
         } catch (ex) {
         }
-        setTimeout(function() { $('#divMapaConsulta').touch(); }, 100);
-
     }
     catch (ex) {
         mensaje(ex.message, "error");
     }
 }
 
+//buttonBorrarHistoricoComunicados.touchstart
+//buttonEnviamentDePendents.touchstart
 function MostrarEsperaConsultaIncidencias(){
     $('#divConsultaIncidenciasEspera').show();
+    //$('#buttonBorrarHistoricoComunicados').css("background-color","#f9dce2");
 }
 
+//buttonBorrarHistoricoComunicados.touchend
 function borrarHistoricoComunicadosConfirm() {
+    $('#buttonBorrarHistoricoComunicados').css("background-color","transparent");
+
     var v_mensaje = "Vol el·liminar l'historial?";
     var v_titulo = "El·liminar historial";
     var v_botones = "SI,NO";
@@ -247,10 +245,9 @@ function borrarHistoricoComunicados(respuesta){
     else{
         $('#divConsultaIncidenciasEspera').hide();
     }
-    //$('#buttonBorrarHistoricoComunicados').removeClass($.mobile.activeBtnClass);
-    setTimeout(function() { $('#listviewLista').touch(); }, 100);
 }
 
+//buttonEnviamentDePendents.touchend
 function enviamentDePendents1(){
     enviamentDePendents(false);
 }
@@ -366,7 +363,7 @@ function enviamentDePendents(p_inicio) {
 
     if(!p_inicio)
     {
-        //$('#buttonEnviamentDePendents').removeClass($.mobile.activeBtnClass);
+        $('#buttonEnviamentDePendents').css("background-color","transparent");
 
         if(v_bError){
             mensaje("Actualització feta amb errors\n"+v_sError,"avís");
@@ -374,7 +371,6 @@ function enviamentDePendents(p_inicio) {
         else{
             mensaje("Actualització feta","avís");
         }
-        setTimeout(function() { $('#listviewLista').touch(); }, 100);
     }
 
 }

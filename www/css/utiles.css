@@ -1,23 +1,16 @@
-/*.mi-util{*/
-    /*background-color:transparent;*/
-    /*padding:2px;*/
-    /*-webkit-user-select: none;*/
-/*}*/
-/*.mi-util:hover{*/
-    /*background-color:#f9dce2;*/
-    /*padding:2px;*/
-    /*-webkit-user-select: none;*/
-/*}*/
-
-{
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+.mi-util{
+    background-color:transparent;
+    padding:2px;
 }
+
+.mi-util:hover{
+    background-color:#f9dce2;
+}
+
 .mi-util a {
     background-color:transparent;
-    margin:2px;
     padding:4px;
     display:block;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .mi-util a:visited  {
     background-color:transparent;
@@ -30,7 +23,7 @@
 }
 
 .mi-util a:hover {
-    background-color:#f9dce2;
+    background-color:transparent;
 }
 
 
