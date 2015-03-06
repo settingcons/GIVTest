@@ -127,6 +127,23 @@ function verDatosComunicat(x){
 
 }
 
+function buttonMostrarEnLista_touchstart(){
+    $('#buttonMostrarEnLista').css("background-color","#f9dce2");
+}
+function buttonMostrarEnLista_touchend(){
+    $('#buttonMostrarEnLista').css("background-color","transparent");
+    abrirPagina('pageConsultaIncidencias', false);
+}
+
+function buttonMostrarEnPlano_touchstart(){
+    $('#buttonMostrarEnPlano').css("background-color","#f9dce2");
+}
+function buttonMostrarEnPlano_touchend(){
+    $('#buttonMostrarEnPlano').css("background-color","transparent");
+    abrirPagina('pageConsultaIncidenciasMapa', false);
+}
+
+
 function mostrarEnPlano() {
     try {
         $('#buttonMostrarEnLista').css("background-color","transparent");
@@ -187,11 +204,14 @@ function mostrarEnPlano() {
     }
 }
 
-//buttonBorrarHistoricoComunicados.touchstart
-//buttonEnviamentDePendents.touchstart
 function MostrarEsperaConsultaIncidencias(){
     $('#divConsultaIncidenciasEspera').show();
-    //$('#buttonBorrarHistoricoComunicados').css("background-color","#f9dce2");
+}
+
+
+function buttonBorrarHistoricoComunicados_touchstart(){
+    MostrarEsperaConsultaIncidencias();
+    $('#buttonBorrarHistoricoComunicados').css("background-color","#f9dce2");
 }
 
 //buttonBorrarHistoricoComunicados.touchend
@@ -245,6 +265,11 @@ function borrarHistoricoComunicados(respuesta){
     else{
         $('#divConsultaIncidenciasEspera').hide();
     }
+}
+
+function buttonEnviamentDePendents_touchstart(){
+    MostrarEsperaConsultaIncidencias();
+    $('#buttonEnviamentDePendents').css("background-color","#f9dce2");
 }
 
 //buttonEnviamentDePendents.touchend

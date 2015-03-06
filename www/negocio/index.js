@@ -43,10 +43,17 @@ function deviceReady() {
         document.addEventListener("backbutton", handleBackButton, false);
         document.getElementById('buttonEnviar').addEventListener("touchstart", MostrarEsperaDatosIncidencia, false);
         document.getElementById('buttonEnviar').addEventListener("touchend", enviarIncidencia, false);
-        document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchstart", MostrarEsperaConsultaIncidencias, false);
+
+        document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchstart", buttonBorrarHistoricoComunicados_touchstart, false);
         document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchend", borrarHistoricoComunicadosConfirm, false);
-        document.getElementById('buttonEnviamentDePendents').addEventListener("touchstart", MostrarEsperaConsultaIncidencias, false);
+        document.getElementById('buttonEnviamentDePendents').addEventListener("touchstart", buttonEnviamentDePendents_touchstart, false);
         document.getElementById('buttonEnviamentDePendents').addEventListener("touchend", enviamentDePendents1, false);
+        document.getElementById('buttonMostrarEnPlano').addEventListener("touchstart", buttonMostrarEnPlano_touchstart, false);
+        document.getElementById('buttonMostrarEnPlano').addEventListener("touchend", buttonMostrarEnPlano_touchend, false);
+        document.getElementById('buttonMostrarEnLista').addEventListener("touchstart", buttonMostrarEnLista_touchstart, false);
+        document.getElementById('buttonMostrarEnLista').addEventListener("touchend", buttonMostrarEnLista_touchend, false);
+
+
         document.getElementById('buttonAudioPlay').addEventListener("touchstart", MostrarAudioReproducir, false);
         document.getElementById('buttonAudioPlay').addEventListener("touchend", AudioReproducir, false);
 
