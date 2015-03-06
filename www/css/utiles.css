@@ -1,19 +1,23 @@
-.mi-util{
-    background-color:transparent;
-    padding:2px;
-    -webkit-user-select: none;
-}
-.mi-util:hover{
-    background-color:#f9dce2;
-    padding:2px;
-    -webkit-user-select: none;
-}
+/*.mi-util{*/
+    /*background-color:transparent;*/
+    /*padding:2px;*/
+    /*-webkit-user-select: none;*/
+/*}*/
+/*.mi-util:hover{*/
+    /*background-color:#f9dce2;*/
+    /*padding:2px;*/
+    /*-webkit-user-select: none;*/
+/*}*/
+
 
 .mi-util a {
     background-color:transparent;
+    margin:2px;
     padding:4px;
     display:block;
-    -webkit-user-select: none;
+}
+.mi-util a.tapped{
+    background-color:green;
 }
 .mi-util a:visited  {
     background-color:transparent;
@@ -26,7 +30,7 @@
 }
 
 .mi-util a:hover {
-    background-color:transparent;
+    background-color:#f9dce2;
 }
 
 
