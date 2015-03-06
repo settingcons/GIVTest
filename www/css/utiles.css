@@ -3,26 +3,45 @@
     padding:2px;
 }
 
-/*.mi-util:hover{*/
-    /*background-color:#f9dce2;*/
-/*}*/
+.mi-util:hover{
+    background-color:#f9dce2;
+}
 
 .mi-util a {
     background-color:transparent;
     padding:4px;
     display:block;
 }
-.mi-util a:visited  {
-    background-color:transparent;
-}
-.mi-util a:link {
-    background-color:transparent;
-}
-.mi-util a:active {
+
+.mi-util a:hover {
     background-color:transparent;
 }
 
-.mi-util a:hover {
+.mi-boton-cab{
+    background-color:transparent;
+    padding:2px;
+}
+
+/*.mi-util:hover{*/
+/*background-color:#f9dce2;*/
+/*}*/
+
+.mi-boton-cab a {
+    background-color:transparent;
+    padding:4px;
+    display:block;
+}
+.mi-boton-cab a:visited  {
+    background-color:transparent;
+}
+.mi-boton-cab a:link {
+    background-color:transparent;
+}
+.mi-boton-cab a:active {
+    background-color:transparent;
+}
+
+mi-boton-cab a:hover {
     background-color:transparent;
 }
 

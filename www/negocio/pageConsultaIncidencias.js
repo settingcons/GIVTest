@@ -216,7 +216,6 @@ function buttonBorrarHistoricoComunicados_touchstart(){
 
 //buttonBorrarHistoricoComunicados.touchend
 function borrarHistoricoComunicadosConfirm() {
-    $('#buttonBorrarHistoricoComunicados').css("background-color","transparent");
 
     var v_mensaje = "Vol el·liminar l'historial?";
     var v_titulo = "El·liminar historial";
@@ -238,6 +237,7 @@ function borrarHistoricoComunicadosConfirm() {
 }
 
 function borrarHistoricoComunicados(respuesta){
+    $('#buttonBorrarHistoricoComunicados').css("background-color","transparent");
 
     if (respuesta==1) {
 
