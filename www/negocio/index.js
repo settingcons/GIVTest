@@ -173,7 +173,7 @@ function handleBackButton() {
 function abrirPagina(sPag, bComprueba) {
 
     if (bComprueba && SinDatosCiudadano()) {
-            mensaje("L'adreça electrònica es obligatoria per utilitzar aquesta app","error")
+            mensaje("L'adreça electrònica es obligatòria per utilitzar aquesta app","error")
    }
     else
     {
