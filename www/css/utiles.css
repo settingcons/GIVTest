@@ -9,15 +9,15 @@
     /*-webkit-user-select: none;*/
 /*}*/
 
-
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 .mi-util a {
     background-color:transparent;
     margin:2px;
     padding:4px;
     display:block;
-}
-.mi-util a.tapped{
-    background-color:green;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .mi-util a:visited  {
     background-color:transparent;
