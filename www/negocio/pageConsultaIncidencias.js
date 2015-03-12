@@ -396,6 +396,9 @@ function enviamentDePendents(p_inicio) {
         else{
             mensaje("Actualització feta","avís");
         }
+        //limpiar/actualizar la lista
+        inicioPaginaConsultaIncidencias();
+
     }
 
 }
