@@ -69,6 +69,9 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.vibration" />
 
+    <!-- hgs ocultar statusbar ios-->
+    <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
+
     <gap:plugin name="settingconsultoria.cordova.plugins.diagnostic" version="0.0.1" />
 
     <feature name="Diagnostic" >
