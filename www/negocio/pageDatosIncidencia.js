@@ -84,13 +84,10 @@ function MostrarUbicacion() {
         cargaLetrasAbcdario(combo, 'lletra inicial', nLetra);
 
         if (GPSActivado) {
-            alert('GPSActivado');
             if (GPSwathId) {
-                alert('GPSwathId true')
                 posicionOK(posicionGPS);
             }
             else {
-                alert('GPSwathId false')
                 //Si hay error al recuperar posición (puede que esté sin cobertura)
                 //Se obtiene la current position por si acaso
                 getPosition();

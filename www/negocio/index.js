@@ -164,7 +164,7 @@ function handleBackButton() {
         }
     }
     catch (ex) {
-        alert("handleBackButton: " +ex.message);
+        //alert("handleBackButton: " +ex.message);
     }
 }
 
@@ -223,7 +223,7 @@ function getLocation() {
     }
     catch (ex){
         GPSwathId=false;
-        alert("getLocation:"+ex.message);
+        //alert("getLocation:"+ex.message);
     }
 }
 
@@ -247,22 +247,23 @@ function getPosition() {
             enableHighAccuracy: true
         };
         //get the current location
-        if(esIOS())
-        {
-            alert("getPosition: IOS");
-            setInterval( function(){
-                    navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1);
-                },
-                5000);
-        }
-        else
-        {
-            navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1, locOptions);
-
-        }
+        navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1, locOptions);
+        //if(esIOS())
+        //{
+        //    alert("getPosition: IOS");
+        //    setInterval( function(){
+        //            navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1);
+        //        },
+        //        5000);
+        //}
+        //else
+        //{
+        //    navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1, locOptions);
+        //
+        //}
     }
     catch (ex){
-        alert("getPosition: "+ex.message);
+        //alert("getPosition: "+ex.message);
     }
 }
 
@@ -272,7 +273,7 @@ function onLocationSuccess1(loc) {
 }
 
 function onLocationError1(e) {
-    alert("onLocationError1: "+e.message);
+    //alert("onLocationError1: "+e.message);
     GPScurrentposition=false;
 }
 
@@ -292,11 +293,11 @@ function GPSEstaActivado(p_inicio) {
         }
     }
     catch (ex) {
-        alert("GPSEstaActivado: "+e.message);
+        //alert("GPSEstaActivado: "+e.message);
     }
 }
 function GPSEstaActivadoError(error) {
-    alert("GPSEstaActivadoError: "+e.message);
+    //alert("GPSEstaActivadoError: "+e.message);
 }
 
 function GPSEstaActivadoOKIni(result) {
