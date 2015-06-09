@@ -147,18 +147,22 @@ function handleBackButton() {
             abrirPagina("pageTipoIncidencia", false);
         }
         else{
+            alert('handleBackButton otro');
             if (navigator.app) {
+                alert('handleBackButton (navigator.app');
                 navigator.app.backHistory();
             } else if (navigator.device) {
+                alert('handleBackButton (navigator.device');
                 navigator.device.backHistory();
             }
             else {
+                alert('handleBackButton (window.history');
                 window.history.back();
             }
         }
     }
     catch (ex) {
-        //alert(ex.message);
+        alert("handleBackButton: " +ex.message);
     }
 }
 
@@ -241,7 +245,19 @@ function getPosition() {
             enableHighAccuracy: true
         };
         //get the current location
-        navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1, locOptions);
+        if(esIOS())
+        {
+            alert("getPosition: IOS");
+            setInterval( function(){
+                    navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1);
+                },
+                5000);
+        }
+        else
+        {
+            navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1, locOptions);
+
+        }
     }
     catch (ex){
         alert("getPosition: "+ex.message);
