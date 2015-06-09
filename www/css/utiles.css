@@ -3,6 +3,11 @@
     padding:2px;
 }
 
+.mi-util-ancho{
+    width: 45px;
+    text-align: center;
+}
+
 .mi-util:hover{
     background-color:#f9dce2;
 }
@@ -175,8 +180,8 @@
 }
 
 #divTipoInci a{
-    width: 110px;
-    height: 80px;
+    width: 145px;
+    height: 85px;
     display: inherit;
     margin: 5px;
     text-align: center;

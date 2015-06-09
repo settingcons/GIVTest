@@ -23,13 +23,6 @@ function localStorageRun() {
     }
 }
 
-function salir() {
-    if (navigator.app) {
-        navigator.app.exitApp();
-    } else if (navigator.device) {
-        navigator.device.exitApp();
-    }
-}
 
 
 function localStorageSupport() {
@@ -41,6 +34,10 @@ function localStorageSupport() {
 
 function phoneGapRun() {
     return(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/));
+}
+
+function esIOS() {
+    return(navigator.userAgent.match(/(iPhone|iPod|iPad)/));
 }
 
 function mensaje(msg,titulo) {

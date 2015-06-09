@@ -277,6 +277,7 @@ function cargaCalles(){
 
 function MostrarEsperaDatosIncidencia(){
     $('#divDatosIncidenciaEspera').show();
+    //enviarIncidencia()();
 }
 
 function enviarIncidencia(){

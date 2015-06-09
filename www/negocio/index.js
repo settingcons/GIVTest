@@ -66,6 +66,16 @@ function deviceReady() {
             v_error='phonegap no soportat';
         }
 
+        //en IOS no se puede utilizar la instrucción exitApp()
+        if(esIOS())
+        {
+            $('#liSalir1').hide();
+            $('#liSalir2').hide();
+            $('#liSalir3').hide();
+            $('#liSalir4').hide();
+            $('#buttonSalir').hide();
+        }
+
         //Hay localstorage ?
         if (!$.jStorage.storageAvailable()) {
             v_error="exception obrint l'app: localstorage no soportat";
@@ -83,11 +93,7 @@ function deviceReady() {
 
     if(v_error != ''){
         mensaje(v_error,"error");
-        if (navigator.app) {
-            navigator.app.exitApp();
-        } else if (navigator.device) {
-            navigator.device.exitApp();
-        }
+        salir();
     }
 
     try{
@@ -114,30 +120,18 @@ function deviceReady() {
         }
     });
 }
+
 function handleBackButton() {
     try {
-        //alert($.mobile.activePage.attr('id'));
         if ($.mobile.activePage.attr('id') == 'pageIndex') {
-            if (navigator.app) {
-                navigator.app.exitApp();
-            } else if (navigator.device) {
-                navigator.device.exitApp();
-            }
+            salir();
         }
         else if ($.mobile.activePage.attr('id') == 'pageTipoIncidencia') {
-            if (navigator.app) {
-                navigator.app.exitApp();
-            } else if (navigator.device) {
-                navigator.device.exitApp();
-            }
+            salir();
         }
         else if ($.mobile.activePage.attr('id') == 'pageIdentificacion') {
             if(SinDatosCiudadano()){
-                if (navigator.app) {
-                    navigator.app.exitApp();
-                } else if (navigator.device) {
-                    navigator.device.exitApp();
-                }
+                salir();
             }
             else{
                 abrirPagina("pageTipoIncidencia", false);
