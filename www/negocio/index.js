@@ -217,7 +217,7 @@ function getLocation() {
     }
     catch (ex){
         GPSwathId=false;
-        //alert("watchPosition:"+ex.message);
+        alert("getLocation:"+ex.message);
     }
 }
 
@@ -229,7 +229,7 @@ function onLocationSuccess(loc) {
 
 function onLocationError(e) {
     GPSwathId=false;
-    //alert("watchPositionERROR: "+ex.message);
+    alert("onLocationError: "+ex.message);
 }
 
 function getPosition() {
@@ -244,7 +244,7 @@ function getPosition() {
         navigator.geolocation.getCurrentPosition(onLocationSuccess1, onLocationError1, locOptions);
     }
     catch (ex){
-        //alert("getPosition: "+ex.message);
+        alert("getPosition: "+ex.message);
     }
 }
 
@@ -254,7 +254,7 @@ function onLocationSuccess1(loc) {
 }
 
 function onLocationError1(e) {
-    //alert("getPositionError: "+e.message);
+    alert("onLocationError1: "+e.message);
     GPScurrentposition=false;
 }
 
@@ -274,9 +274,11 @@ function GPSEstaActivado(p_inicio) {
         }
     }
     catch (ex) {
+        alert("GPSEstaActivado: "+e.message);
     }
 }
 function GPSEstaActivadoError(error) {
+    alert("GPSEstaActivadoError: "+e.message);
 }
 
 function GPSEstaActivadoOKIni(result) {

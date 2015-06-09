@@ -180,7 +180,7 @@
 }
 
 #divTipoInci a{
-    width: 145px;
+    width: 135px;
     height: 85px;
     display: inherit;
     margin: 5px;
@@ -190,7 +190,7 @@
 }
 
 #divTipoInci a div {
-    line-height: 10px;
+    line-height: 15px;
 }
 
 .divCargar{
