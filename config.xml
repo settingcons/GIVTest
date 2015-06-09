@@ -62,14 +62,15 @@
     <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="org.apache.cordova.file-transfer" />
     <!-- si se utiliza otra versión no funciona la geolocalización -->
-    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.7" />
+    <!--<gap:plugin name="org.apache.cordova.geolocation" version="0.3.7" />-->
+    <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.vibration" />
 
-    
+
     <!-- ocultar statusbar en ios -->
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
 

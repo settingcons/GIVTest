@@ -147,17 +147,19 @@ function handleBackButton() {
             abrirPagina("pageTipoIncidencia", false);
         }
         else{
-            alert('handleBackButton otro');
-            if (navigator.app) {
-                alert('handleBackButton (navigator.app');
-                navigator.app.backHistory();
-            } else if (navigator.device) {
-                alert('handleBackButton (navigator.device');
-                navigator.device.backHistory();
+            if(esIOS())
+            {
+                window.history.back();
             }
             else {
-                alert('handleBackButton (window.history');
-                window.history.back();
+                if (navigator.app) {
+                    navigator.app.backHistory();
+                } else if (navigator.device) {
+                    navigator.device.backHistory();
+                }
+                else {
+                    window.history.back();
+                }
             }
         }
     }
