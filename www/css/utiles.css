@@ -1,6 +1,11 @@
 .mi-util{
     background-color:transparent;
     padding:2px;
+    display: inherit;
+}
+
+.mi-util-hover{
+    background-color:#f9dce2;
 }
 
 .mi-util-ancho{
@@ -8,9 +13,9 @@
     text-align: center;
 }
 
-.mi-util:hover{
-    background-color:#f9dce2;
-}
+/*.mi-util:hover{*/
+    /*background-color:#f9dce2;*/
+/*}*/
 
 .mi-util a {
     background-color:transparent;

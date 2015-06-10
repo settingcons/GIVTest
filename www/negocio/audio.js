@@ -1,3 +1,14 @@
+
+function mediaAudioFichero(){
+    if(esIOS())
+    {
+        return _mediaAudioFicheroIOS;
+    }
+    else
+    {
+        return _mediaAudioFicheroAndroid;
+    }
+}
 function AudioGrabacionConfirma() {
     try{
         var v_mensaje = "s'està gravant al teu missatge de veu...";
@@ -8,8 +19,9 @@ function AudioGrabacionConfirma() {
         v_imagen.src = "images/play_gray.png";
 
         //Iniciar Grabación
-        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudio,onErrorAudio);
+        _mediaAudio = new Media( mediaAudioFichero(),onSuccessAudio,onErrorAudio);
         _mediaAudio.startRecord();
+
 
         if(navigator.notification && navigator.notification.confirm){
             navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
@@ -53,7 +65,7 @@ function AudioGrabacion(respuesta){
 }
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
-    fileSystem.root.getFile(_mediaAudioFichero, null, LeerFicheroAudio, onErrorAudio);
+    fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudio);
 }
 function LeerFicheroAudio(fileEntry) {
     fileEntry.file(LeerFicheroAudioOK, onErrorAudio);
@@ -92,7 +104,7 @@ function AudioReproducir(){
 
         //Iniciar Reprodución
         //var v_src="data:audio/mpeg;base64," +_inciAudioFichero;
-        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudioPlay,onErrorAudioPlay);
+        _mediaAudio = new Media( mediaAudioFichero(),onSuccessAudioPlay,onErrorAudioPlay);
         _mediaAudio.play();
         if (_mediaTimer == null) {
             _mediaTimer = setInterval(function() {

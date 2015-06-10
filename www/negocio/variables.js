@@ -14,8 +14,9 @@ var _wsURLLogin="http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/Log
 
 var _mediaAudio;
 var _mediaTimer = null;
-var _mediaAudioFichero = "givaudio.mp3";
-//var _mediaAudioFichero = "givaudio.mpeg";
-
+//var _mediaAudioFichero = "givaudio.mp3";
+var _mediaAudioFicheroAndroid = "givaudio.mpeg";
+var _mediaAudioFicheroIOS = "givaudio.wav";
 
 var _inciAudioFichero;
+

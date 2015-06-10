@@ -633,7 +633,15 @@
 //            alert('1');
 //            $('#divMapaConsulta').focus();
 //        });
+        $('.mi-util').live('touchstart', function(e){
+            $(this).addClass('mi-util-hover');
+            //alert('alert');
+        });
 
+        $('.mi-util').live('touchend', function(e){
+            $(this).removeClass('mi-util-hover');
+            //alert('alert');
+        });
 
         $("#selectLletraIniCARRER").bind( "change", function(event, ui) {
             cargaCarrersEnArray(); //rellena el array de calles que empiezan por esa letra desde el fic XML
