@@ -13,8 +13,10 @@ function ObtenerfullPathIOS() {
     _mediaAudioFicheroIOSFullPath="";
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
         function (fileSystem) {
+            alert('ObtenerfullPathIOS 1');
             fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false},
                 function (fileEntry) {
+                    alert('ObtenerfullPathIOS 2');
                     _mediaAudioFicheroIOSFullPath = fileEntry.fullPath;
                 },
                 onErrorAudio); //of getFile
@@ -33,8 +35,12 @@ function AudioGrabacionConfirma() {
             ObtenerfullPathIOS();
         }
         //Iniciar Grabación
-            _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
-            _mediaAudio.startRecord();
+        alert('AudioGrabacionConfirma 1');
+
+        _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
+        alert('AudioGrabacionConfirma 2');
+        _mediaAudio.startRecord();
+        alert('AudioGrabacionConfirma 3');
 
         if(navigator.notification && navigator.notification.confirm){
             navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
