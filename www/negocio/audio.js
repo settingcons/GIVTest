@@ -9,19 +9,6 @@ function mediaAudioFichero(){
         return _mediaAudioFicheroAndroid;
     }
 }
-function ObtenerfullPathIOS() {
-    _mediaAudioFicheroIOSFullPath="";
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
-        function (fileSystem) {
-            alert('ObtenerfullPathIOS 1');
-            fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false},
-                function (fileEntry) {
-                    alert('ObtenerfullPathIOS 2');
-                    _mediaAudioFicheroIOSFullPath = fileEntry.fullPath;
-                },
-                onErrorAudio); //of getFile
-        }, onErrorAudio); //of requestFileSystem
-}
 function AudioGrabacionConfirma() {
     try{
         var v_mensaje = "s'està gravant al teu missatge de veu...";
@@ -31,32 +18,55 @@ function AudioGrabacionConfirma() {
         var v_imagen = document.getElementById('imgAudioPlay');
         v_imagen.src = "images/play_gray.png";
 
-        if(esIOS()) {
-            ObtenerfullPathIOS();
-        }
         //Iniciar Grabación
-        alert('AudioGrabacionConfirma 1');
-
-        _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
-        alert('AudioGrabacionConfirma 2');
-        _mediaAudio.startRecord();
-        alert('AudioGrabacionConfirma 3');
-
-        if(navigator.notification && navigator.notification.confirm){
-            navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
+        if(esIOS()) {
+            CrearMediaIOS();
         }
         else
         {
-            var v_retorno = confirm(v_mensaje);
-            if (v_retorno){
-                AudioGrabacion(1);
-            }
-            else {
-                AudioGrabacion(2);
-            }
+            _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
+            InicializaGrabacion();
         }
     }
     catch (ex){mensaje(ex.message,"error");}
+}
+function CrearMediaIOS() {
+    _mediaAudioFicheroIOSFullPath="";
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+        function (fileSystem) {
+            alert('CrearMediaIOS 1');
+            fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false},
+                function (fileEntry) {
+                    alert('CrearMediaIOS 2');
+                    _mediaAudioFicheroIOSFullPath = fileEntry.fullPath;
+                    alert('CrearMediaIOS 3');
+                    _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
+                    alert('CrearMediaIOS 4');
+                    InicializaGrabacion();
+                },
+                onErrorAudio); //of getFile
+        }, onErrorAudio); //of requestFileSystem
+}
+
+function InicializaGrabacion(){
+    alert('InicializaGrabacion 1');
+    _mediaAudio.startRecord();
+    alert('InicializaGrabacion 2');
+
+    if(navigator.notification && navigator.notification.confirm){
+        navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
+    }
+    else
+    {
+        var v_retorno = confirm(v_mensaje);
+        if (v_retorno){
+            AudioGrabacion(1);
+        }
+        else {
+            AudioGrabacion(2);
+        }
+    }
+
 }
 function onSuccessAudio() {
 }
