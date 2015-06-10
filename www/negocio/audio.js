@@ -54,10 +54,12 @@ function InicializaGrabacion(){
     alert('InicializaGrabacion 2');
 
     if(navigator.notification && navigator.notification.confirm){
+        alert('InicializaGrabacion 3');
         navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
     }
     else
     {
+        alert('InicializaGrabacion 4');
         var v_retorno = confirm(v_mensaje);
         if (v_retorno){
             AudioGrabacion(1);
@@ -69,6 +71,7 @@ function InicializaGrabacion(){
 
 }
 function onSuccessAudio() {
+    alert('onSuccessAudio');
 }
 
 function onErrorAudio(error) {
