@@ -107,10 +107,12 @@ function AudioGrabacion(respuesta){
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
     alert('ConvertirFicheroAudioToBase64');
+    alert('fileSystem:  ' +fileSystem);
         fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudio);
 }
 function LeerFicheroAudio(fileEntry) {
     alert('LeerFicheroAudio');
+    alert('fileEntry: '+fileEntry);
     fileEntry.file(LeerFicheroAudioOK, onErrorAudio);
 }
 // the file is successfully retreived
@@ -123,6 +125,7 @@ function TransformarFicheroAudioToBase64(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         alert('reader.onloadend');
+        alert(' evt.target.result: '+ evt.target.result);
         _inciAudioFichero = evt.target.result;
         _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
         alert(_inciAudioFichero);
