@@ -53,7 +53,7 @@ function InicializaGrabacion(){
     var recInterval = setInterval(function() {
         recTime = recTime + 1;
         setAudioPosition(recTime + " sec");
-        if (recTime >= 10) {
+        if (recTime >= 100) {
             clearInterval(recInterval);
             mediaRec.stopRecord();
         }
@@ -122,8 +122,10 @@ function TransformarFicheroAudioToBase64(file) {
     alert('TransformarFicheroAudioToBase64');
     var reader = new FileReader();
     reader.onloadend = function(evt) {
+        alert('reader.onloadend');
         _inciAudioFichero = evt.target.result;
         _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
+        alert(_inciAudioFichero);
         var imagen = document.getElementById('imgAudioPlay');
         imagen.src = "images/play_red.png";
     };
