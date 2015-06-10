@@ -37,6 +37,10 @@ function CrearMediaIOS() {
             fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false},
                 function (fileEntry) {
                     _mediaAudioFicheroIOSFullPath = fileEntry.fullPath;
+                    alert('fileEntry.fullPath: '+_mediaAudioFicheroIOSFullPath);
+                    _mediaAudioFicheroIOSFullPath = fileEntry.toURI();
+                    alert('fileEntry.toURI(): '+_mediaAudioFicheroIOSFullPath);
+
                     _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
                     InicializaGrabacion();
                 },
