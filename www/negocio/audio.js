@@ -2,12 +2,23 @@
 function mediaAudioFichero(){
     if(esIOS())
     {
-        return _mediaAudioFicheroIOS;
+        return _mediaAudioFicheroIOSFullPath;
     }
     else
     {
         return _mediaAudioFicheroAndroid;
     }
+}
+function ObtenerfullPathIOS() {
+    _mediaAudioFicheroIOSFullPath="";
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+        function (fileSystem) {
+            fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false},
+                function (fileEntry) {
+                    _mediaAudioFicheroIOSFullPath = fileEntry.fullPath;
+                },
+                onErrorAudio); //of getFile
+        }, onErrorAudio); //of requestFileSystem
 }
 function AudioGrabacionConfirma() {
     try{
@@ -18,10 +29,12 @@ function AudioGrabacionConfirma() {
         var v_imagen = document.getElementById('imgAudioPlay');
         v_imagen.src = "images/play_gray.png";
 
+        if(esIOS()) {
+            ObtenerfullPathIOS();
+        }
         //Iniciar Grabación
-        _mediaAudio = new Media( mediaAudioFichero(),onSuccessAudio,onErrorAudio);
-        _mediaAudio.startRecord();
-
+            _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
+            _mediaAudio.startRecord();
 
         if(navigator.notification && navigator.notification.confirm){
             navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
@@ -67,7 +80,7 @@ function AudioGrabacion(respuesta){
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
     alert('ConvertirFicheroAudioToBase64');
-    fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudio);
+        fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudio);
 }
 function LeerFicheroAudio(fileEntry) {
     alert('LeerFicheroAudio');
