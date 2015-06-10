@@ -52,6 +52,7 @@ function AudioGrabacion(respuesta){
         //Finalizar grabación
         _mediaAudio.stopRecord();
         if (respuesta==1) {
+            alert('AudioGrabacion');
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudio);
         }
         else{
@@ -65,9 +66,11 @@ function AudioGrabacion(respuesta){
 }
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
+    alert('ConvertirFicheroAudioToBase64');
     fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudio);
 }
 function LeerFicheroAudio(fileEntry) {
+    alert('LeerFicheroAudio');
     fileEntry.file(LeerFicheroAudioOK, onErrorAudio);
 }
 // the file is successfully retreived
@@ -76,6 +79,7 @@ function LeerFicheroAudioOK(file){
 }
 // turn the file into a base64 encoded string, and update the var base to this value.
 function TransformarFicheroAudioToBase64(file) {
+    alert('TransformarFicheroAudioToBase64');
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         _inciAudioFichero = evt.target.result;
