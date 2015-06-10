@@ -47,19 +47,35 @@ function CrearMediaIOS() {
 function InicializaGrabacion(){
     _mediaAudio.startRecord();
 
-    if(navigator.notification && navigator.notification.confirm){
-        navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
-    }
-    else
-    {
-        var v_retorno = confirm(v_mensaje);
-        if (v_retorno){
-            AudioGrabacion(1);
+    alert('InicializaGrabacion 1');
+    // Stop recording after 10 sec
+    var recTime = 0;
+    var recInterval = setInterval(function() {
+        recTime = recTime + 1;
+        setAudioPosition(recTime + " sec");
+        if (recTime >= 10) {
+            clearInterval(recInterval);
+            mediaRec.stopRecord();
         }
-        else {
-            AudioGrabacion(2);
-        }
-    }
+    }, 1000);
+
+    alert('InicializaGrabacion 2');
+    AudioGrabacion(1);
+    alert('InicializaGrabacion 3');
+
+    //if(navigator.notification && navigator.notification.confirm){
+    //    navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
+    //}
+    //else
+    //{
+    //    var v_retorno = confirm(v_mensaje);
+    //    if (v_retorno){
+    //        AudioGrabacion(1);
+    //    }
+    //    else {
+    //        AudioGrabacion(2);
+    //    }
+    //}
 
 }
 function onSuccessAudio() {
