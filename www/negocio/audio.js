@@ -34,14 +34,10 @@ function CrearMediaIOS() {
     _mediaAudioFicheroIOSFullPath="";
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
         function (fileSystem) {
-            alert('CrearMediaIOS 1');
             fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false},
                 function (fileEntry) {
-                    alert('CrearMediaIOS 2');
                     _mediaAudioFicheroIOSFullPath = fileEntry.fullPath;
-                    alert('CrearMediaIOS 3');
                     _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
-                    alert('CrearMediaIOS 4');
                     InicializaGrabacion();
                 },
                 onErrorAudio); //of getFile
@@ -49,17 +45,13 @@ function CrearMediaIOS() {
 }
 
 function InicializaGrabacion(){
-    alert('InicializaGrabacion 1');
     _mediaAudio.startRecord();
-    alert('InicializaGrabacion 2');
 
     if(navigator.notification && navigator.notification.confirm){
-        alert('InicializaGrabacion 3');
         navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
     }
     else
     {
-        alert('InicializaGrabacion 4');
         var v_retorno = confirm(v_mensaje);
         if (v_retorno){
             AudioGrabacion(1);
@@ -71,7 +63,6 @@ function InicializaGrabacion(){
 
 }
 function onSuccessAudio() {
-    alert('onSuccessAudio');
 }
 
 function onErrorAudio(error) {
@@ -81,10 +72,11 @@ function onErrorAudio(error) {
 
 function AudioGrabacion(respuesta){
     try{
+        alert('AudioGrabacion 1');
         //Finalizar grabación
         _mediaAudio.stopRecord();
         if (respuesta==1) {
-            alert('AudioGrabacion');
+            alert('AudioGrabacion 2');
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudio);
         }
         else{
