@@ -130,9 +130,9 @@ function ConvertirFicheroAudioToBase64(fileSystem) {
     alert('ConvertirFicheroAudioToBase64');
     alert('fileSystem:  ' +fileSystem);
     alert('mediaAudioFichero :'+mediaAudioFichero());
-    alert(' tempDirectory: '+cordova.file.tempDirectory + _mediaAudioFicheroIOS);
-        fileSystem.root.getFile( cordova.file.tempDirectory + _mediaAudioFicheroIOS, null, LeerFicheroAudio, onErrorAudiogetFile);
-    //fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudiogetFile);
+    //alert(' tempDirectory: '+cordova.file.tempDirectory + _mediaAudioFicheroIOS);
+        //fileSystem.root.getFile( cordova.file.tempDirectory + _mediaAudioFicheroIOS, null, LeerFicheroAudio, onErrorAudiogetFile);
+    fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudiogetFile);
 }
 function LeerFicheroAudio(fileEntry) {
     alert('LeerFicheroAudio');
