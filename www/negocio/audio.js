@@ -37,11 +37,11 @@ function CrearMediaIOS() {
         function (fileSystem) {
             fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false},
                 function (fileEntry) {
-                    _mediaAudioFicheroIOSFullPath = fileEntry.fullPath;
-                    alert('fileEntry.fullPath: '+_mediaAudioFicheroIOSFullPath);
                     _mediaAudioFicheroIOSFullPath = fileEntry.toURI();
                     alert('fileEntry.toURI(): '+_mediaAudioFicheroIOSFullPath);
-
+                    _mediaAudioFicheroIOSFullPath = fileEntry.fullPath;
+                    alert('fileEntry.fullPath: '+_mediaAudioFicheroIOSFullPath);
+                    //_mediaAudioFicheroIOSFullPath = fileEntry.fullPath.indexOf('file://') > -1 ? fileEntry.fullPath : "file://" + fileEntry.fullPath;
                     _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudioMedia);
                     InicializaGrabacion();
                 },
