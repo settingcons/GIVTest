@@ -42,7 +42,7 @@ function CrearMediaIOS() {
                     _mediaAudioFicheroIOSFullPath = fileEntry.toURI();
                     alert('fileEntry.toURI(): '+_mediaAudioFicheroIOSFullPath);
 
-                    _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
+                    _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudioMedia);
                     InicializaGrabacion();
                 },
                 onErrorAudio); //of getFile
@@ -90,6 +90,22 @@ function onErrorAudio(error) {
     _inciAudioFichero='';
     mensaje(error.message,"error");
 }
+function onErrorAudioMedia(error) {
+    _inciAudioFichero='';
+    mensaje(error.message,"error Media");
+}
+function onErrorAudioFileSystem(error) {
+    _inciAudioFichero='';
+    mensaje(error.message,"error FileSystem");
+}
+function onErrorAudiogetFile(error) {
+    _inciAudioFichero='';
+    mensaje(error.message,"error getFile");
+}
+function onErrorAudioLeer(error) {
+    _inciAudioFichero='';
+    mensaje(error.message,"error Leer");
+}
 
 function AudioGrabacion(respuesta){
     try{
@@ -98,7 +114,7 @@ function AudioGrabacion(respuesta){
         _mediaAudio.stopRecord();
         if (respuesta==1) {
             alert('AudioGrabacion 2');
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudio);
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudioFileSystem);
         }
         else{
             _inciAudioFichero='';
@@ -113,12 +129,12 @@ function AudioGrabacion(respuesta){
 function ConvertirFicheroAudioToBase64(fileSystem) {
     alert('ConvertirFicheroAudioToBase64');
     alert('fileSystem:  ' +fileSystem);
-        fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudio);
+        fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudiogetFile);
 }
 function LeerFicheroAudio(fileEntry) {
     alert('LeerFicheroAudio');
     alert('fileEntry: '+fileEntry);
-    fileEntry.file(LeerFicheroAudioOK, onErrorAudio);
+    fileEntry.file(LeerFicheroAudioOK, onErrorAudioLeer);
 }
 // the file is successfully retreived
 function LeerFicheroAudioOK(file){
