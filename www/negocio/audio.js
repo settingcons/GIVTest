@@ -20,6 +20,7 @@ function AudioGrabacionConfirma() {
 
         //Iniciar Grabación
         if(esIOS()) {
+            alert('Es IOS');
             CrearMediaIOS();
         }
         else
