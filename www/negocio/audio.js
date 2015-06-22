@@ -1,14 +1,3 @@
-
-function mediaAudioFichero(){
-    if(esIOS())
-    {
-        return _mediaAudioFicheroIOSFullPath;
-    }
-    else
-    {
-        return _mediaAudioFicheroAndroid;
-    }
-}
 function AudioGrabacionConfirma() {
     try{
         var v_mensaje = "s'està gravant al teu missatge de veu...";
@@ -19,69 +8,24 @@ function AudioGrabacionConfirma() {
         v_imagen.src = "images/play_gray.png";
 
         //Iniciar Grabación
-        if(esIOS()) {
-            alert('Es IOS');
-            CrearMediaIOS();
+        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudio,onErrorAudio);
+        _mediaAudio.startRecord();
+
+        if(navigator.notification && navigator.notification.confirm){
+            navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
         }
         else
         {
-            _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudio);
-            InicializaGrabacion();
+            var v_retorno = confirm(v_mensaje);
+            if (v_retorno){
+                AudioGrabacion(1);
+            }
+            else {
+                AudioGrabacion(2);
+            }
         }
     }
     catch (ex){mensaje(ex.message,"error");}
-}
-function CrearMediaIOS() {
-    _mediaAudioFicheroIOSFullPath="";
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
-        function (fileSystem) {
-            fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false},
-                function (fileEntry) {
-                    _mediaAudioFicheroIOSFullPath = fileEntry.toURI();
-                    alert('fileEntry.toURI(): '+_mediaAudioFicheroIOSFullPath);
-                    _mediaAudioFicheroIOSFullPath = fileEntry.fullPath;
-                    alert('fileEntry.fullPath: '+_mediaAudioFicheroIOSFullPath);
-                    //_mediaAudioFicheroIOSFullPath = fileEntry.fullPath.indexOf('file://') > -1 ? fileEntry.fullPath : "file://" + fileEntry.fullPath;
-                    _mediaAudio = new Media(mediaAudioFichero(), onSuccessAudio, onErrorAudioMedia);
-                    InicializaGrabacion();
-                },
-                onErrorAudio); //of getFile
-        }, onErrorAudio); //of requestFileSystem
-}
-
-function InicializaGrabacion(){
-    _mediaAudio.startRecord();
-
-    alert('InicializaGrabacion 1');
-    // Stop recording after 10 sec
-    var recTime = 0;
-    var recInterval = setInterval(function() {
-        recTime = recTime + 1;
-        setAudioPosition(recTime + " sec");
-        if (recTime >= 100) {
-            clearInterval(recInterval);
-            mediaRec.stopRecord();
-        }
-    }, 1000);
-
-    alert('InicializaGrabacion 2');
-    AudioGrabacion(1);
-    alert('InicializaGrabacion 3');
-
-    //if(navigator.notification && navigator.notification.confirm){
-    //    navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
-    //}
-    //else
-    //{
-    //    var v_retorno = confirm(v_mensaje);
-    //    if (v_retorno){
-    //        AudioGrabacion(1);
-    //    }
-    //    else {
-    //        AudioGrabacion(2);
-    //    }
-    //}
-
 }
 function onSuccessAudio() {
 }
@@ -90,31 +34,13 @@ function onErrorAudio(error) {
     _inciAudioFichero='';
     mensaje(error.message,"error");
 }
-function onErrorAudioMedia(error) {
-    _inciAudioFichero='';
-    mensaje(error.message,"error Media");
-}
-function onErrorAudioFileSystem(error) {
-    _inciAudioFichero='';
-    mensaje(error.message,"error FileSystem");
-}
-function onErrorAudiogetFile(error) {
-    _inciAudioFichero='';
-    mensaje(error.message,"error getFile");
-}
-function onErrorAudioLeer(error) {
-    _inciAudioFichero='';
-    mensaje(error.message,"error Leer");
-}
 
 function AudioGrabacion(respuesta){
     try{
-        alert('AudioGrabacion 1');
         //Finalizar grabación
         _mediaAudio.stopRecord();
         if (respuesta==1) {
-            alert('AudioGrabacion 2');
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudioFileSystem);
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudio);
         }
         else{
             _inciAudioFichero='';
@@ -127,17 +53,10 @@ function AudioGrabacion(respuesta){
 }
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
-    alert('ConvertirFicheroAudioToBase64');
-    alert('fileSystem:  ' +fileSystem);
-    alert('mediaAudioFichero :'+mediaAudioFichero());
-    //alert(' tempDirectory: '+cordova.file.tempDirectory + _mediaAudioFicheroIOS);
-        //fileSystem.root.getFile( cordova.file.tempDirectory + _mediaAudioFicheroIOS, null, LeerFicheroAudio, onErrorAudiogetFile);
-    fileSystem.root.getFile( mediaAudioFichero(), null, LeerFicheroAudio, onErrorAudiogetFile);
+    fileSystem.root.getFile(_mediaAudioFichero, null, LeerFicheroAudio, onErrorAudio);
 }
 function LeerFicheroAudio(fileEntry) {
-    alert('LeerFicheroAudio');
-    alert('fileEntry: '+fileEntry);
-    fileEntry.file(LeerFicheroAudioOK, onErrorAudioLeer);
+    fileEntry.file(LeerFicheroAudioOK, onErrorAudio);
 }
 // the file is successfully retreived
 function LeerFicheroAudioOK(file){
@@ -145,14 +64,10 @@ function LeerFicheroAudioOK(file){
 }
 // turn the file into a base64 encoded string, and update the var base to this value.
 function TransformarFicheroAudioToBase64(file) {
-    alert('TransformarFicheroAudioToBase64');
     var reader = new FileReader();
     reader.onloadend = function(evt) {
-        alert('reader.onloadend');
-        alert(' evt.target.result: '+ evt.target.result);
         _inciAudioFichero = evt.target.result;
         _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
-        alert(_inciAudioFichero);
         var imagen = document.getElementById('imgAudioPlay');
         imagen.src = "images/play_red.png";
     };
@@ -177,7 +92,7 @@ function AudioReproducir(){
 
         //Iniciar Reprodución
         //var v_src="data:audio/mpeg;base64," +_inciAudioFichero;
-        _mediaAudio = new Media( mediaAudioFichero(),onSuccessAudioPlay,onErrorAudioPlay);
+        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudioPlay,onErrorAudioPlay);
         _mediaAudio.play();
         if (_mediaTimer == null) {
             _mediaTimer = setInterval(function() {
