@@ -74,6 +74,10 @@ function deviceReady() {
             $('#liSalir3').hide();
             $('#liSalir4').hide();
             $('#buttonSalir').hide();
+
+            //Crear fichero audio
+            window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, CrearFicheroAudioIOS, ErrorCrearFicheroAudioIOS);
+
         }
 
         //Hay localstorage ?

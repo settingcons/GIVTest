@@ -1,3 +1,14 @@
+function ObtenerFicheroAudio(){
+    if(esIOS())
+    {
+        return _mediaAudioFicheroIOSFullPath;
+    }
+    else
+    {
+        return _mediaAudioFichero;
+    }
+}
+
 function AudioGrabacionConfirma() {
     try{
         var v_mensaje = "s'està gravant al teu missatge de veu...";
@@ -8,7 +19,8 @@ function AudioGrabacionConfirma() {
         v_imagen.src = "images/play_gray.png";
 
         //Iniciar Grabación
-        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudio,onErrorAudio);
+        var v_fichero=ObtenerFicheroAudio();
+        _mediaAudio = new Media(v_fichero,onSuccessAudio,onErrorAudio);
         _mediaAudio.startRecord();
 
         if(navigator.notification && navigator.notification.confirm){
@@ -40,7 +52,14 @@ function AudioGrabacion(respuesta){
         //Finalizar grabación
         _mediaAudio.stopRecord();
         if (respuesta==1) {
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudio);
+            if(esIOS())
+            {
+                window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, ConvertirFicheroAudioToBase64IOS, onErrorAudio);
+
+            }
+            else {
+                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudio);
+            }
         }
         else{
             _inciAudioFichero='';
@@ -92,7 +111,8 @@ function AudioReproducir(){
 
         //Iniciar Reprodución
         //var v_src="data:audio/mpeg;base64," +_inciAudioFichero;
-        _mediaAudio = new Media(_mediaAudioFichero,onSuccessAudioPlay,onErrorAudioPlay);
+        var v_fichero = ObtenerFicheroAudio();
+        _mediaAudio = new Media(v_fichero,onSuccessAudioPlay,onErrorAudioPlay);
         _mediaAudio.play();
         if (_mediaTimer == null) {
             _mediaTimer = setInterval(function() {
@@ -154,3 +174,50 @@ function cerrarAudio() {
     $('#divDatosIncidenciaAudioPlay').hide();
 }
 
+//--------------------------------------------------------------------------------------------
+//Tratar audio IOS
+//--------------------------------------------------------------------------------------------
+function ErrorCrearFicheroAudioIOS() {
+    if(error!=null && error.message!=null) {
+        mensaje("Error creació fitxer audio:\n"+error.message, "error");
+    }
+}
+function CrearFicheroAudioIOS(fileSystem) {
+    fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false}, CrearFicheroAudioIOSCorrecto, CrearFicheroAudioIOSError);
+}
+
+function CrearFicheroAudioIOSError(error) {
+    if(error!=null && error.message!=null) {
+        mensaje("Error creació fitxer audio:\n"+error.message, "error");
+    }
+}
+
+function CrearFicheroAudioIOSCorrecto(fileEntry) {
+    _mediaAudioFicheroIOSFullPath=fileEntry.fullPath;
+
+}
+
+
+function ConvertirFicheroAudioToBase64IOS(fileSystem) {
+    fileSystem.root.getFile(_mediaAudioFicheroIOS,{create: false,exclusive:false}, LeerFicheroAudioIOS, onErrorAudio);
+}
+
+function LeerFicheroAudioIOS(fileEntry) {
+    fileEntry.file(LeerFicheroAudioOKIOS, onErrorAudio);
+}
+
+function LeerFicheroAudioOKIOS(file){
+    TransformarFicheroAudioToBase64IOS(file);
+}
+
+function TransformarFicheroAudioToBase64IOS(file) {
+    file.type='audio/wav';
+    var reader = new FileReader();
+    reader.onloadend = function(evt) {
+        _inciAudioFichero = evt.target.result;
+        _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
+        var imagen = document.getElementById('imgAudioPlay');
+        imagen.src = "images/play_red.png";
+    };
+    reader.readAsDataURL(file);
+}

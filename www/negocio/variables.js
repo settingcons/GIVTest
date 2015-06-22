@@ -16,5 +16,8 @@ var _mediaAudio;
 var _mediaTimer = null;
 var _mediaAudioFichero = "givaudio.mpeg";
 
+var _mediaAudioFicheroIOS = "givaudio.wav";
+var _mediaAudioFicheroIOSFullPath = "";
+
 var _inciAudioFichero;
 
