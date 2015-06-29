@@ -44,8 +44,12 @@ function getComunicats(){
     try {
         while (true){
             objComunicat = leeObjetoLocal('COMUNICAT_' + (n--).toString().trim() , 'NO_EXISTE');
-            if(objComunicat == 'NO_EXISTE') break;
-            aComunicats[nInd++] = objComunicat;
+            //if(objComunicat == 'NO_EXISTE') break;
+            //aComunicats[nInd++] = objComunicat;
+            if(objComunicat != 'NO_EXISTE') {
+                aComunicats[nInd++] = objComunicat;
+            }
+            if(n<0)break;
         }
         return aComunicats;
     }

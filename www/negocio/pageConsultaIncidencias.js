@@ -634,25 +634,32 @@ function borrarFichaComunicadoConfirm() {
 }
 
 function borrarFichaComunicado(respuesta){
+    try{
+
     $('#buttonBorrarFichaComunicado').css("background-color","transparent");
 
     if (respuesta==1) {
 
         var v_aComs = getComunicats();
         var bBorrado = false;
+        var bEncontrado = false;
+        var v_id=0;
 
         if (v_aComs != null && v_aComs.length != 0) {
             for (var x = 0; x < v_aComs.length; x++) {
-                if (v_aComs[x].ID == $('#labelCOMUNICAT_ID').text()) {
-                    bBorrado = borraObjetoLocal('COMUNICAT_' + x.toString().trim());
-                    borraObjetoLocal('FOTO_' + x.toString().trim());
-                    borraObjetoLocal('AUDIO_' + x.toString().trim());
-                    if (!bBorrado) mensaje('El comunicat ' + x.toString().trim() + " no s'ha pogut esborrar", "info");
-
+                if(!bEncontrado) {
+                    v_id=v_aComs[x].ID;
+                    if (v_id.toString() == $('#labelCOMUNICAT_ID').text()) {
+                        bEncontrado = true;
+                        bBorrado = borraObjetoLocal('COMUNICAT_' +v_id.toString().trim());
+                        borraObjetoLocal('FOTO_' +v_id.toString().trim());
+                        borraObjetoLocal('AUDIO_' + v_id.toString().trim());
+                        if (!bBorrado) mensaje('El comunicat ' +v_id.toString().trim() + " no s'ha pogut esborrar", "info");
+                    }
                 }
             }
         }
-        inicioPaginaConsultaIncidencias();
+        abrirPagina('pageConsultaIncidencias', false);
 
         //var nComunicats = leeObjetoLocal('COMUNICATS_NEXTVAL', -1);
         ////alert('A eliminar comunicats');
@@ -676,6 +683,12 @@ function borrarFichaComunicado(respuesta){
     else{
         $('#divConsultaIncidenciasEspera').hide();
     }
+    }
+    catch (ex){
+        $('#divConsultaIncidenciasEspera').hide();
+        mensaje("ERROR: "+ex.message,"error");
+    }
+
 }
 
 
