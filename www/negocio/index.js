@@ -44,6 +44,8 @@ function deviceReady() {
         document.getElementById('buttonEnviar').addEventListener("touchstart", MostrarEsperaDatosIncidencia, false);
         document.getElementById('buttonEnviar').addEventListener("touchend", enviarIncidencia, false);
 
+        document.getElementById('buttonBorrarFichaComunicado').addEventListener("touchstart", buttonBorrarFichaComunicado_touchstart, false);
+        document.getElementById('buttonBorrarFichaComunicado').addEventListener("touchend", borrarFichaComunicadoConfirm, false);
         document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchstart", buttonBorrarHistoricoComunicados_touchstart, false);
         document.getElementById('buttonBorrarHistoricoComunicados').addEventListener("touchend", borrarHistoricoComunicadosConfirm, false);
         document.getElementById('buttonEnviamentDePendents').addEventListener("touchstart", buttonEnviamentDePendents_touchstart, false);

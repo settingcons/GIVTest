@@ -11,6 +11,15 @@ function inicioPaginaConsultaIncidencias(){
         cargaListaComunicats();
 }
 
+function MostrarEsperaConsultaIncidencias(){
+    $('#divConsultaIncidenciasEspera').show();
+}
+
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
+// LISTA DE  COMUNICADOS - MOSTRAR LISTA
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 function cargaListaComunicats(){
     $('#listviewLista').children().remove('li');
 
@@ -82,51 +91,6 @@ function cargaListaComunicats(){
     catch (ex){}
 }
 
-function verDatosComunicat(x){
-    try {
-
-        $('#labelCOMUNICAT_TIPUS').text('');
-        $('#labelCOMUNICAT_CARRER').text('');
-        $('#labelCOMUNICAT_ID').text('');
-        $('#labelCOMUNICAT_REFERENCIA').text('');
-        //$('#labelCOMUNICAT_NUM').text('');
-        $('#labelCOMUNICAT_COMENTARI').text('');
-        $('#labelCOMUNICAT_DATA').text('');
-        $('#labelCOMUNICAT_ESTAT').text('');
-
-        var sFotoInci = leeObjetoLocal('FOTO_' + aComs[x].ID, '');
-        var imagen = document.getElementById('imgCOMUNICAT_FOTO');
-        if (sFotoInci == '') {
-            imagen.src = sFotoInci = "images/sinFoto.png";
-        }
-        else {
-            imagen.src = "data:image/jpeg;base64," + sFotoInci;
-        }
-
-        abrirPagina("pageConsultaIncidenciasFicha", false);
-
-        $('#labelCOMUNICAT_ID').text(aComs[x].ID);
-        $('#labelCOMUNICAT_REFERENCIA').text(aComs[x].REFERENCIA);
-        $('#labelCOMUNICAT_ESTAT').text(aComs[x].ESTAT);
-        $('#labelCOMUNICAT_DATA').text(aComs[x].DATA);
-        if(aComs[x].ESTAT=="RESOLTA") {
-            $('#labelCOMUNICAT_DATARES').text(aComs[x].DATARES);
-            $('#fecharesuelta').show();
-        }
-        else{
-            $('#fecharesuelta').hide();
-        }
-        $('#labelCOMUNICAT_CARRER').text(aComs[x].CARRER + " " + aComs[x].NUM);
-        $('#labelCOMUNICAT_COMENTARI').text(aComs[x].COMENTARI);
-        $('#labelCOMUNICAT_COORDENADES').text(aComs[x].COORD_X + " , " + aComs[x].COORD_Y);
-        $('#labelCOMUNICAT_TIPUS').text(aComs[x].ITE_DESC);
-    }
-    catch (ex){
-        mensaje('exception en verDatosComunicat : ' + e.message , 'error');
-    }
-
-}
-
 function buttonMostrarEnLista_touchstart(){
     $('#buttonMostrarEnLista').css("background-color","#f9dce2");
 }
@@ -135,6 +99,11 @@ function buttonMostrarEnLista_touchend(){
     abrirPagina('pageConsultaIncidencias', false);
 }
 
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
+// LISTA DE  COMUNICADOS - MOSTRAR PLANO
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 function buttonMostrarEnPlano_touchstart(){
     $('#buttonMostrarEnPlano').css("background-color","#f9dce2");
 }
@@ -142,7 +111,6 @@ function buttonMostrarEnPlano_touchend(){
     $('#buttonMostrarEnPlano').css("background-color","transparent");
     abrirPagina('pageConsultaIncidenciasMapa', false);
 }
-
 
 function mostrarEnPlano() {
     try {
@@ -204,17 +172,17 @@ function mostrarEnPlano() {
     }
 }
 
-function MostrarEsperaConsultaIncidencias(){
-    $('#divConsultaIncidenciasEspera').show();
-}
 
-
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
+// LISTA DE  COMUNICADOS - ELIMINAR
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 function buttonBorrarHistoricoComunicados_touchstart(){
     MostrarEsperaConsultaIncidencias();
     $('#buttonBorrarHistoricoComunicados').css("background-color","#f9dce2");
 }
 
-//buttonBorrarHistoricoComunicados.touchend
 function borrarHistoricoComunicadosConfirm() {
 
     var v_mensaje = "Vol el·liminar l'historial?";
@@ -267,12 +235,17 @@ function borrarHistoricoComunicados(respuesta){
     }
 }
 
+
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
+// LISTA DE  COMUNICADOS - ENVÍO DE COMUNICADOS PENDIENTES
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 function buttonEnviamentDePendents_touchstart(){
     MostrarEsperaConsultaIncidencias();
     $('#buttonEnviamentDePendents').css("background-color","#f9dce2");
 }
 
-//buttonEnviamentDePendents.touchend
 function enviamentDePendents1(){
     enviamentDePendents(false);
 }
@@ -575,9 +548,136 @@ function GuardaActualizacionComunicats(aResultados){
     }
     catch(e)
     {
-         return 'ERROR (exception) en GuardaActualizacionComunicats : \n' + e.code + '\n' + e.message;
+        return 'ERROR (exception) en GuardaActualizacionComunicats : \n' + e.code + '\n' + e.message;
     }
 }
+
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
+// FICHA DE UN COMUNICADO - ELIMINAR
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
+function verDatosComunicat(x){
+    try {
+
+        $('#labelCOMUNICAT_TIPUS').text('');
+        $('#labelCOMUNICAT_CARRER').text('');
+        $('#labelCOMUNICAT_ID').text('');
+        $('#labelCOMUNICAT_REFERENCIA').text('');
+        //$('#labelCOMUNICAT_NUM').text('');
+        $('#labelCOMUNICAT_COMENTARI').text('');
+        $('#labelCOMUNICAT_DATA').text('');
+        $('#labelCOMUNICAT_ESTAT').text('');
+
+        var sFotoInci = leeObjetoLocal('FOTO_' + aComs[x].ID, '');
+        var imagen = document.getElementById('imgCOMUNICAT_FOTO');
+        if (sFotoInci == '') {
+            imagen.src = sFotoInci = "images/sinFoto.png";
+        }
+        else {
+            imagen.src = "data:image/jpeg;base64," + sFotoInci;
+        }
+
+        abrirPagina("pageConsultaIncidenciasFicha", false);
+
+        $('#labelCOMUNICAT_ID').text(aComs[x].ID);
+        $('#labelCOMUNICAT_REFERENCIA').text(aComs[x].REFERENCIA);
+        $('#labelCOMUNICAT_ESTAT').text(aComs[x].ESTAT);
+        $('#labelCOMUNICAT_DATA').text(aComs[x].DATA);
+        if(aComs[x].ESTAT=="RESOLTA") {
+            $('#labelCOMUNICAT_DATARES').text(aComs[x].DATARES);
+            $('#fecharesuelta').show();
+        }
+        else{
+            $('#fecharesuelta').hide();
+        }
+        $('#labelCOMUNICAT_CARRER').text(aComs[x].CARRER + " " + aComs[x].NUM);
+        $('#labelCOMUNICAT_COMENTARI').text(aComs[x].COMENTARI);
+        $('#labelCOMUNICAT_COORDENADES').text(aComs[x].COORD_X + " , " + aComs[x].COORD_Y);
+        $('#labelCOMUNICAT_TIPUS').text(aComs[x].ITE_DESC);
+    }
+    catch (ex){
+        mensaje('exception en verDatosComunicat : ' + e.message , 'error');
+    }
+
+}
+
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
+// FICHA DE UN COMUNICADO - ELIMINAR
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
+function buttonBorrarFichaComunicado_touchstart(){
+    MostrarEsperaConsultaIncidencias();
+    $('#buttonBorrarFichaComunicado').css("background-color","#f9dce2");
+}
+
+function borrarFichaComunicadoConfirm() {
+
+    var v_mensaje = "Vol el·liminar aquest comunicat?";
+    var v_titulo = "El·liminar comunicat";
+    var v_botones = "SI,NO";
+
+    if(navigator.notification && navigator.notification.confirm){
+        navigator.notification.confirm(v_mensaje,borrarFichaComunicado,v_titulo,v_botones);
+    }
+    else
+    {
+        var v_retorno = confirm(v_mensaje);
+        if (v_retorno){
+            borrarFichaComunicado(1);
+        }
+        else {
+            borrarFichaComunicado(2);
+        }
+    }
+}
+
+function borrarFichaComunicado(respuesta){
+    $('#buttonBorrarFichaComunicado').css("background-color","transparent");
+
+    if (respuesta==1) {
+
+        var v_aComs = getComunicats();
+        var bBorrado = false;
+
+        if (v_aComs != null && v_aComs.length != 0) {
+            for (var x = 0; x < v_aComs.length; x++) {
+                if (v_aComs[x].ID == $('#labelCOMUNICAT_ID').text()) {
+                    bBorrado = borraObjetoLocal('COMUNICAT_' + x.toString().trim());
+                    borraObjetoLocal('FOTO_' + x.toString().trim());
+                    borraObjetoLocal('AUDIO_' + x.toString().trim());
+                    if (!bBorrado) mensaje('El comunicat ' + x.toString().trim() + " no s'ha pogut esborrar", "info");
+
+                }
+            }
+        }
+        inicioPaginaConsultaIncidencias();
+
+        //var nComunicats = leeObjetoLocal('COMUNICATS_NEXTVAL', -1);
+        ////alert('A eliminar comunicats');
+        //if (nComunicats != -1) {
+        //    //Eliminar de la B.D.
+        //    nComunicats += 1;
+        //    var bBorrado = false;
+        //    for (var x = 0; x < nComunicats; x++) {
+        //        bBorrado = borraObjetoLocal('COMUNICAT_' + x.toString().trim());
+        //        borraObjetoLocal('FOTO_' + x.toString().trim());
+        //        borraObjetoLocal('AUDIO_' + x.toString().trim());
+        //        if (!bBorrado) mensaje('El comunicat ' + x.toString().trim() + " no s'ha pogut esborrar", "info");
+        //    }
+        //
+        //    //limpiar/actualizar la lista
+        //    inicioPaginaConsultaIncidencias();
+        //
+        //
+        //}
+    }
+    else{
+        $('#divConsultaIncidenciasEspera').hide();
+    }
+}
+
 
 
 
