@@ -9,9 +9,11 @@ function inicioPaginaIdentificacion() {
 
 function cargaDatosCiudadano(){
 
+    alert('HGS limpia datos ciudadano');
     LimpiarDatosCiudadano();
+    alert('HGS getDatosCiudadano');
     var objUsu = getDatosUsuario();
-
+    alert('HGS logica de cargaDAtos');
     if(objUsu != null)
     {
         if(objUsu.TIPUS=="Interno"){
