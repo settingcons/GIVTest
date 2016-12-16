@@ -1,5 +1,6 @@
 function inicioPaginaIdentificacion() {
     try{
+        alert('HGS InicioPaginaIdentificacion');
         cargaDatosCiudadano();
     }
     catch (ex){

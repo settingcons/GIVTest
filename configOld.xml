@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.settingconsultoria.incidenciesAdvisorTEST" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>GIVTest</name>
+    <description>
+        Comunicador incidencies tipus TEST
+    </description>
+    <author email="settingcons@gmail.com" href="http://www.settingconsultoria.com">
+        Setting Consultoria
+    </author>
+    <content src="index.html" />
+    <preference name="permissions" value="none" />
+    <!-- si se utiliza la versión de phonegap 3.6.3 no funciona la geolocalización -->
+    <preference name="phonegap-version" value="3.5.0" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <!--si se pone fullscreen a true se oculta la barra de estado de la parte superior -->
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="false" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/media"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+        <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    <feature name="Media">
+        <param name="ios-package" value="CDVSound" />
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
+    <gap:plugin name="org.apache.cordova.battery-status" />
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.media-capture" />
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.contacts" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.device-motion" />
+    <gap:plugin name="org.apache.cordova.device-orientation" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+    <!-- si se utiliza otra versión no funciona la geolocalización -->
+    <!--<gap:plugin name="org.apache.cordova.geolocation" version="0.3.7" />-->
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10"/>
+    <gap:plugin name="org.apache.cordova.globalization" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.vibration" />
+
+
+    <!-- ocultar statusbar en ios -->
+    <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
+
+    <gap:plugin name="settingconsultoria.cordova.plugins.diagnostic" version="0.0.1" />
+
+    <feature name="Diagnostic" >
+        <param name="ios-package" value="Diagnostic" />
+        <param name="android-package" value="cordova.plugins.diagnostic"/>
+    </feature>
+
+    <plugin name="SplashScreen" value="”org.apache.cordova.SplashScreen"/>
+
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="ios-package" value="CDVFile" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+        <param name="ios-package" value="CDVFileTransfer" />
+    </feature>
+
+    <!-- Define app icon for each platform. -->
+    <icon src="icon.png" />
+    <icon gap:platform="ios" height="57" src="icons/ios/icon-57.png" width="57" />
+    <icon gap:platform="ios" height="72" src="icons/ios/icon-72.png" width="72" />
+    <icon gap:platform="ios" height="114" src="icons/ios/icon-57-2x.png" width="114" />
+    <icon gap:platform="ios" height="144" src="icons/ios/icon-72-2x.png" width="144" />
+    <icon src="icons/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="icons/android/icon-48-mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="icons/android/icon-72-hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="icons/android/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+
+    <gap:splash src="splash.png" />
+    <gap:splash src="icons/ios/Default-Landscape~ipad.png" width="1024" height="768" />
+    <gap:splash src="icons/ios/Default-Portrait~ipad.png" width="768" height="1024" />
+    <gap:splash src="icons/android/splash-ldpi_port_(200-320).png" gap:platform="android" gap:density="ldpi" gap:qualifier="port-ldpi"  />
+    <gap:splash src="icons/android/splash-mdpi_port_(320-480).png" gap:platform="android" gap:density="mdpi" gap:qualifier="port-mdpi"/>
+    <gap:splash src="icons/android/splash-hdpi_port_(480-800).png" gap:platform="android" gap:density="hdpi" gap:qualifier="port-hdpi"/>
+    <gap:splash src="icons/android/splash-xhdpi_port_(720-1280).png" gap:platform="android" gap:density="xhdpi"  gap:qualifier="port-xhdpi"/>
+    <gap:splash src="icons/android/splash-ldpi_land_(320-200).png" gap:platform="android" gap:density="ldpi" gap:qualifier="land-ldpi"  />
+    <gap:splash src="icons/android/splash-mdpi_land_(480-320).png" gap:platform="android" gap:density="mdpi" gap:qualifier="land-mdpi"  />
+    <gap:splash src="icons/android/splash-hdpi_land_(800-480).png" gap:platform="android" gap:density="hdpi" gap:qualifier="land-hdpi"/>
+    <gap:splash src="icons/android/splash-xhdpi_land(1280-720).png" gap:platform="android" gap:density="xhdpi"  gap:qualifier="land-xhdpi" />
+
+
+    <!--<icon src="icon.png" />-->
+    <!--<icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />-->
+    <!--<icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />-->
+    <!--<icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />-->
+    <!--<icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />-->
+    <!--<icon gap:platform="blackberry" src="www/res/icon/blackberry/icon-80.png" />-->
+    <!--<icon gap:platform="blackberry" gap:state="hover" src="www/res/icon/blackberry/icon-80.png" />-->
+    <!--<icon gap:platform="ios" height="57" src="www/res/icon/ios/icon-57.png" width="57" />-->
+    <!--<icon gap:platform="ios" height="72" src="www/res/icon/ios/icon-72.png" width="72" />-->
+    <!--<icon gap:platform="ios" height="114" src="www/res/icon/ios/icon-57-2x.png" width="114" />-->
+    <!--<icon gap:platform="ios" height="144" src="www/res/icon/ios/icon-72-2x.png" width="144" />-->
+    <!--<icon gap:platform="webos" src="www/res/icon/webos/icon-64.png" />-->
+    <!--<icon gap:platform="winphone" src="www/res/icon/windows-phone/icon-48.png" />-->
+    <!--<icon gap:platform="winphone" gap:role="background" src="www/res/icon/windows-phone/icon-173-tile.png" />-->
+
+    <!--<gap:splash src="splash.png" />-->
+    <!--<gap:splash gap:platform="android" gap:density="ldpi" src="www/res/screen/android/splash-ldpi-portrait.png" />-->
+    <!--<gap:splash gap:platform="android" gap:density="mdpi" src="www/res/screen/android/splash-mdpi-portrait.png" />-->
+    <!--<gap:splash gap:platform="android" gap:density="hdpi" src="www/res/screen/android/splash-hdpi-portrait.png" />-->
+    <!--<gap:splash gap:platform="android" gap:density="xhdpi" src="www/res/screen/android/splash-xhdpi-portrait.png" />-->
+    <!--<gap:splash gap:platform="blackberry" src="www/res/screen/blackberry/splash-225.png" />-->
+    <!--<gap:splash gap:platform="ios" height="480" src="www/res/screen/ios/splash-iphone-portrait.png" width="320" />-->
+    <!--<gap:splash gap:platform="ios" height="960" src="www/res/screen/ios/splash-iphone-portrait-2x.png" width="640" />-->
+    <!--<gap:splash gap:platform="ios" height="1136" src="www/res/screen/ios/splash-iphone-portrait-568h-2x.png" width="640" />-->
+    <!--<gap:splash gap:platform="ios" height="1024" src="www/res/screen/ios/splash-ipad-portrait.png" width="768" />-->
+    <!--<gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/splash-ipad-landscape.png" width="1024" />-->
+    <!--<gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/splash-portrait.jpg" />-->
+    <access origin="*" />
+</widget>
