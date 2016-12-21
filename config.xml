@@ -28,10 +28,6 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
 
-    <preference name="android-build-tool" value="ant|gradle" />
-
-    <preference name="iosExtraFilesystems" value="library,library-nosync,documents,documents-nosync,cache,bundle,root" />
-
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/file"/>
@@ -70,7 +66,6 @@
 	<plugin name="cordova-plugin-battery-status" source="npm" version="1.2.0"/>
 	<plugin name="cordova-plugin-media-capture" source="npm" version="1.4.0"/>
 	<plugin name="cordova-plugin-device-motion" source="npm" version="1.2.2"/>
-    <plugin name="cordova-plugin-local-notifications-npm" spec="1.0.3" source="npm" />
     <gap:plugin name="cordova-plugin-device-orientation" source="npm" version="1.0.4"/>
     <gap:plugin name="cordova-plugin-dialogs" source="npm" version="1.3.0"/>
 	<gap:plugin name="cordova-plugin-file-transfer" source="npm" version="1.6.0"/>
@@ -94,7 +89,6 @@
 	<gap:plugin name="cordova-plugin-camera" source="npm"/>
 	<gap:plugin name="cordova-plugin-console" source="npm"/>
 	<gap:plugin name="cordova-plugin-device" source="npm"/>
-    <!--<gap:plugin name="cordova-plugin-whitelist" source="npm"/>-->
 
 	<!-- faltaria adaptar aquests
     <gap:plugin name="org.apache.cordova.contacts" />-->
