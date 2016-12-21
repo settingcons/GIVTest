@@ -63,6 +63,7 @@ function guardaDatosCiudadano(){
                 p_sTelefon: telefon + ''
             };
 
+            alert ("HGS nom, c1, c2,dni, email i telf: " + nom+ ","+cognom1+ ","+cognom2+ ","+dni+ ","+email+ ","+telefon+ ".");
             ComprobarUsuarioWS(sParams);
         }
         else
