@@ -64,6 +64,7 @@ function guardaDatosCiudadano(){
             };
 
             alert ("HGS nom, c1, c2,dni, email i telf: " + nom+ ","+cognom1+ ","+cognom2+ ","+dni+ ","+email+ ","+telefon+ ".");
+            alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
             ComprobarUsuarioWS(sParams);
         }
         else
