@@ -89,7 +89,8 @@
 	<gap:plugin name="cordova-plugin-camera" source="npm"/>
 	<gap:plugin name="cordova-plugin-console" source="npm"/>
 	<gap:plugin name="cordova-plugin-device" source="npm"/>
-		
+    <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
+
 	<!-- faltaria adaptar aquests
     <gap:plugin name="org.apache.cordova.contacts" />-->
     		
@@ -148,4 +149,5 @@
     <!--<gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/splash-ipad-landscape.png" width="1024" />-->
     <!--<gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/splash-portrait.jpg" />-->
     <access origin="*" />
+    <access origin="mailto:*" launch-external="yes" />
 </widget>
