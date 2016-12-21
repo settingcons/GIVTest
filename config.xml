@@ -102,7 +102,7 @@
 	<gap:plugin name="cordova-plugin-camera" source="npm"/>
 	<gap:plugin name="cordova-plugin-console" source="npm"/>
 	<gap:plugin name="cordova-plugin-device" source="npm"/>
-    
+
 
 	<!-- faltaria adaptar aquests
     <gap:plugin name="org.apache.cordova.contacts" />-->
