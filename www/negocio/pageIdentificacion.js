@@ -97,6 +97,7 @@ function ComprobarUsuarioWS(sParams){
 function ComprobarUsuarioWS_OK(datos){
     try{
         var v_sMensaje='';
+        alert ("HGS comprueba usuario: "+datos);
         if(datos==null){
             v_sMensaje= "No hi ha confirmació de l'enviament de la comunicació ";
         }
