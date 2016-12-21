@@ -27,7 +27,6 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
-    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="android-build-tool" value="ant|gradle" />
 
     <preference name="iosExtraFilesystems" value="library,library-nosync,documents,documents-nosync,cache,bundle,root" />
