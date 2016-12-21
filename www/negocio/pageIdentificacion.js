@@ -156,8 +156,7 @@ function ComprobarUsuarioWS_OK(datos){
     }
 }
 function ComprobarUsuarioWS_ERROR(error){
-    alert ("HGS pete aqui:" + error.responseText.toString());
-    mensaje(error.responseText , 'error');
+    mensaje(error.responseText , 'error:' + error.message);
 }
 
 
