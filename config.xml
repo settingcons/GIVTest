@@ -27,7 +27,6 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
-
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="android-build-tool" value="ant|gradle" />
 
@@ -103,7 +102,7 @@
 	<gap:plugin name="cordova-plugin-camera" source="npm"/>
 	<gap:plugin name="cordova-plugin-console" source="npm"/>
 	<gap:plugin name="cordova-plugin-device" source="npm"/>
-    <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
+    
 
 	<!-- faltaria adaptar aquests
     <gap:plugin name="org.apache.cordova.contacts" />-->
