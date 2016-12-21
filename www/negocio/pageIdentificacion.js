@@ -77,6 +77,7 @@ function guardaDatosCiudadano(){
 }
 
 function ComprobarUsuarioWS(sParams){
+    alert ('HGS sParams:'+sParams);
     try {
         $.ajax({
             type: 'POST',
