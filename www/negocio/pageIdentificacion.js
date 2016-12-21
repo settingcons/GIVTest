@@ -62,9 +62,6 @@ function guardaDatosCiudadano(){
                 p_sEmail: email + '',
                 p_sTelefon: telefon + ''
             };
-
-            alert ("HGS nom, c1, c2,dni, email i telf: " + nom+ ","+cognom1+ ","+cognom2+ ","+dni+ ","+email+ ","+telefon+ ".");
-            alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
             ComprobarUsuarioWS(sParams);
         }
         else
@@ -79,7 +76,7 @@ function guardaDatosCiudadano(){
 }
 
 function ComprobarUsuarioWS(sParams){
-    alert ('HGS sParams:'+sParams);
+    alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
     try {
         $.ajax({
             type: 'POST',
@@ -159,6 +156,7 @@ function ComprobarUsuarioWS_OK(datos){
     }
 }
 function ComprobarUsuarioWS_ERROR(error){
+    alert ("HGS pete aqui:" + error.responseText.toString());
     mensaje(error.responseText , 'error');
 }
 
