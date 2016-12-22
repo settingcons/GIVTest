@@ -77,10 +77,12 @@ function guardaDatosCiudadano(){
 
 function ComprobarUsuarioWS(sParams){
     alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
+    alert ("url: "+ _wsURLLogin);
+    /*url: _wsURLLogin,*/
     try {
         $.ajax({
             type: 'POST',
-            url: _wsURLLogin,
+            url:'http://172.26.0.2:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/Login_v1',
             data: sParams,
             success: ComprobarUsuarioWS_OK,
             error: ComprobarUsuarioWS_ERROR,
