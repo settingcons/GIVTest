@@ -158,7 +158,7 @@ function ComprobarUsuarioWS_OK(datos){
     }
 }
 function ComprobarUsuarioWS_ERROR(error){
-    mensaje(error.responseText , 'error:' + error.message + ' i ' + error.responseText);
+    mensaje(error.responseText , 'error:' + error.message);
 }
 
 
