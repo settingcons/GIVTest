@@ -82,7 +82,7 @@ function ComprobarUsuarioWS(sParams){
             type: "POST",
             url:url+"Login_v1",
             data: sParams,
-            success: function (ComprobarUsuarioWS_OK){alert("OK"); alert("datos: " + datos);},
+            success: function (ComprobarUsuarioWS_OK){alert("OK");},
             error: function(ComprobarUsuarioWS_ERROR){alert("KO");},
             async:false
         });
