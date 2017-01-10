@@ -85,7 +85,7 @@ function ComprobarUsuarioWS(sParams){
             type: "POST",
             url:url+"Login_v1",
             data: sParams,
-            success: ComprobarUsuarioWS_OK,
+            success: function (ComprobarUsuarioWS_OK){alert("ok");},
             error: ComprobarUsuarioWS_ERROR,
             async:false
         });
@@ -95,7 +95,7 @@ function ComprobarUsuarioWS(sParams){
     }
 }
 
-function ComprobarUsuarioWS_OK(datos){
+function ORIGINALComprobarUsuarioWS_OK(datos){
     try{
         var v_sMensaje='';
         alert ("HGS comprueba usuario: "+datos);
@@ -158,7 +158,7 @@ function ComprobarUsuarioWS_OK(datos){
         mensaje(ex.message, 'error');
     }
 }
-function ComprobarUsuarioWS_ERROR(error){
+function ORIGINALComprobarUsuarioWS_ERROR(error){
     mensaje(error.responseText , 'error:' + error.message);
 }
 
