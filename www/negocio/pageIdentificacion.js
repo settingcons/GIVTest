@@ -82,14 +82,22 @@ function ComprobarUsuarioWS(sParams){
             type: "POST",
             url:url+"Login_v1",
             data: sParams,
-            success: function (ComprobarUsuarioWS_OK){alert("OK");},
-            error: function(ComprobarUsuarioWS_ERROR){alert("KO");},
+            success: ComprobarUsuarioWS_OK,
+            error: ComprobarUsuarioWS_ERROR,
             async:false
         });
     }
     catch (ex){
         mensaje(ex.message , 'error');
     }
+}
+
+function ComprobarUsuarioWS_OK(datos){
+    alert("OK");
+}
+
+function ComprobarUsuarioWS_ERROR(){
+    alert("KO");
 }
 
 function ORIGINALComprobarUsuarioWS_OK(datos){
