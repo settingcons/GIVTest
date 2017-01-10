@@ -86,7 +86,7 @@ function ComprobarUsuarioWS(sParams){
             url:url+"Login_v1",
             data: sParams,
             success: function (ComprobarUsuarioWS_OK){alert("ok");},
-            error: ComprobarUsuarioWS_ERROR,
+            error: function(ComprobarUsuarioWS_ERROR){alert("ok");},
             async:false
         });
     }
