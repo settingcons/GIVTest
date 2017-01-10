@@ -30,11 +30,9 @@
       <file leaf-file-name="pageIdentificacion.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/negocio/pageIdentificacion.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.510917" vertical-offset="1899" max-vertical-offset="3625">
-              <caret line="90" column="11" selection-start-line="90" selection-start-column="11" selection-end-line="90" selection-end-column="11" />
-              <folding>
-                <element signature="n#!!block;n#ORIGINALComprobarUsuarioWS_OK#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.6157205" vertical-offset="2052" max-vertical-offset="5200">
+              <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -929,11 +927,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/negocio/pageIdentificacion.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.510917" vertical-offset="1899" max-vertical-offset="3625">
-          <caret line="90" column="11" selection-start-line="90" selection-start-column="11" selection-end-line="90" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!block;n#ORIGINALComprobarUsuarioWS_OK#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.6157205" vertical-offset="2052" max-vertical-offset="5200">
+          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -78,6 +78,7 @@ function guardaDatosCiudadano(){
 function ComprobarUsuarioWS(sParams){
     alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
     alert ("url: "+ _wsURLLogin);
+    alert("datos: " + datos);
     /*url: _wsURLLogin -->'http://172.26.0.2:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/Login_v1'*/
     var url = "http://172.26.0.2:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/";
     try {
@@ -85,8 +86,8 @@ function ComprobarUsuarioWS(sParams){
             type: "POST",
             url:url+"Login_v1",
             data: sParams,
-            success: function (ComprobarUsuarioWS_OK){alert("ok");},
-            error: function(ComprobarUsuarioWS_ERROR){alert("ok");},
+            success: function (ComprobarUsuarioWS_OK){alert("OK");},
+            error: function(ComprobarUsuarioWS_ERROR){alert("KO");},
             async:false
         });
     }
