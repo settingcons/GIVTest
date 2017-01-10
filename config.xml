@@ -93,9 +93,6 @@
 
 	<!-- faltaria adaptar aquests
     <gap:plugin name="org.apache.cordova.contacts" />-->
-    		
-    
-    
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
