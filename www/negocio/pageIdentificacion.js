@@ -79,7 +79,7 @@ function ComprobarUsuarioWS(sParams){
             type: "POST",
             url:_wsURLLogin,
             data: sParams,
-            contentType:"application/json;charset=utf-8",
+            /*contentType:"application/json;charset=utf-8",*/
             dataType:"json",
             success: function ComprobarUsuarioWS_OK(msg){alert("prueba: " + msg.d);},
             error: function ComprobarUsuarioWS_ERROR(errorThrown){alert("status " +errorThrown.status);alert(errorThrown.statusText);alert(errorThrown.responseText);}
