@@ -74,8 +74,32 @@ function guardaDatosCiudadano(){
 
 function ComprobarUsuarioWS(sParams){
     alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
-    /*url: _wsURLLogin -->'http://172.26.0.2:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/Login_v1'*/
+     try {
+        $.ajax({
+            type: "POST",
+            url:_wsURLLogin,
+            data: sParams,
+            contentType:"application/json;charset=utf-8",
+            dataType:"json",
+            success: function ComprobarUsuarioWS_OK(msg){alert("prueba: " + msg.d);},
+            error: function ComprobarUsuarioWS_ERROR(errorThrown){alert("status " +errorThrown.status);alert(errorThrown.statusText);alert(errorThrown.responseText);}
+        });
+    }
+    catch (ex){
+        mensaje(ex.message , 'error ' + ex);
+    }
+}
 
+function ComprobarUsuarioWS_OK(){
+    alert("OK");
+}
+
+function ComprobarUsuarioWS_ERROR(){
+    alert("KO");
+}
+
+function ORIGINALComprobarUsuarioWS(sParams){
+    alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
     try {
         $.ajax({
             type: "POST",
@@ -90,15 +114,6 @@ function ComprobarUsuarioWS(sParams){
         mensaje(ex.message , 'error');
     }
 }
-
-function ComprobarUsuarioWS_OK(){
-    alert("OK");
-}
-
-function ComprobarUsuarioWS_ERROR(){
-    alert("KO");
-}
-
 function ORIGINALComprobarUsuarioWS_OK(datos){
     try{
         var v_sMensaje='';
