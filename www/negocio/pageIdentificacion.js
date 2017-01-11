@@ -74,7 +74,7 @@ function guardaDatosCiudadano(){
 
 
 function ComprobarUsuarioWS(sParams){
-    alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
+    //alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
     try {
         $.ajax({
             type: "POST",
@@ -92,7 +92,7 @@ function ComprobarUsuarioWS(sParams){
 function ComprobarUsuarioWS_OK(datos){
     try{
         var v_sMensaje='';
-        alert ("HGS comprueba usuario: "+datos);
+        //alert ("HGS comprueba usuario: "+datos);
         if(datos==null){
             v_sMensaje= "No hi ha confirmació de l'enviament de la comunicació ";
         }
