@@ -72,33 +72,8 @@ function guardaDatosCiudadano(){
     }
 }
 
+
 function ComprobarUsuarioWS(sParams){
-    alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
-     try {
-        $.ajax({
-            type: "POST",
-            url:_wsURLLogin,
-            data: sParams,
-            /*contentType:"application/json;charset=utf-8",*/
-            dataType:"json",
-            success: function ComprobarUsuarioWS_OK(msg){alert("prueba: " + msg.d);},
-            error: function ComprobarUsuarioWS_ERROR(errorThrown){alert("status " +errorThrown.status);alert(errorThrown.statusText);alert(errorThrown.responseText);}
-        });
-    }
-    catch (ex){
-        mensaje(ex.message , 'error ' + ex);
-    }
-}
-
-function ComprobarUsuarioWS_OK(){
-    alert("OK");
-}
-
-function ComprobarUsuarioWS_ERROR(){
-    alert("KO");
-}
-
-function ORIGINALComprobarUsuarioWS(sParams){
     alert ("HGS sParams: " + sParams.p_sNom + ","+sParams.p_sCognom1+ ","+sParams.p_sCognom2+ ","+sParams.p_sDni+ ","+sParams.p_sDni+ ","+sParams.p_sEmail+ ","+sParams.p_sTelefon+ ".")
     try {
         $.ajax({
@@ -114,7 +89,7 @@ function ORIGINALComprobarUsuarioWS(sParams){
         mensaje(ex.message , 'error');
     }
 }
-function ORIGINALComprobarUsuarioWS_OK(datos){
+function ComprobarUsuarioWS_OK(datos){
     try{
         var v_sMensaje='';
         alert ("HGS comprueba usuario: "+datos);
@@ -177,7 +152,7 @@ function ORIGINALComprobarUsuarioWS_OK(datos){
         mensaje(ex.message, 'error');
     }
 }
-function ORIGINALComprobarUsuarioWS_ERROR(error){
+function ComprobarUsuarioWS_ERROR(error){
     mensaje(error.responseText , 'error:' + error.message);
 }
 
