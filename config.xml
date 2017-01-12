@@ -8,7 +8,7 @@
         Setting Consultoria
     </author>
     <content src="index.html" />
-    <preference name="permissions" value="none" />
+    <!--<preference name="permissions" value="none" />HGS 120117-->
     <!-- si se utiliza la versión de phonegap 3.6.3 no funciona la geolocalización, por eso se pone 3.5.0 -->
     <preference name="phonegap-version" value="cli-6.3.0" />
     <preference name="orientation" value="default" />
