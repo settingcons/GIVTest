@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.settingconsultoria.incidenciesAdvisorTEST" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>GIVTest</name>
+<widget id="com.settingconsultoria.incidenciesAdvisorTEST" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>GIV</name>
     <description>
-        Comunicador incidencies tipus TEST
+        Comunicador incidencies via publica
     </description>
     <author email="settingcons@gmail.com" href="http://www.settingconsultoria.com">
         Setting Consultoria
